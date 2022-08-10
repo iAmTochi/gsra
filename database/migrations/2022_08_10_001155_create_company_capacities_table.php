@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('company_capacities', function (Blueprint $table) {
             $table->id();
+            $table->string('capacity');
             $table->timestamps();
         });
     }

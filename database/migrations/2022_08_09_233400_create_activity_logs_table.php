@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('activity_logs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->longText('activity');
+            $table->string('ip_address');
+            $table->string('platform');
+            $table->string('browser');
+            $table->string('device_model');
+            $table->string('device_family');
+            $table->boolean('is_mobile');
+            $table->boolean('is_tablet');
+            $table->boolean('is_desktop');
             $table->timestamps();
         });
     }

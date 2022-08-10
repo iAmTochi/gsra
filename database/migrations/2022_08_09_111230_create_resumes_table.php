@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('resumes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->longText('resume_path');
             $table->timestamps();
         });
     }
