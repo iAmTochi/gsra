@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->longText('job_summary');
             $table->unsignedBigInteger('job_function_id');
             $table->unsignedBigInteger('industry_id');
             $table->unsignedBigInteger('work_type_id');
