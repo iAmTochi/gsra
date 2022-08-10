@@ -32,7 +32,7 @@
         <div class="container">
             <nav id="navigation" class="navigation navigation-landscape">
                 <div class="nav-header">
-                    <a class="nav-brand" href="#">
+                    <a class="nav-brand" href="{{ url('/') }}">
                         <img src="assets/img/logo.png" class="logo" alt="" />
                     </a>
                     <div class="nav-toggle"></div>
@@ -1117,7 +1117,7 @@
                         </div>
 
                         <div class="form-group text-center mb-0">
-                            <p class="extra">Not a member?<a href="#et-register-wrap" class="text-dark"> Register</a></p>
+                            <p class="extra">Not a member?<a href="{{ route('register') }}" class="text-dark"> Register</a></p>
                         </div>
                     </form>
                 </div>
