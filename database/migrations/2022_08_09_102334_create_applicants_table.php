@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->date('dob');
             $table->enum('Gender',['Male','Female']);
+            $table->mediumText('image')->nullable();
             $table->unsignedBigInteger('qualification_id',)->comment('highest_qualification');
             $table->string('current_job_role');
             $table->unsignedBigInteger('country_id');
@@ -28,6 +29,7 @@ return new class extends Migration
             $table->unsignedBigInteger('resume_id');
             $table->unsignedBigInteger('availability_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

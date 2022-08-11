@@ -13,21 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('recruiters', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('job_role');
+            $table->string('last_name',);
+            $table->string('first_name',);
             $table->string('phone')->unique();
-            $table->string('company_name');
-            $table->string('industry_id');
-            $table->string('company_capacity_id');
-            $table->string('contact_person');
-            $table->string('notification_email');
-            $table->mediumText('address');
-            $table->unsignedBigInteger('country_id');
+            $table->text('address')->nullable();
+            $table->date('dob');
+            $table->enum('gender',['Male','Female']);
+            $table->string('image')->nullable();
             $table->timestamps();
+            $table->string('created_by');
+            $table->string('updated_by')->nullable();
             $table->softDeletes();
         });
     }
@@ -39,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recruiters');
+        Schema::dropIfExists('admins');
     }
 };

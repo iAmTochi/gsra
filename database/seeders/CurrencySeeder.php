@@ -128,7 +128,7 @@ class CurrencySeeder extends Seeder
             array('name' => 'Dong','code' => 'VND','symbol' => '₫'),
             array('name' => 'Rials','code' => 'YER','symbol' => '﷼'),
             array('name' => 'Zimbabwe Dollars','code' => 'ZWD','symbol' => 'Z$'),
-            array('name' => 'Rupees','code' => 'INR','symbol' => '₹')
+            //array('name' => 'Rupees','code' => 'INR','symbol' => '₹')
           );
 
           foreach($currency as $currency){
