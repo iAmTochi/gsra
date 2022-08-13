@@ -1,18 +1,6 @@
 <!DOCTYPE html>
-<html lang="zxx">
-
-<!-- Mirrored from themezhub.net/live-workplex/workplex/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Aug 2022 17:49:58 GMT -->
-<head>
-    <meta charset="utf-8" />
-    <meta name="author" content="Themezhub" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Workplex - Creative Job Board HTML Template</title>
-
-    <!-- Custom CSS -->
-    <link href="assets/css/styles.css" rel="stylesheet">
-
-</head>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@include('partial.head')
 
 <body>
 
@@ -34,12 +22,17 @@
         <div class="container">
             <nav id="navigation" class="navigation navigation-landscape">
                 <div class="nav-header">
-                    <a class="nav-brand" href="#">
+                    <a class="nav-brand" href="{{ url('/') }}">
                         <img src="assets/img/logo.png" class="logo" alt="" />
                     </a>
                     <div class="nav-toggle"></div>
                     <div class="mobile_nav">
                         <ul>
+                            <li>
+                                <a href="{{ route('login') }}"  class="theme-cl fs-lg">
+                                    <i class="lni lni-user"></i>
+                                </a>
+                            </li>
                             <li>
                                 <a href="#" data-toggle="modal" data-target="#login" class="theme-cl fs-lg">
                                     <i class="lni lni-user"></i>
@@ -57,7 +50,7 @@
                     <ul class="nav-menu">
 
                         <li><a href="#">Home</a>
-                            <ul class="nav-dropdown nav-submenu">
+                            {{-- <ul class="nav-dropdown nav-submenu">
                                 <li><a href="index.html">Home 1</a></li>
                                 <li><a href="home-2.html">Home 2</a></li>
                                 <li><a href="home-3.html">Home 3</a></li>
@@ -66,7 +59,7 @@
                                 <li><a href="home-6.html">Home 6</a></li>
                                 <li><a href="home-7.html">Home 7</a></li>
                                 <li><a href="home-8.html">Home 8</a></li>
-                            </ul>
+                            </ul> --}}
                         </li>
 
                         <li><a href="javascript:void(0);">Find Job</a>
@@ -134,6 +127,12 @@
                             <a href="#" data-toggle="modal" data-target="#login" class="ft-medium">
                                 <i class="lni lni-user mr-2"></i>Sign In
                             </a>
+
+                        </li>
+                        <li>
+                            <a href="{{ route('login') }}"  class="ft-medium">
+                                <i class="lni lni-user mr-2"></i> Sign In
+                            </a>
                         </li>
                         <li class="add-listing theme-bg">
                             <a href="dashboard-post-job.html" >
@@ -151,140 +150,12 @@
     <!-- Top header  -->
     <!-- ============================================================== -->
 
-    <!-- ======================= Top Breadcrubms ======================== -->
-    <div class="gray py-3">
-        <div class="container">
-            <div class="row">
-                <div class="colxl-12 col-lg-12 col-md-12">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Register</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ======================= Top Breadcrubms ======================== -->
-
-    <!-- ======================= Login Detail ======================== -->
-    <section class="middle">
-        <div class="container">
-            <div class="row align-items-start justify-content-center">
 
 
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mfliud">
-                    <form class="border p-3 rounded" method="{{ route('register') }}">
+@yield('content')
 
-                        @csrf
 
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label>First Name *</label>
-                                <input type="text" class="form-control" placeholder="First Name">
-                                <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
-                                </span>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last Name">
-                                <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Email *</label>
-                            <input type="text" class="form-control" placeholder="Username*">
-                            <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
-                                </span>
-                        </div>
-
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label>Password *</label>
-                                <input type="password" class="form-control" placeholder="Password*">
-                                <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
-                                </span>
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label>Confirm Password *</label>
-                                <input type="password" class="form-control" placeholder="Confirm Password*">
-                                <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <p>By registering your details, you agree with our Terms & Conditions, and Privacy and Cookie Policy.</p>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="flex-1">
-                                    <input id="ddd" class="checkbox-custom" name="ddd" type="checkbox">
-                                    <label for="ddd" class="checkbox-custom-label">Sign me up for the Newsletter!</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-md full-width theme-bg text-light fs-md ft-medium">Create An Account</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- ======================= Login End ======================== -->
-
-    <!-- ======================= Newsletter Start ============================ -->
-    <section class="space bg-cover" style="background:#03343b url(assets/img/landing-bg.png) no-repeat;">
-        <div class="container py-5">
-
-            <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="text-light mb-0">Subscribr Now</h6>
-                        <h2 class="ft-bold text-light">Get All New Job Notification</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row align-items-center justify-content-center">
-                <div class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12">
-                    <form class="bg-white rounded p-1">
-                        <div class="row no-gutters">
-                            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8">
-                                <div class="form-group mb-0 position-relative">
-                                    <input type="text" class="form-control lg left-ico" placeholder="Enter Your Email Address">
-                                    <i class="bnc-ico lni lni-envelope"></i>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="form-group mb-0 position-relative">
-                                    <button class="btn full-width custom-height-lg theme-bg text-light fs-md" type="button">Subscribe</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- ======================= Newsletter Start ============================ -->
-
-    <!-- ============================ Footer Start ================================== -->
+<!-- ============================ Footer Start ================================== -->
     <footer class="light-footer skin-light-footer style-2">
         <div class="footer-middle">
             <div class="container">
@@ -394,7 +265,8 @@
                         <h2 class="m-0 ft-regular">Login</h2>
                     </div>
 
-                    <form>
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="form-group">
                             <label>User Name</label>
                             <input type="text" class="form-control" placeholder="Username*">
@@ -422,7 +294,7 @@
                         </div>
 
                         <div class="form-group text-center mb-0">
-                            <p class="extra">Not a member?<a href="#et-register-wrap" class="text-dark"> Register</a></p>
+                            <p class="extra">Not a member?<a href="{{ route('register') }}" class="text-dark"> Register</a></p>
                         </div>
                     </form>
                 </div>
@@ -442,20 +314,19 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/slick.js"></script>
-<script src="assets/js/slider-bg.js"></script>
-<script src="assets/js/smoothproducts.js"></script>
-<script src="assets/js/snackbar.min.js"></script>
-<script src="assets/js/jQuery.style.switcher.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/slick.js') }}"></script>
+<script src="{{ asset('assets/js/slider-bg.js') }}"></script>
+<script src="{{ asset('assets/js/smoothproducts.js') }}"></script>
+<script src="{{ asset('assets/js/snackbar.min.js') }}"></script>
+<script src="{{ asset('assets/js/jQuery.style.switcher.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
 <!-- ============================================================== -->
 <!-- This page plugins -->
 <!-- ============================================================== -->
 
 </body>
 
-<!-- Mirrored from themezhub.net/live-workplex/workplex/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Aug 2022 17:49:58 GMT -->
 </html>

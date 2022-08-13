@@ -179,13 +179,21 @@
                     <form class="border p-3 rounded" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
-                            <label>User Name *</label>
-                            <input type="text" class="form-control" placeholder="Username*">
+                            <label>Email *</label>
+                            <input type="text" name="email" class="form-control  @error('email') is-invalid @enderror" placeholder="Email *">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <label>Password *</label>
-                            <input type="password" class="form-control" placeholder="Password*">
+                            <input type="password" name="password" class="form-control" placeholder="Password*">
+{{--                            <span role="alert" class="invalid-feedback">--}}
+{{--                                <strong>{{$errors->first('first_name')}}</strong>--}}
+{{--                            </span>--}}
                         </div>
 
                         <div class="form-group">
@@ -205,16 +213,13 @@
                         </div>
                     </form>
                 </div>
-
-
-
             </div>
         </div>
     </section>
     <!-- ======================= Login End ======================== -->
 
     <!-- ======================= Newsletter Start ============================ -->
-    <section class="space bg-cover" style="background:#03343b url(assets/img/landing-bg.png) no-repeat;">
+    <section class="space bg-cover" style="background:#03343b url({{ asset('assets/img/landing-bg.png') }}) no-repeat;">
         <div class="container py-5">
 
             <div class="row justify-content-center">
