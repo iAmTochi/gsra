@@ -39,6 +39,11 @@
                     <div class="mobile_nav">
                         <ul>
                             <li>
+                                <a href="{{ route('login') }}"  class="theme-cl fs-lg">
+                                    <i class="lni lni-user"></i>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#" data-toggle="modal" data-target="#login" class="theme-cl fs-lg">
                                     <i class="lni lni-user"></i>
                                 </a>
@@ -131,6 +136,12 @@
                         <li>
                             <a href="#" data-toggle="modal" data-target="#login" class="ft-medium">
                                 <i class="lni lni-user mr-2"></i>Sign In
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="{{ route('login') }}"  class="ft-medium">
+                                <i class="lni lni-user mr-2"></i> Sign In
                             </a>
                         </li>
                         <li class="add-listing theme-bg">
@@ -264,7 +275,8 @@
                         <h2 class="m-0 ft-regular">Login</h2>
                     </div>
 
-                    <form>
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="form-group">
                             <label>User Name</label>
                             <input type="text" class="form-control" placeholder="Username*">
