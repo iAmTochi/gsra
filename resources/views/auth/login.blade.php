@@ -174,8 +174,10 @@
         <div class="container">
             <div class="row align-items-start justify-content-center">
 
+
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <form class="border p-3 rounded">
+                    <form class="border p-3 rounded" method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="form-group">
                             <label>User Name *</label>
                             <input type="text" class="form-control" placeholder="Username*">
