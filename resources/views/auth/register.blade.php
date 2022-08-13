@@ -48,49 +48,49 @@
                             <img src="assets/img/logo.png" class="logo" alt="" />
                         </a>
                     </div>
-                    <form class="border p-3 rounded" method="{{ route('register') }}">
+                    <form class="border p-3 rounded" action="{{ route('register') }}" method="post">
 
                         @csrf
 
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>First Name *</label>
-                                <input type="text" class="form-control" placeholder="First Name">
+                                <input type="text" name="first_name" value="{{ old('first_name') }}" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" placeholder="First Name">
                                 <span role="alert" class="invalid-feedback">
                                         <strong>{{$errors->first('first_name')}}</strong>
                                 </span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Last Name</label>
-                                <input type="text" class="form-control" placeholder="Last Name">
+                                <input type="text" name="last_name" value="{{ old('last_name') }}" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" placeholder="Last Name">
                                 <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
+                                        <strong>{{$errors->first('last_name')}}</strong>
                                 </span>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Email *</label>
-                            <input type="text" class="form-control" placeholder="Username*">
+                            <input type="text" name="email" value="{{ old('email') }}" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Username*">
                             <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
+                                        <strong>{{$errors->first('email')}}</strong>
                                 </span>
                         </div>
 
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label>Password *</label>
-                                <input type="password" class="form-control" placeholder="Password*">
+                                <input type="password" name="password" value="{{ old('password') }}" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password*">
                                 <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
+                                        <strong>{{$errors->first('password')}}</strong>
                                 </span>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>Confirm Password *</label>
-                                <input type="password" class="form-control" placeholder="Confirm Password*">
+                                <input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" class="form-control {{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" placeholder="Confirm Password*">
                                 <span role="alert" class="invalid-feedback">
-                                        <strong>{{$errors->first('first_name')}}</strong>
+                                        <strong>{{$errors->first('password_confirmation')}}</strong>
                                 </span>
                             </div>
                         </div>
