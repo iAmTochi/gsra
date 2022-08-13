@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function(){
     #===================================
     Route::prefix('employer')->group(function(){
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
+            return view('employer.dashboard');
         });
     });
 
@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function(){
     #===================================
     Route::prefix('job-seeker')->group(function(){
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
+            return view('applicant.dashboard');
         });;
     });
 });
