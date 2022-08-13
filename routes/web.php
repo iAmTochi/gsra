@@ -15,12 +15,33 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 Route::middleware(['auth'])->group(function(){
+    #==================================
+    #Admin Routes
+    #===================================
     Route::prefix('admin')->group(function(){
         Route::get('/dashboard', function () {
             return view('admin.dashboard');
         })->name('dashboard');;
+    });
+
+    #==================================
+    #Employer Routes
+    #===================================
+    Route::prefix('employer')->group(function(){
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');
+        });
+    });
+
+    #==================================
+    #Applicants Routes
+    #===================================
+    Route::prefix('job-seeker')->group(function(){
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');
+        });;
     });
 });
 
