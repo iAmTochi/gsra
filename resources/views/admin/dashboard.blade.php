@@ -4,13 +4,6 @@
 
     <!-- ======================= dashboard Detail ======================== -->
 
-    <div class="dashboard-wrap bg-light">
-        <a class="mobNavigation" data-toggle="collapse" href="#MobNav" role="button" aria-expanded="false" aria-controls="MobNav">
-            <i class="fas fa-bars mr-2"></i>Dashboard Navigation
-        </a>
-        @include('partial._admin_sidebar')
-
-
         <div class="dashboard-content">
             <div class="dashboard-tlbar d-block mb-5">
                 <div class="row">
@@ -194,6 +187,5 @@
 
         </div>
 
-    </div>
-    <!-- ======================= dashboard Detail End ======================== -->
+
 @endsection

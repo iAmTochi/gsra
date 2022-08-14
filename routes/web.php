@@ -20,19 +20,21 @@ Route::middleware(['auth'])->group(function(){
     #==================================
     #Admin Routes
     #===================================
-    Route::prefix('admin')->group(function(){
+    Route::middleware('admin')->prefix('admin')->group(function(){
         Route::get('/dashboard', function () {
+
             return view('admin.dashboard');
-        })->name('dashboard');;
+
+        })->name('admin.dashboard');
     });
 
     #==================================
     #Employer Routes
     #===================================
-    Route::prefix('employer')->group(function(){
+    Route::middleware('employer')->prefix('employer')->group(function(){
         Route::get('/dashboard', function () {
             return view('employer.dashboard');
-        });
+        })->name('employer.dashboard');;
     });
 
     #==================================
@@ -41,7 +43,7 @@ Route::middleware(['auth'])->group(function(){
     Route::prefix('job-seeker')->group(function(){
         Route::get('/dashboard', function () {
             return view('applicant.dashboard');
-        });;
+        })->name('applicant.dashboard');
     });
 });
 

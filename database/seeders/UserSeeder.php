@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
 
             $dev = User::create([
                 'email'     => 'ugwukelvintochukwu@gmail.com',
-                'role'      => 'developer',
+                'role'      => 'admin',
                 'is_banned' => false,
                 'password'  => Hash::make('password'),
             ]);

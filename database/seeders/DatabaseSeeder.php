@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
         $this->call(JobFunctionSeeder::class);
         $this->call(QualificationSeeder::class);
         $this->call(WorkTypeSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }
