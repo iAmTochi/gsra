@@ -49,6 +49,11 @@
                         </a>
                     </div>
                     <form class="border p-3 rounded" method="POST" action="{{ route('login') }}">
+                        @if (session()->has('status'))
+                            <div class="mb-4 font-medium theme-cl text-sm text-green-600">
+                                {{ __('Login with your new password') }}
+                            </div>
+                        @endif
                         @csrf
                         <div class="form-group">
                             <label>Email *</label>
@@ -75,7 +80,7 @@
                                     <label for="dd" class="checkbox-custom-label">Remember Me</label>
                                 </div>
                                 <div class="eltio_k2">
-                                    <a href="#" class="theme-cl">Lost Your Password?</a>
+                                    <a href="{{ route('password.request') }}" class="theme-cl">Lost Your Password?</a>
                                 </div>
                             </div>
                         </div>

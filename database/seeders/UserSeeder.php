@@ -17,11 +17,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::where('email','ugwukelvintochukwu@gmail.com')->first();
+        $checkUser = User::where('email','ugwukelvintochukwu@gmail.com')->first();
 
-        if(!$user){
+        if(!$checkUser){
 
-            $dev = User::create([
+            $user = User::create([
                 'email'     => 'ugwukelvintochukwu@gmail.com',
                 'role'      => 'admin',
                 'is_banned' => false,
@@ -29,14 +29,14 @@ class UserSeeder extends Seeder
             ]);
 
             Admin::create([
-                'user_id' => $dev->id,
+                'user_id' => $user->id,
                 'last_name' => 'Ugwu',
                 'first_name' => 'Tochukwu',
                 'phone'=> '+2348036037038',
                 'address'=> '8 Oba Fatai Aileru Street, Lagos',
                 'dob' => '1991-01-24',
                 'gender'=> 'Male',
-                'created_by'=>$dev->id,
+                'created_by'=>$user->id,
 
             ]);
         }

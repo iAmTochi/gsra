@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('industry_id');
             $table->string('company_capacity_id');
-            $table->string('contact_person');
+            $table->string('contact_person')->nullable();
             $table->string('notification_email');
             $table->mediumText('address');
             $table->unsignedBigInteger('country_id');

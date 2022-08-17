@@ -1,39 +1,52 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.auth')
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
-        </div>
+@section('content')
 
-        @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-            </div>
-        @endif
+    <!-- ======================= Verify email Detail ======================== -->
+    <section class="middle">
+        <div class="container">
+            <div class="row align-items-start justify-content-center">
 
-        <div class="mt-4 flex items-center justify-between">
-            <form method="POST" action="{{ route('verification.send') }}">
-                @csrf
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="text-center mb-5 p-2">
+                        <a class="nav-brand" href="{{ route('home') }}">
+                            <img src="assets/img/logo.png" class="logo" alt="" />
+                        </a>
+                    </div>
+                    <form class="border p-3 rounded" method="POST" action="{{ route('verification.send') }}">
+                        @csrf
+                        <div class="form-group">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="eltio_k2">
+                                    <a href="#">Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.</a>
+                                </div>
+                            </div>
+                        </div>
 
-                <div>
-                    <x-button>
-                        {{ __('Resend Verification Email') }}
-                    </x-button>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-md full-width theme-bg text-light fs-md ft-medium">Resend Verification Email</button>
+                        </div>
+                        @if (session('status') == 'verification-link-sent')
+                            <div class="mb-4 font-medium theme-cl text-sm text-green-600">
+                                {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+                            </div>
+                        @endif
+                        <div class="form-group text-center mb-0">
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"
+                               class="text-dark"> Logout</a>
+                        </div>
+                    </form>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+
                 </div>
-            </form>
-
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __('Log Out') }}
-                </button>
-            </form>
+            </div>
         </div>
-    </x-auth-card>
-</x-guest-layout>
+    </section>
+    <!-- ======================= Verify email End ======================== -->
+
+@endsection

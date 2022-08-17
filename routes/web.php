@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
-Route::middleware(['auth'])->group(function(){
+Route::get('/reset-password1', function () {
+    return view('auth.reset-password1');
+});
+Route::middleware(['auth','verified'])->group(function(){
     #==================================
     #Admin Routes
     #===================================

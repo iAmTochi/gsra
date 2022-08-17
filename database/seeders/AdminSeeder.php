@@ -17,26 +17,26 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::where('email','kedesto@gmail.com')->first();
+        $user = User::where('email','ugwukelvintochukwu@gmail.com')->first();
 
         if(!$user){
 
-            $dev = User::create([
-                'email'     => 'kedesto@gmail.com',
-                'role'      => 'employer',
+            $admin = User::create([
+                'email'     => 'ugwukelvintochuku@gmail.com',
+                'role'      => 'admin',
                 'is_banned' => false,
                 'password'  => Hash::make('password'),
             ]);
 
             Admin::create([
-                'user_id' => $dev->id,
+                'user_id' => $admin->id,
                 'last_name' => 'Ugwu',
-                'first_name' => 'Godwin',
-                'phone'=> '+2348030819626',
+                'first_name' => 'Tochukwu',
+                'phone'=> '+2348036037038',
                 'address'=> '8 Oba Fatai Aileru Street, Lagos',
                 'dob' => '1991-01-24',
                 'gender'=> 'Male',
-                'created_by'=>$dev->id,
+                'created_by'=>$admin->id,
 
             ]);
         }

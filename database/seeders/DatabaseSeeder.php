@@ -20,16 +20,18 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(UserSeeder::class);
+        $this->call(JobFunctionSeeder::class);
+        $this->call(IndustrySeeder::class);
+        $this->call(CountrySeeder::class);
         $this->call(StateSeeder::class);
         $this->call(LgaSeeder::class);
         $this->call(AvailabilitySeeder::class);
         $this->call(CompanyCapacitySeeder::class);
-        $this->call(CountrySeeder::class);
         $this->call(CurrencySeeder::class);
-        $this->call(JobFunctionSeeder::class);
         $this->call(QualificationSeeder::class);
         $this->call(WorkTypeSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(AdminSeeder::class);
+        $this->call(RecruiterSeeder::class);
     }
 }
