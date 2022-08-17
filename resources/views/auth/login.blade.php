@@ -49,10 +49,15 @@
                         </a>
                     </div>
                     <form class="border p-3 rounded" method="POST" action="{{ route('login') }}">
+                        @if (session()->has('status'))
+                            <div class="mb-4 font-medium theme-cl text-sm text-green-600">
+                                {{ __('Login with your new password') }}
+                            </div>
+                        @endif
                         @csrf
                         <div class="form-group">
                             <label>Email *</label>
-                            <input type="text" name="email" class="form-control  @error('email') is-invalid @enderror" placeholder="Email *">
+                            <input type="text" value="{{ old('email') }}" name="email" class="form-control  @error('email') is-invalid @enderror" placeholder="Email *">
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -75,7 +80,7 @@
                                     <label for="dd" class="checkbox-custom-label">Remember Me</label>
                                 </div>
                                 <div class="eltio_k2">
-                                    <a href="#" class="theme-cl">Lost Your Password?</a>
+                                    <a href="{{ route('password.request') }}" class="theme-cl">Lost Your Password?</a>
                                 </div>
                             </div>
                         </div>

@@ -16,23 +16,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
-Route::middleware(['auth'])->group(function(){
+Route::get('/reset-password1', function () {
+    return view('auth.reset-password1');
+});
+Route::middleware(['auth','verified'])->group(function(){
     #==================================
     #Admin Routes
     #===================================
-    Route::prefix('admin')->group(function(){
+    Route::middleware('admin')->prefix('admin')->group(function(){
         Route::get('/dashboard', function () {
+
             return view('admin.dashboard');
-        })->name('dashboard');;
+
+        })->name('admin.dashboard');
     });
 
     #==================================
     #Employer Routes
     #===================================
-    Route::prefix('employer')->group(function(){
+    Route::middleware('employer')->prefix('employer')->group(function(){
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        });
+            return view('employer.dashboard');
+        })->name('employer.dashboard');;
     });
 
     #==================================
@@ -40,8 +45,8 @@ Route::middleware(['auth'])->group(function(){
     #===================================
     Route::prefix('job-seeker')->group(function(){
         Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        });;
+            return view('applicant.dashboard');
+        })->name('applicant.dashboard');
     });
 });
 

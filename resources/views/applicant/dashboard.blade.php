@@ -2,16 +2,14 @@
 
 @section('content')
 
-    <!-- ======================= dashboard Detail ======================== -->
-
         <div class="dashboard-content">
             <div class="dashboard-tlbar d-block mb-5">
                 <div class="row">
                     <div class="colxl-12 col-lg-12 col-md-12">
-                        <h1 class="ft-medium">Hello, {{ auth()->user()->admin->first_name.' '.auth()->user()->admin->last_name }}</h1>
+                        <h1 class="ft-medium">Hello, Adam Jesuf</h1>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item text-muted"><a href="#">{{  ucfirst(auth()->user()->role) }}</a></li>
+                                <li class="breadcrumb-item text-muted"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#" class="theme-cl">Dashboard</a></li>
                             </ol>
                         </nav>
@@ -22,30 +20,30 @@
             <div class="dashboard-widg-bar d-block">
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <div class="dash-widgets py-5 px-4 bg-success rounded">
+                        <div class="dash-widgets py-5 px-4 bg-info rounded">
                             <h2 class="ft-medium mb-1 fs-xl text-light">46</h2>
-                            <p class="p-0 m-0 text-light fs-md">Submit Jobs</p>
+                            <p class="p-0 m-0 text-light fs-md">Applied Jobs</p>
                             <i class="lni lni-empty-file"></i>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <div class="dash-widgets py-5 px-4 bg-purple rounded">
+                        <div class="dash-widgets py-5 px-4 bg-dark rounded">
                             <h2 class="ft-medium mb-1 fs-xl text-light">87</h2>
-                            <p class="p-0 m-0 text-light fs-md">Applications</p>
+                            <p class="p-0 m-0 text-light fs-md">Notifications</p>
                             <i class="lni lni-users"></i>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <div class="dash-widgets py-5 px-4 bg-danger rounded">
+                        <div class="dash-widgets py-5 px-4 bg-warning rounded">
                             <h2 class="ft-medium mb-1 fs-xl text-light">312</h2>
-                            <p class="p-0 m-0 text-light fs-md">Notifications</p>
+                            <p class="p-0 m-0 text-light fs-md">Alert Jobs</p>
                             <i class="lni lni-bar-chart"></i>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <div class="dash-widgets py-5 px-4 bg-blue rounded">
+                        <div class="dash-widgets py-5 px-4 bg-purple rounded">
                             <h2 class="ft-medium mb-1 fs-xl text-light">32</h2>
-                            <p class="p-0 m-0 text-light fs-md">Bookmark</p>
+                            <p class="p-0 m-0 text-light fs-md">Bookmark jobs</p>
                             <i class="lni lni-heart"></i>
                         </div>
                     </div>
@@ -186,6 +184,4 @@
             </div>
 
         </div>
-
-
 @endsection

@@ -22,8 +22,22 @@
     <!-- ============================================================== -->
     <!-- Top header  -->
     <!-- ============================================================== -->
+    <!-- ======================= dashboard Detail ======================== -->
 
-    @yield('content')
+    <div class="dashboard-wrap bg-light">
+        <a class="mobNavigation" data-toggle="collapse" href="#MobNav" role="button" aria-expanded="false" aria-controls="MobNav">
+            <i class="fas fa-bars mr-2"></i>Dashboard Navigation
+        </a>
+        @include('partial._admin_sidebar')
+
+
+        @yield('content')
+
+    </div>
+    <!-- ======================= dashboard Detail End ======================== -->
+
+
+
 
     <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
 

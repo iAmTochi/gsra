@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Recruiter;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -15,26 +17,31 @@ class RecruiterSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::where('email','ugwukelvintochukwu@gmail.com')->first();
+        $user = User::where('email','employer@gmail.com')->first();
 
         if(!$user){
 
-            $dev = User::create([
-                'email'     => 'ugwukelvintochukwu@gmail.com',
-                'role'      => 'developer',
+            $employer = User::create([
+                'email'     => 'employer@gmail.com',
+                'role'      => 'employer',
                 'is_banned' => false,
                 'password'  => Hash::make('password'),
             ]);
 
-            Admin::create([
-                'user_id' => $dev->id,
-                'last_name' => 'Ugwu',
-                'first_name' => 'Tochukwu',
-                'phone'=> '+2348036037038',
-                'address'=> '8 Oba Fatai Aileru Street, Lagos',
-                'dob' => '1991-01-24',
-                'gender'=> 'Male',
-                'created_by'=>$dev->id,
+            Recruiter::create([
+                'user_id' => $employer->id,
+                'last_name' => 'Patience',
+                'first_name' => 'Doe',
+                'job_role' => 'HR',
+                'company_name' => 'Sawtrax Limited',
+                'industry_id' => 12,
+                'company_capacity_id' => 5,
+                'notification_email' => 'employer@sawtraxltd.com',
+
+                'phone'=> '+2348000000001',
+                'address'=> 'Ox Street, Lagos',
+                'country_id'=> 1,
+
 
             ]);
         }
