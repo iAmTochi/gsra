@@ -2,11 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Currency;
+use App\Models\Industry;
 use App\Models\Job;
+use App\Models\JobFunction;
+use App\Models\Qualification;
+use App\Models\State;
+use App\Models\WorkType;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
+    protected $industry;
+    protected $workType;
+    protected $jobFunction;
+    protected $currency;
+    protected $state;
+    protected $qualification;
+    protected $experience;
+
+
+    public function __construct()
+    {
+        $this->industry = new Industry();
+        $this->workType = new WorkType();
+        $this->jobFunction = new JobFunction();
+        $this->currency = new Currency();
+        $this->state = new State();
+        $this->qualification = new Qualification();
+        $this->qualification = new Expe();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +40,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        return view('jobs.index')->with('jobs', Job::all());
     }
 
     /**
@@ -24,7 +50,13 @@ class JobController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'industries' => $this->industry,
+            'industries' => $this->industry,
+            'industries' => $this->industry,
+            'industries' => $this->industry
+        ];
+        return view('jobs.create', $data);
     }
 
     /**
