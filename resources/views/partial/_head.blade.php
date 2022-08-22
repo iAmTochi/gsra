@@ -9,5 +9,24 @@
 
     <!-- Custom CSS -->
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+    <style>
+        .theme-bg-light {
+            background: rgb(41 40 182 / 11%) !important;
+            background-image: initial !important;
+            background-position-x: initial !important;
+            background-position-y: initial !important;
+            background-size: initial !important;
+            background-repeat-x: initial !important;
+            background-repeat-y: initial !important;
+            background-attachment: initial !important;
+            background-origin: initial !important;
+            background-clip: initial !important;
+            background-color: rgba(41, 40, 182, 0.11) !important;
+        }
+        .dashboard-nav ul li.active, .dashboard-nav ul li:hover {
+            border-color: #0001A2;
+            background-color: rgba(41, 40, 182,0.1);
+        }
+    </style>
 
 </head>
