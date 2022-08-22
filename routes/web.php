@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+Route::get('/about-us', function () {
+    return view('about-us');
+})->name('about');
+
+Route::get('/contact-us', function () {
+    return view('contact-us');
+})->name('contact');
+
 Route::get('/reset-password1', function () {
     return view('auth.reset-password1');
 });
