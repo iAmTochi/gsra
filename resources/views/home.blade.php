@@ -435,9 +435,23 @@
                     <div class="m-spaced">
                         <div class="position-relative">
                             <div class="mb-1"><span class="theme-bg-light theme-cl px-2 py-1 rounded">About Us</span></div>
-                            <h2 class="ft-bold mb-3">Create and Build Your<br>Attractive Profile</h2>
-                            <p class="mb-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                            <p class="mb-4">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+                            <h2 class="ft-bold mb-3">We Recruit, Train <br>and Staff For You</h2>
+                            <p class="mb-2"> Global Skills Recruitment Agency, GSRA, is a recruiting,
+                                training and staffing agency. Our number one goal is to significantly
+                                reduce the number of unemployed graduates in Nigeria. To achieve our primary objective,
+                                we dedicate a lot of time to training and re-training candidates to be employable and
+                                fitted for the right job. We hire for fit by connecting
+                                qualified employees to their respective employers.
+                            </p>
+                            <p class="mb-4">At GSRA, we are focused on making candidates
+                                highly productive at the workplace. To do that, we undertake a lot of training
+                                on behalf of our clients and the candidates themselves to ensure that they are equipped
+                                with the requisite knowledge and skills to perform their responsibilities effectively.
+                                We are a one-stop shop for the basic recruitment needs of both employers and
+                                job seekers and have inculcated SKILLS ACQUISITION as a fundamental aspect of GSRA to
+                                help prepare our
+                                candidates to be successful in their next job.
+                            </p>
                         </div>
                         <div class="position-relative row">
                             <div class="col-lg-4 col-md-4 col-4">
@@ -453,7 +467,7 @@
                                 <p class="ft-medium">Employers</p>
                             </div>
                             <div class="col-lg-12 col-md-12 col-12 mt-3">
-                                <a href="javascript:void(0);" class="btn btn-md theme-bg-light rounded theme-cl hover-theme">See Details<i class="lni lni-arrow-right-circle ml-2"></i></a>
+                                <a href="{{ route('about') }}" class="btn btn-md theme-bg-light rounded theme-cl hover-theme">See Details<i class="lni lni-arrow-right-circle ml-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -470,15 +484,85 @@
     </section>
     <!-- ======================= About Start ============================ -->
 
+        <!-- ======================= Why Choose GSRA Start ============================ -->
+        <section class="space min gray">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="sec_title position-relative text-center mb-4">
+{{--                            <h6 class="text-muted mb-0">Why Choose GSRA? </h6>--}}
+                            <h2 class="ft-bold text-muted">Why Choose GSRA?</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <!-- Single Item -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="blg_grid_box">
+                            <div class="blg_grid_caption">
+                                <div class="blg_tag"><span>1</span></div>
+{{--                                <div class="blg_title"><h4><a href="blog-detail.html">How To Register &amp; Enrolled on SkillUp Step by Step?</a></h4></div>--}}
+                                <div class="blg_desc"><p>We leave no stone unturned in fitting the right employee to the right employer and
+                                        according to the organizational goals of our clients</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Item -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="blg_grid_box">
+                            <div class="blg_grid_caption">
+                                <div class="blg_tag"><span>2</span></div>
+{{--                                <div class="blg_title"><h4><a href="blog-detail.html">How To Register &amp; Enrolled on SkillUp Step by Step?</a></h4></div>--}}
+                                <div class="blg_desc"><p>We diagnose and offer purpose-built and targeted
+                                        solutions to our clients’
+                                        peculiar needs</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Item -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="blg_grid_box">
+                            <div class="blg_grid_caption">
+                                <div class="blg_tag"><span>3</span></div>
+{{--                                <div class="blg_title"><h4><a href="blog-detail.html">How To Register &amp; Enrolled on SkillUp Step by Step?</a></h4></div>--}}
+                                <div class="blg_desc"><p>We equip employees and job seekers with the appropriate working skills
+                                        needed to function productively in the workplace.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- Single Item -->
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="blg_grid_box">
+                            <div class="blg_grid_caption">
+                                <div class="blg_tag"><span>4</span></div>
+{{--                                <div class="blg_title"><h4><a href="blog-detail.html">How To Register &amp; Enrolled on SkillUp Step by Step?</a></h4></div>--}}
+                                <div class="blg_desc"><p>We meticulously weave through the thick of applicant
+                                        to ensure the right candidate is selected</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- ======================= Blog Start ============================ -->
+
     <!-- ======================= Our Partner Start ============================ -->
-    <section class="p-0">
+    <section class="p-0 mt-4">
         <div class="container">
 
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-lg-7 col-md-9 col-sm-12">
                     <div class="sec_title position-relative text-center mb-5">
                         <h6 class="text-muted mb-0">Our Partners</h6>
-                        <h2 class="ft-bold">We Have Worked with <span class="theme-cl">10,000+</span> Trusted Companies</h2>
+                        <h2 class="ft-bold">We Have Worked with <span class="theme-cl">100+</span> Trusted Companies</h2>
                     </div>
                 </div>
             </div>
@@ -551,285 +635,248 @@
     </section>
     <!-- ======================= Our Partner Start ============================ -->
 
-    <!-- ============================ Pricing Start ==================================== -->
-    <section class="space min">
-        <div class="container">
+{{--    <!-- ============================ Pricing Start ==================================== -->--}}
+{{--    <section class="space min">--}}
+{{--        <div class="container">--}}
 
-            <div class="row justify-content-center">
-                <div class="col-xl-5 col-lg-7 col-md-9 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="text-muted mb-0">Our Pricing</h6>
-                        <h2 class="ft-bold">Choose Your Package</h2>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row justify-content-center">--}}
+{{--                <div class="col-xl-5 col-lg-7 col-md-9 col-sm-12">--}}
+{{--                    <div class="sec_title position-relative text-center mb-5">--}}
+{{--                        <h6 class="text-muted mb-0">Our Pricing</h6>--}}
+{{--                        <h2 class="ft-bold">Choose Your Package</h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="row align-items-center">
+{{--            <div class="row align-items-center">--}}
 
-                <!-- Single Package -->
-                <div class="col-lg-4 col-md-4">
-                    <div class="pricing_wrap">
-                        <div class="prt_head">
-                            <h4 class="ft-medium">Basic</h4>
-                        </div>
-                        <div class="prt_price">
-                            <h2 class="ft-bold"><span>$</span>29</h2>
-                            <span class="fs-md">per user, per month</span>
-                        </div>
-                        <div class="prt_body">
-                            <ul>
-                                <li>99.5% Uptime Guarantee</li>
-                                <li>120GB CDN Bandwidth</li>
-                                <li>5GB Cloud Storage</li>
-                                <li class="none">Personal Help Support</li>
-                                <li class="none">Enterprise SLA</li>
-                            </ul>
-                        </div>
-                        <div class="prt_footer">
-                            <a href="#" class="btn choose_package">Start Basic</a>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Package -->--}}
+{{--                <div class="col-lg-4 col-md-4">--}}
+{{--                    <div class="pricing_wrap">--}}
+{{--                        <div class="prt_head">--}}
+{{--                            <h4 class="ft-medium">Basic</h4>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_price">--}}
+{{--                            <h2 class="ft-bold"><span>$</span>29</h2>--}}
+{{--                            <span class="fs-md">per user, per month</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_body">--}}
+{{--                            <ul>--}}
+{{--                                <li>99.5% Uptime Guarantee</li>--}}
+{{--                                <li>120GB CDN Bandwidth</li>--}}
+{{--                                <li>5GB Cloud Storage</li>--}}
+{{--                                <li class="none">Personal Help Support</li>--}}
+{{--                                <li class="none">Enterprise SLA</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_footer">--}}
+{{--                            <a href="#" class="btn choose_package">Start Basic</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Package -->
-                <div class="col-lg-4 col-md-4">
-                    <div class="pricing_wrap">
-                        <div class="prt_head">
-                            <div class="recommended">Best Value</div>
-                            <h4 class="ft-medium">Standard</h4>
-                        </div>
-                        <div class="prt_price">
-                            <h2 class="ft-bold"><span>$</span>49</h2>
-                            <span class="fs-md">per user, per month</span>
-                        </div>
-                        <div class="prt_body">
-                            <ul>
-                                <li>99.5% Uptime Guarantee</li>
-                                <li>150GB CDN Bandwidth</li>
-                                <li>10GB Cloud Storage</li>
-                                <li>Personal Help Support</li>
-                                <li class="none">Enterprise SLA</li>
-                            </ul>
-                        </div>
-                        <div class="prt_footer">
-                            <a href="#" class="btn choose_package active">Start Standard</a>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Package -->--}}
+{{--                <div class="col-lg-4 col-md-4">--}}
+{{--                    <div class="pricing_wrap">--}}
+{{--                        <div class="prt_head">--}}
+{{--                            <div class="recommended">Best Value</div>--}}
+{{--                            <h4 class="ft-medium">Standard</h4>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_price">--}}
+{{--                            <h2 class="ft-bold"><span>$</span>49</h2>--}}
+{{--                            <span class="fs-md">per user, per month</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_body">--}}
+{{--                            <ul>--}}
+{{--                                <li>99.5% Uptime Guarantee</li>--}}
+{{--                                <li>150GB CDN Bandwidth</li>--}}
+{{--                                <li>10GB Cloud Storage</li>--}}
+{{--                                <li>Personal Help Support</li>--}}
+{{--                                <li class="none">Enterprise SLA</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_footer">--}}
+{{--                            <a href="#" class="btn choose_package active">Start Standard</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Package -->
-                <div class="col-lg-4 col-md-4">
-                    <div class="pricing_wrap">
-                        <div class="prt_head">
-                            <h4 class="ft-medium">Platinum</h4>
-                        </div>
-                        <div class="prt_price">
-                            <h2 class="ft-bold"><span>$</span>79</h2>
-                            <span class="fs-md">2 user, per month</span>
-                        </div>
-                        <div class="prt_body">
-                            <ul>
-                                <li>100% Uptime Guarantee</li>
-                                <li>200GB CDN Bandwidth</li>
-                                <li>20GB Cloud Storage</li>
-                                <li>Personal Help Support</li>
-                                <li>Enterprise SLA</li>
-                            </ul>
-                        </div>
-                        <div class="prt_footer">
-                            <a href="#" class="btn choose_package">Start Platinum</a>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Package -->--}}
+{{--                <div class="col-lg-4 col-md-4">--}}
+{{--                    <div class="pricing_wrap">--}}
+{{--                        <div class="prt_head">--}}
+{{--                            <h4 class="ft-medium">Platinum</h4>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_price">--}}
+{{--                            <h2 class="ft-bold"><span>$</span>79</h2>--}}
+{{--                            <span class="fs-md">2 user, per month</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_body">--}}
+{{--                            <ul>--}}
+{{--                                <li>100% Uptime Guarantee</li>--}}
+{{--                                <li>200GB CDN Bandwidth</li>--}}
+{{--                                <li>20GB Cloud Storage</li>--}}
+{{--                                <li>Personal Help Support</li>--}}
+{{--                                <li>Enterprise SLA</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <div class="prt_footer">--}}
+{{--                            <a href="#" class="btn choose_package">Start Platinum</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
+{{--            </div>--}}
 
-        </div>
-    </section>
-    <!-- ============================ Pricing End ==================================== -->
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- ============================ Pricing End ==================================== -->--}}
 
-    <!-- ======================= Blog Start ============================ -->
-    <section class="space min gray">
-        <div class="container">
+{{--    <!-- ======================= Blog Start ============================ -->--}}
+{{--    <section class="space min gray">--}}
+{{--        <div class="container">--}}
 
-            <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-4">
-                        <h6 class="text-muted mb-0">Latest News</h6>
-                        <h2 class="ft-bold">Pickup New Updates</h2>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row justify-content-center">--}}
+{{--                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">--}}
+{{--                    <div class="sec_title position-relative text-center mb-4">--}}
+{{--                        <h6 class="text-muted mb-0">Latest News</h6>--}}
+{{--                        <h2 class="ft-bold">Pickup New Updates</h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="row justify-content-center">
+{{--            <div class="row justify-content-center">--}}
 
-                <!-- Single Item -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="blg_grid_box">
-                        <div class="blg_grid_thumb">
-                            <a href="blog-detail.html"><img src="assets/img/b-4.jpg" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="blg_grid_caption">
-                            <div class="blg_tag"><span>Marketing</span></div>
-                            <div class="blg_title"><h4><a href="blog-detail.html">How To Register &amp; Enrolled on SkillUp Step by Step?</a></h4></div>
-                            <div class="blg_desc"><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p></div>
-                        </div>
-                        <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
-                                <div class="crs_fl_first">
-                                    <div class="crs_tutor">
-                                        <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-2.jpg" class="img-fluid circle" width="35" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="crs_fl_last">
-                                    <div class="foot_list_info">
-                                        <ul>
-                                            <li><div class="elsio_ic"><i class="fa fa-eye text-success"></i></div><div class="elsio_tx">10k Views</div></li>
-                                            <li><div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div><div class="elsio_tx">10 July 2021</div></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Item -->--}}
+{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">--}}
+{{--                    <div class="blg_grid_box">--}}
+{{--                        <div class="blg_grid_thumb">--}}
+{{--                            <a href="blog-detail.html"><img src="assets/img/b-4.jpg" class="img-fluid" alt=""></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="blg_grid_caption">--}}
+{{--                            <div class="blg_tag"><span>Marketing</span></div>--}}
+{{--                            <div class="blg_title"><h4><a href="blog-detail.html">How To Register &amp; Enrolled on SkillUp Step by Step?</a></h4></div>--}}
+{{--                            <div class="blg_desc"><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p></div>--}}
+{{--                        </div>--}}
+{{--                        <div class="crs_grid_foot">--}}
+{{--                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">--}}
+{{--                                <div class="crs_fl_first">--}}
+{{--                                    <div class="crs_tutor">--}}
+{{--                                        <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-2.jpg" class="img-fluid circle" width="35" alt=""></a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="crs_fl_last">--}}
+{{--                                    <div class="foot_list_info">--}}
+{{--                                        <ul>--}}
+{{--                                            <li><div class="elsio_ic"><i class="fa fa-eye text-success"></i></div><div class="elsio_tx">10k Views</div></li>--}}
+{{--                                            <li><div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div><div class="elsio_tx">10 July 2021</div></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Item -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="blg_grid_box">
-                        <div class="blg_grid_thumb">
-                            <a href="blog-detail.html"><img src="assets/img/b-5.jpg" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="blg_grid_caption">
-                            <div class="blg_tag"><span>Business</span></div>
-                            <div class="blg_title"><h4><a href="blog-detail.html">Let's Know How Skillup Work Fast and Secure?</a></h4></div>
-                            <div class="blg_desc"><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p></div>
-                        </div>
-                        <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
-                                <div class="crs_fl_first">
-                                    <div class="crs_tutor">
-                                        <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-3.jpg" class="img-fluid circle" width="35" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="crs_fl_last">
-                                    <div class="foot_list_info">
-                                        <ul>
-                                            <li><div class="elsio_ic"><i class="fa fa-eye text-success"></i></div><div class="elsio_tx">10k Views</div></li>
-                                            <li><div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div><div class="elsio_tx">10 July 2021</div></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Item -->--}}
+{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">--}}
+{{--                    <div class="blg_grid_box">--}}
+{{--                        <div class="blg_grid_thumb">--}}
+{{--                            <a href="blog-detail.html"><img src="assets/img/b-5.jpg" class="img-fluid" alt=""></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="blg_grid_caption">--}}
+{{--                            <div class="blg_tag"><span>Business</span></div>--}}
+{{--                            <div class="blg_title"><h4><a href="blog-detail.html">Let's Know How Skillup Work Fast and Secure?</a></h4></div>--}}
+{{--                            <div class="blg_desc"><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p></div>--}}
+{{--                        </div>--}}
+{{--                        <div class="crs_grid_foot">--}}
+{{--                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">--}}
+{{--                                <div class="crs_fl_first">--}}
+{{--                                    <div class="crs_tutor">--}}
+{{--                                        <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-3.jpg" class="img-fluid circle" width="35" alt=""></a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="crs_fl_last">--}}
+{{--                                    <div class="foot_list_info">--}}
+{{--                                        <ul>--}}
+{{--                                            <li><div class="elsio_ic"><i class="fa fa-eye text-success"></i></div><div class="elsio_tx">10k Views</div></li>--}}
+{{--                                            <li><div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div><div class="elsio_tx">10 July 2021</div></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <!-- Single Item -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="blg_grid_box">
-                        <div class="blg_grid_thumb">
-                            <a href="blog-detail.html"><img src="assets/img/b-6.jpg" class="img-fluid" alt=""></a>
-                        </div>
-                        <div class="blg_grid_caption">
-                            <div class="blg_tag"><span>Accounting</span></div>
-                            <div class="blg_title"><h4><a href="blog-detail.html">How To Improove Digital Marketing for Fast SEO</a></h4></div>
-                            <div class="blg_desc"><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p></div>
-                        </div>
-                        <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
-                                <div class="crs_fl_first">
-                                    <div class="crs_tutor">
-                                        <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-5.jpg" class="img-fluid circle" width="35" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <div class="crs_fl_last">
-                                    <div class="foot_list_info">
-                                        <ul>
-                                            <li><div class="elsio_ic"><i class="fa fa-eye text-success"></i></div><div class="elsio_tx">10k Views</div></li>
-                                            <li><div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div><div class="elsio_tx">10 July 2021</div></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <!-- Single Item -->--}}
+{{--                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">--}}
+{{--                    <div class="blg_grid_box">--}}
+{{--                        <div class="blg_grid_thumb">--}}
+{{--                            <a href="blog-detail.html"><img src="assets/img/b-6.jpg" class="img-fluid" alt=""></a>--}}
+{{--                        </div>--}}
+{{--                        <div class="blg_grid_caption">--}}
+{{--                            <div class="blg_tag"><span>Accounting</span></div>--}}
+{{--                            <div class="blg_title"><h4><a href="blog-detail.html">How To Improove Digital Marketing for Fast SEO</a></h4></div>--}}
+{{--                            <div class="blg_desc"><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p></div>--}}
+{{--                        </div>--}}
+{{--                        <div class="crs_grid_foot">--}}
+{{--                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">--}}
+{{--                                <div class="crs_fl_first">--}}
+{{--                                    <div class="crs_tutor">--}}
+{{--                                        <div class="crs_tutor_thumb"><a href="instructor-detail.html"><img src="assets/img/team-5.jpg" class="img-fluid circle" width="35" alt=""></a></div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="crs_fl_last">--}}
+{{--                                    <div class="foot_list_info">--}}
+{{--                                        <ul>--}}
+{{--                                            <li><div class="elsio_ic"><i class="fa fa-eye text-success"></i></div><div class="elsio_tx">10k Views</div></li>--}}
+{{--                                            <li><div class="elsio_ic"><i class="fa fa-clock text-warning"></i></div><div class="elsio_tx">10 July 2021</div></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-            </div>
+{{--            </div>--}}
 
-        </div>
-    </section>
-    <!-- ======================= Blog Start ============================ -->
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- ======================= Blog Start ============================ -->--}}
 
-    <!-- ========================== Download App Section =============================== -->
-    <section>
-        <div class="container">
-            <div class="row align-items-center">
+{{--    <!-- ========================== Download App Section =============================== -->--}}
+{{--    <section>--}}
+{{--        <div class="container">--}}
+{{--            <div class="row align-items-center">--}}
 
-                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                    <div class="content_block_2 pr-3 py-4">
-                        <div class="content-box">
-                            <div class="sec-title light">
-                                <p class="theme-cl px-3 py-1 rounded bg-light-success d-inline-flex">Download apps</p>
-                                <h2 class="ft-bold">Get the Workplex Job<br>Search App</h2>
-                            </div>
-                            <div class="text">
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto accusantium.</p>
-                            </div>
-                            <div class="btn-box clearfix mt-5">
-                                <a href="index.html" class="download-btn play-store mb-1 d-inline-flex"><img src="assets/img/ios.png" width="200" alt="" /></a>
-                                <a href="index.html" class="download-btn play-store ml-2 mb-1 d-inline-flex"><img src="assets/img/and.png" width="200" alt="" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-lg-6 col-md-12 col-sm-12 content-column">--}}
+{{--                    <div class="content_block_2 pr-3 py-4">--}}
+{{--                        <div class="content-box">--}}
+{{--                            <div class="sec-title light">--}}
+{{--                                <p class="theme-cl px-3 py-1 rounded bg-light-success d-inline-flex">Download apps</p>--}}
+{{--                                <h2 class="ft-bold">Get the Workplex Job<br>Search App</h2>--}}
+{{--                            </div>--}}
+{{--                            <div class="text">--}}
+{{--                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto accusantium.</p>--}}
+{{--                            </div>--}}
+{{--                            <div class="btn-box clearfix mt-5">--}}
+{{--                                <a href="index.html" class="download-btn play-store mb-1 d-inline-flex"><img src="assets/img/ios.png" width="200" alt="" /></a>--}}
+{{--                                <a href="index.html" class="download-btn play-store ml-2 mb-1 d-inline-flex"><img src="assets/img/and.png" width="200" alt="" /></a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                    <div class="image-box">
-                        <figure class="image"><img src="assets/img/app.png" class="img-fluid" alt=""></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ========================== Download App Section =============================== -->
-
-    <!-- ======================= Newsletter Start ============================ -->
-    <section class="space bg-cover" style="background:#03343b url({{asset('assets/img/landing-bg.png')}}) no-repeat;">
-        <div class="container py-5">
-
-            <div class="row justify-content-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="text-light mb-0">Subscribr Now</h6>
-                        <h2 class="ft-bold text-light">Get All New Job Notification</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row align-items-center justify-content-center">
-                <div class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12">
-                    <form class="bg-white rounded p-1">
-                        <div class="row no-gutters">
-                            <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8">
-                                <div class="form-group mb-0 position-relative">
-                                    <input type="text" class="form-control lg left-ico" placeholder="Enter Your Email Address">
-                                    <i class="bnc-ico lni lni-envelope"></i>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="form-group mb-0 position-relative">
-                                    <button class="btn full-width custom-height-lg theme-bg text-light fs-md" type="button">Subscribe</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- ======================= Newsletter Start ============================ -->
+{{--                <div class="col-lg-6 col-md-12 col-sm-12 image-column">--}}
+{{--                    <div class="image-box">--}}
+{{--                        <figure class="image"><img src="assets/img/app.png" class="img-fluid" alt=""></figure>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+{{--    <!-- ========================== Download App Section =============================== -->--}}
 
     @endsection
