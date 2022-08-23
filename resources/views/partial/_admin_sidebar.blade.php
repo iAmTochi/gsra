@@ -2,12 +2,12 @@
     <div class="dashboard-nav">
         <div class="dashboard-inner">
             <ul data-submenu-title="Main Navigation">
-                <li class="active"><a href="employer-dashboard.html"><i class="lni lni-dashboard mr-2"></i>Dashboard</a></li>
+                <li class="active"><a href="{{ route('login') }}"><i class="lni lni-dashboard mr-2"></i>Dashboard</a></li>
                 <li class="accordion">
                     <a href="" data-toggle="collapse" data-target="#manage-job" aria-expanded="true" aria-controls="manage-job"><i class="lni lni-add-files mr-2"></i>Manage Jobs</a>
                     <ul id="manage-job" class="collapse">
-                        <li><a href="dashboard-shortlisted-resume.html"><i class="lni lni-files mr-2"></i>View All Jobs<span class="count-tag bg-warning">4</span></a></li>
-                        <li><a href="dashboard-packages.html"><i class="lni lni-add-files mr-2"></i>Post New Job </a></li>
+                        <li><a href="{{ route('jobs.index') }}"><i class="lni lni-files mr-2"></i>View All Jobs<span class="count-tag bg-warning">4</span></a></li>
+                        <li><a href="{{ route('jobs.create') }}"><i class="lni lni-add-files mr-2"></i>Post New Job </a></li>
                     </ul>
 
                 </li>

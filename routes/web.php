@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +48,7 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::get('/dashboard', function () {
             return view('employer.dashboard');
         })->name('employer.dashboard');;
+        Route::resource('jobs',JobController::class);
     });
 
     #==================================

@@ -31,11 +31,11 @@
                                     <i class="lni lni-user"></i>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#login" class="theme-cl fs-lg">
-                                    <i class="lni lni-user"></i>
-                                </a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="#" data-toggle="modal" data-target="#login" class="theme-cl fs-lg">--}}
+{{--                                    <i class="lni lni-user"></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <li>
                                 <a href="dashboard-post-job.html" class="crs_yuo12 w-auto text-white theme-bg">
                                     <span class="embos_45"><i class="fas fa-plus-circle mr-1 mr-1"></i>Post Job</span>
@@ -143,7 +143,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="text-light mb-0">Subscribr Now</h6>
+                        <h6 class="text-light mb-0">Subscribe Now</h6>
                         <h2 class="ft-bold text-light">Get All New Job Notification</h2>
                     </div>
                 </div>

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Currency;
+use App\Models\Experience;
 use App\Models\Industry;
 use App\Models\Job;
 use App\Models\JobFunction;
+use App\Models\JobLevel;
 use App\Models\Qualification;
+use App\Models\Salary;
 use App\Models\State;
 use App\Models\WorkType;
 use Illuminate\Http\Request;
@@ -20,6 +23,8 @@ class JobController extends Controller
     protected $state;
     protected $qualification;
     protected $experience;
+    protected $salary;
+    protected $jobLevel;
 
 
     public function __construct()
@@ -30,7 +35,9 @@ class JobController extends Controller
         $this->currency = new Currency();
         $this->state = new State();
         $this->qualification = new Qualification();
-        $this->qualification = new Expe();
+        $this->experience = new Experience();
+        $this->salary = new Salary();
+        $this->jobLevel = new JobLevel();
     }
 
     /**
@@ -51,10 +58,15 @@ class JobController extends Controller
     public function create()
     {
         $data = [
-            'industries' => $this->industry,
-            'industries' => $this->industry,
-            'industries' => $this->industry,
-            'industries' => $this->industry
+            'industries'    => $this->industry->all(),
+            'workTypes'     => $this->workType->all(),
+            'jobFunctions'  => $this->jobFunction->all(),
+            'currencies'    => $this->currency->all(),
+            'states'        => $this->state->all(),
+            'qualifications'    => $this->qualification->all(),
+            'experiences'       => $this->experience->all(),
+            'salaries'          => $this->salary->all(),
+            'jobLevels'         => $this->jobLevel->all(),
         ];
         return view('jobs.create', $data);
     }

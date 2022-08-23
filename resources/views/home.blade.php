@@ -9,7 +9,7 @@
                 <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
 
                     <div class="banner_caption text-center mb-5">
-                        <h1 class="banner_title ft-bold mb-1"><span class="count">72412</span> jobs Listed Here!</h1>
+                        <h1 class="banner_title ft-bold mb-1"><span class="count">127</span> jobs Listed Here!</h1>
                         <p class="fs-md ft-medium">Your Dream Jobs is Waiting</p>
                     </div>
 
@@ -435,7 +435,7 @@
                     <div class="m-spaced">
                         <div class="position-relative">
                             <div class="mb-1"><span class="theme-bg-light theme-cl px-2 py-1 rounded">About Us</span></div>
-                            <h2 class="ft-bold mb-3">We Recruit, Train <br>and Staff For You</h2>
+                            <h2 class="ft-bold mb-3">We Recruit and Train <br> Staffs For You</h2>
                             <p class="mb-2"> Global Skills Recruitment Agency, GSRA, is a recruiting,
                                 training and staffing agency. Our number one goal is to significantly
                                 reduce the number of unemployed graduates in Nigeria. To achieve our primary objective,
