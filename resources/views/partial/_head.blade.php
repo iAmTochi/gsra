@@ -27,6 +27,12 @@
             border-color: #0001A2;
             background-color: rgba(41, 40, 182,0.1);
         }
+
+        .theme-bg {
+            background: #ff0000 !important;
+
+        }
     </style>
+    @yield('styles')
 
 </head>

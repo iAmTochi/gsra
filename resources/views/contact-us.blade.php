@@ -5,7 +5,7 @@
     <section class="middle">
         <div class="container">
 
-            <div class="row justify-content-center mb-5">
+            <div class="row justify-content-center mb-5 mt-3">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="sec_title position-relative text-center">
                         <h2 class="off_title">Contact Us</h2>
@@ -84,4 +84,13 @@
     </section>
     <!-- ======================= Contact Page End ======================== -->
 
+@endsection
+
+@section('styles')
+    <style>
+
+        .nav-menu>li>a {
+            color: #172228 !important;
+        }
+    </style>
 @endsection
