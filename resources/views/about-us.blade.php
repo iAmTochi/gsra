@@ -122,51 +122,53 @@
                     </div>
                 </div>
 
-                <div class="row col-md-6">
+                <div class="col-md-6">
 
-                    <!-- Single Item -->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blg_grid_box">
+                    <div class="row">
+                        <!-- Single Item -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="blg_grid_box">
 
-                            <div class="blg_grid_caption">
-                                <div class="blg_title text-uppercase text-center"><h4 class="text-success">Honorable </h4></div>
+                                <div class="blg_grid_caption">
+                                    <div class="blg_title text-uppercase text-center"><h4 class="text-success">Honorable </h4></div>
+                                </div>
+
                             </div>
-
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blg_grid_box">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="blg_grid_box">
 
-                            <div class="blg_grid_caption">
+                                <div class="blg_grid_caption">
 
-                                <div class="blg_title text-uppercase text-center"><h4  class="text-warning">Commitment </h4></div>
+                                    <div class="blg_title text-uppercase text-center"><h4  class="text-warning">Commitment </h4></div>
+
+                                </div>
 
                             </div>
-
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blg_grid_box">
-                            <div class="blg_grid_caption">
-                                <div class="blg_title text-uppercase text-center"><h4  class="text-info">Equality</h4></div>
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="blg_grid_box">
+                                <div class="blg_grid_caption">
+                                    <div class="blg_title text-uppercase text-center"><h4  class="text-info">Equality</h4></div>
+                                </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blg_grid_box">
-                            <div class="blg_grid_caption">
-                                <div class="blg_title text-uppercase text-center"><h4 class="text-danger">Resoluteness</h4></div>
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="blg_grid_box">
+                                <div class="blg_grid_caption">
+                                    <div class="blg_title text-uppercase text-center"><h4 class="text-danger">Resoluteness</h4></div>
+                                </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="blg_grid_box">
-                            <div class="blg_grid_caption">
-                                <div class="blg_title text-uppercase text-center"><h4 class="text-warning">Integrity-driven</h4></div>
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                            <div class="blg_grid_box">
+                                <div class="blg_grid_caption">
+                                    <div class="blg_title text-uppercase text-center"><h4 class="text-warning">Integrity-driven</h4></div>
+                                </div>
 
+                            </div>
                         </div>
                     </div>
 
