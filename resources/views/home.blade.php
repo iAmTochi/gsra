@@ -80,7 +80,6 @@
                                     <p class="fs-md ft-medium">...Or seeking for a new job</p>
                                 </div>
 
-
                                 <div class="text-center align-items-center justify-content-center mt-5">
                                     <a href="javascript:void(0);" class="btn bg-white hover-theme ft-regular mr-1"><i
                                                 class="lni lni-user mr-1"></i>I'm looking for a Job</a>
@@ -118,7 +117,7 @@
                      style=" background: url({{ asset('assets/img/applicant.jpeg') }}); z-index: 1" data-overlay="1">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="position-relative py-5 my-4 px-4">
+                    <div class="position-relative py-5 px-4">
 
                         <h2 class="ft-bold mb-3 text-white text-center">FOR JOB SEEKERS</h2>
                         <p class="mb-2" style="font-size: 18px !important;"> Global Skills Recruitment Agency, GSRA, is
@@ -150,8 +149,8 @@
             <div class="row employer">
 
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="m-spaced pl-2">
-                        <div class="position-relative py-5 my-4 px-4">
+
+                        <div class="position-relative py-5 px-2">
 
                             <h2 class="ft-bold mb-3 text-white text-center">FOR EMPLOYERS</h2>
                             <p class="mb-2" style="font-size: 18px !important;"> Global Skills Recruitment Agency, GSRA,
@@ -168,9 +167,6 @@
                                             class="lni lni-arrow-right-circle ml-2"></i></a>
                             </div>
                         </div>
-
-
-                    </div>
                 </div>
                 <div class="px-0 col-xl-6 col-lg-6 col-md-12 col-sm-12 jbs"
                      style=" background: url({{ asset('assets/img/recruiter.webp') }}); z-index: 1" data-overlay="1">
@@ -451,131 +447,11 @@
                     </div>
                 </div>
 
-                <!-- Single -->
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
-                        <div class="position-absolute ab-left">
-                            <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
-                                <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
-                        </div>
-                        <div class="position-absolute ab-right"><span
-                                    class="medium bg-light-purple text-purple px-2 py-1 rounded">Contract</span></div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-5.png"
-                                                                                              class="img-fluid"
-                                                                                              width="70" alt=""/></a>
-                        </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
-                            <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
-                            </div>
-                        </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single -->
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
-                        <div class="position-absolute ab-left">
-                            <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
-                                <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
-                        </div>
-                        <div class="position-absolute ab-right"><span
-                                    class="medium theme-cl theme-bg-light px-2 py-1 rounded">Full Time</span></div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-6.png"
-                                                                                              class="img-fluid"
-                                                                                              width="70" alt=""/></a>
-                        </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
-                            <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
-                            </div>
-                        </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single -->
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
-                        <div class="position-absolute ab-left">
-                            <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
-                                <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
-                        </div>
-                        <div class="position-absolute ab-right"><span
-                                    class="medium bg-light-danger text-danger px-2 py-1 rounded">Enternship</span></div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-7.png"
-                                                                                              class="img-fluid"
-                                                                                              width="70" alt=""/></a>
-                        </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
-                            <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
-                            </div>
-                        </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single -->
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
-                        <div class="position-absolute ab-left">
-                            <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
-                                <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
-                        </div>
-                        <div class="position-absolute ab-right"><span
-                                    class="medium bg-light-warning text-warning px-2 py-1 rounded">Part Time</span>
-                        </div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-8.png"
-                                                                                              class="img-fluid"
-                                                                                              width="70" alt=""/></a>
-                        </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
-                            <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
-                            </div>
-                        </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
             <!-- row -->
             <div class="position-relative text-center">
-                <a href="job-search-v1.html" class="btn btn-md theme-bg rounded text-light hover-theme">Explore More
+                <a href="" class="btn btn-md theme-bg rounded text-light hover-theme">Explore More
                     Jobs<i class="lni lni-arrow-right-circle ml-2"></i></a>
             </div>
 
@@ -803,13 +679,6 @@
     <!-- ======================= Customer Review ======================== -->
 
 
-
-
-
-    <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
-
-
-    </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
@@ -835,7 +704,7 @@
         @media only screen and (max-width: 991px) {
 
             .jbs {
-                height: 200px;
+                height: 220px;
                 /*width: 100%;*/
             }
 
