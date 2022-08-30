@@ -29,7 +29,8 @@
 									</div>
 
 									<div class="_dashboard_content_body py-3 px-3">
-										<form class="row">
+										<form class="row" action="{{ route('jobs.store') }}" method="post">
+											@csrf
 											<div class="col-xl-12 col-lg-12 col-md-12">
 												<div class="row">
 
