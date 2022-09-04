@@ -5,10 +5,18 @@
                 <li class="active"><a href="{{ route('login') }}"><i class="lni lni-dashboard mr-2"></i>Dashboard</a></li>
                 <li class="accordion">
                     <a href="" data-toggle="collapse" data-target="#manage-job" aria-expanded="true" aria-controls="manage-job"><i class="lni lni-add-files mr-2"></i>Manage Jobs</a>
+                    @if(auth()->user()->role == "employer")
                     <ul id="manage-job" class="collapse">
                         <li><a href="{{ route('jobs.index') }}"><i class="lni lni-files mr-2"></i>View All Jobs<span class="count-tag bg-warning">4</span></a></li>
                         <li><a href="{{ route('jobs.create') }}"><i class="lni lni-add-files mr-2"></i>Post New Job </a></li>
                     </ul>
+                    @endif
+                    @if(auth()->user()->role == "admin")
+                    <ul id="manage-job" class="collapse">
+                        <li><a href="{{ route('manage-jobs.index') }}"><i class="lni lni-files mr-2"></i>View All Jobs<span class="count-tag bg-warning">4</span></a></li>
+
+                    </ul>
+                    @endif
 
                 </li>
                 <li class="accordion">
@@ -29,7 +37,6 @@
                 </li>
                 <li><a href="dashboard-messages.html"><i class="lni lni-envelope mr-2"></i>Messages<span class="count-tag">4</span></a></li>
 
-                <li><a href="dashboard-shortlisted-resume.html"><i class="lni lni-bookmark mr-2"></i>BookmarkResumes<span class="count-tag bg-warning">4</span></a></li>
 
 
 

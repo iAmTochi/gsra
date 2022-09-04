@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Job\CreateJobRequest;
 use App\Models\Currency;
 use App\Models\Experience;
 use App\Models\Industry;
@@ -25,6 +26,7 @@ class JobController extends Controller
     protected $experience;
     protected $salary;
     protected $jobLevel;
+    protected $job;
 
 
     public function __construct()
@@ -38,6 +40,7 @@ class JobController extends Controller
         $this->experience = new Experience();
         $this->salary = new Salary();
         $this->jobLevel = new JobLevel();
+        $this->job = new Job();
     }
 
     /**
@@ -47,7 +50,10 @@ class JobController extends Controller
      */
     public function index()
     {
-        return view('jobs.index')->with('jobs', Job::all());
+        $data = [
+            'jobs' => $this->job->myJobPost()
+        ];
+        return view('jobs.employer.index',$data)->withCount(0);
     }
 
     /**
@@ -68,7 +74,7 @@ class JobController extends Controller
             'salaries'          => $this->salary->all(),
             'jobLevels'         => $this->jobLevel->all(),
         ];
-        return view('jobs.create', $data);
+        return view('jobs.employer.create', $data);
     }
 
     /**
@@ -77,9 +83,37 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateJobRequest $request)
     {
+
+        //dd($request->all());
         //
+
+        $data = [
+            'title'             => $request->title,
+            'job_summary'       => $request->description,
+            'job_function_id'   => $request->job_function,
+            'industry_id'       => $request->industry,
+            'work_type_id'      => $request->work_type,
+            'job_level_id'      => $request->job_level,
+            'state'             => $request->state,
+            'min_qualification' => $request->qualification,
+            'experience'        => $request->experience,
+            'currency_id'       => 1,
+            'monthly_salary'    => $request->expected_salary,
+            'openings'          => $request->opening,
+            'author'            => auth()->user()->id,
+            'feature_days'      => $request->deadline,
+            'is_closed'         => false
+        ];
+
+        $storeJob = $this->job->create($data);
+
+        session()->flash('success',  "Job post added successfully");
+
+        return view('jobs.employer.index');
+
+
     }
 
     /**
@@ -101,7 +135,21 @@ class JobController extends Controller
      */
     public function edit(Job $job)
     {
-        //
+
+
+        $data = [
+            'industries'    => $this->industry->all(),
+            'workTypes'     => $this->workType->all(),
+            'jobFunctions'  => $this->jobFunction->all(),
+            'currencies'    => $this->currency->all(),
+            'states'        => $this->state->all(),
+            'qualifications'    => $this->qualification->all(),
+            'experiences'       => $this->experience->all(),
+            'salaries'          => $this->salary->all(),
+            'jobLevels'         => $this->jobLevel->all(),
+            'job' => $job
+        ];
+        return view('jobs.employer.edit', $data);
     }
 
     /**
@@ -111,9 +159,36 @@ class JobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update(CreateJobRequest $request, Job $job)
     {
-        //
+        $data = [
+            'title'             => $request->title,
+            'job_summary'       => $request->description,
+            'job_function_id'   => $request->job_function,
+            'industry_id'       => $request->industry,
+            'work_type_id'      => $request->work_type,
+            'job_level_id'      => $request->job_level,
+            'state'             => $request->state,
+            'min_qualification' => $request->qualification,
+            'experience'        => $request->experience,
+            'currency_id'       => 1,
+            'monthly_salary'    => $request->expected_salary,
+            'openings'          => $request->opening,
+            'author'            => auth()->user()->id,
+            'feature_days'      => $request->deadline,
+            'is_closed'         => false
+        ];
+
+        $updateJob = $job->update($data);
+
+
+//        if ($job->isClean()) {
+//            session()->flash('info',  "You have made no changes!");
+//            return redirect()->back();
+//        }
+        session()->flash('success',  "Job post updated successfully");
+
+        return redirect()->route('jobs.index');
     }
 
     /**
@@ -124,6 +199,17 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        //
+        if ($job->trashed()){
+            $job->forceDelete();
+            session()->flash('success', 'Job Post Deleted successfully');
+
+        } else {
+
+            $job->delete();
+            session()->flash('success', 'Job Post trashed successfully');
+
+        }
+
+        return redirect()->back();
     }
 }

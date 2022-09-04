@@ -39,6 +39,9 @@ Route::middleware(['auth','verified'])->group(function(){
             return view('admin.dashboard');
 
         })->name('admin.dashboard');
+        Route::get('manage-jobs',[JobController::class, 'index'])->name('manage-jobs.index');
+
+
     });
 
     #==================================
