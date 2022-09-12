@@ -41,4 +41,30 @@ class Job extends Model
 
       return  $jobs;
     }
+
+
+
+    public function work_type(){
+
+        return  $this->belongsTo(WorkType::class);
+    }
+    public function currency(){
+
+        return  $this->belongsTo(Currency::class);
+    }
+    public function salary(){
+
+        return  $this->belongsTo(Salary::class,'monthly_salary','id');
+    }
+
+    public function country(){
+
+        return  $this->belongsTo(Country::class);
+    }
+    public function state(){
+
+        return  $this->belongsTo(State::class);
+    }
+
+
 }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('industry_id');
             $table->unsignedBigInteger('work_type_id');
             $table->unsignedBigInteger('job_level_id');
-            $table->unsignedBigInteger('state');
+            $table->unsignedBigInteger('state_id');
             $table->unsignedBigInteger('min_qualification');
             $table->unsignedBigInteger('experience');
             $table->unsignedBigInteger('currency_id');

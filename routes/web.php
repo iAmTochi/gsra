@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Home\HomeJobController;
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,14 @@ Route::get('/contact-us', function () {
 Route::get('/reset-password1', function () {
     return view('auth.reset-password1');
 });
+
+Route::get('/jobs-list', [HomeJobController::class,'jobList'])->name('home.jobs');
+Route::get('/jobs-grid', [HomeJobController::class,'jobListGrid'])->name('home.jobs.grid');
+
+
+
+
+
 Route::middleware(['auth','verified'])->group(function(){
     #==================================
     #Admin Routes

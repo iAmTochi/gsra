@@ -59,7 +59,7 @@
                         <li><a href="javascript:void(0);">Find Job</a>
                             <ul class="nav-dropdown nav-submenu">
                                 <li><a href="browse-resumes.html">Upload Resumes</a></li>
-                                <li><a href="browse-jobs.html">Browse Jobs</a></li>
+                                <li><a href="{{ route('home.jobs') }}">Browse Jobs</a></li>
                             </ul>
 
                         </li>
