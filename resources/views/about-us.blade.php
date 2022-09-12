@@ -116,11 +116,12 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="abt_caption">
-                        <img src="assets/img/about-2.png" class="img-fluid rounded" alt="" />
+{{--                        <img src="assets/img/about-2.png" class="img-fluid rounded" alt="" />--}}
+                        <img src="assets/img/about_team1.png" class="img-fluid rounded" alt=""  />
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 mt-4">
 
                     <div class="row">
                         <!-- Single Item -->
@@ -197,7 +198,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                     <div class="blg_grid_box">
                         <div class="blg_grid_thumb">
-                            <img src="assets/img/team-test.png" class="img-fluid" alt="">
+                            <img src="assets/img/team1.jpeg" class="img-fluid" alt="">
                         </div>
                         <div class="blg_grid_caption">
                             <div class="blg_tag"><span>CEO, GSRA </span></div>
@@ -256,7 +257,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                     <div class="blg_grid_box">
                         <div class="blg_grid_thumb">
-                            <img src="assets/img/team-test.png" class="img-fluid" alt="">
+                            <img src="assets/img/team2.jpeg" class="img-fluid" alt="">
                         </div>
                         <div class="blg_grid_caption">
                             <div class="blg_tag"><span>MD, GSRA </span></div>
