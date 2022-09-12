@@ -26,11 +26,26 @@
                     <div class="nav-toggle"></div>
                     <div class="mobile_nav">
                         <ul>
+                            @auth
+                                <li>
+                                    <a href="{{ route('login') }}"  class="theme-cl fs-lg" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
+                                        <i class="lni lni-home"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();"  class="theme-cl fs-lg" data-toggle="tooltip" data-placement="bottom" title="Logout">
+                                        <i class="lni lni-power-switch"></i>
+                                    </a>
+                                </li>
+                            @else
                             <li>
                                 <a href="{{ route('login') }}"  class="theme-cl fs-lg">
                                     <i class="lni lni-user"></i>
                                 </a>
                             </li>
+                            @endauth
                             <li>
                                 <a href="{{ route('jobs.create') }}" class="crs_yuo12 w-auto text-white theme-bg">
                                     <span class="embos_45"><i class="fas fa-plus-circle mr-1 mr-1"></i>Post Job</span>
@@ -43,32 +58,54 @@
                     <ul class="nav-menu">
                         <li><a href="javascript:void(0);">Find Job</a>
                             <ul class="nav-dropdown nav-submenu">
+                                <li><a href="browse-resumes.html">Upload Resumes</a></li>
                                 <li><a href="browse-jobs.html">Browse Jobs</a></li>
-                                <li><a href="browse-resumes.html">Browse Resumes</a></li>
-                                <li><a href="browse-category.html">Browse Categories</a></li>
-
                             </ul>
 
                         </li>
 
                         <li><a href="javascript:void(0);">Employers</a>
+                            <ul class="nav-dropdown nav-submenu">
+                                <li><a href="{{ route('register.employer') }}">Sign Up</a></li>
+                                <li><a href="browse-resumes.html">Browse Resumes</a></li>
+                                <li><a href="browse-category.html">Browse Categories</a></li>
+
+                            </ul>
                         </li>
                         <li><a href="{{ route('about') }}">About</a></li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
 
                     <ul class="nav-menu nav-menu-social align-to-right">
-                        <li>
-                            <a href="{{ route('login') }}"  class="ft-medium">
-                                <i class="lni lni-user mr-2"></i> Sign In
-                            </a>
-                        </li>
+                        @auth
+                            <li>
+                                <a href="{{ route('login') }}"  class="ft-medium">
+                                    <i class="lni lni-dashboard mr-2"></i> My Dashboard
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();"  class="ft-medium">
+                                    <i class="lni lni-power-switch mr-2"></i> Logout
+                                </a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ route('login') }}"  class="ft-medium">
+                                    <i class="lni lni-user mr-2"></i> Sign In
+                                </a>
+                            </li>
+                        @endauth
                         <li class="add-listing theme-bg">
                             <a href="{{ route('jobs.create') }}" >
                                 <i class="lni lni-circle-plus mr-1"></i> Post a Job
                             </a>
                         </li>
                     </ul>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </nav>
         </div>

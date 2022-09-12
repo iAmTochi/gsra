@@ -15,20 +15,21 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
+
             <div class="carousel-item active">
                 <div class="home-banner margin-bottom-0"
-                     style="background:#00ab46 url({{ asset('assets/img/banner-7.jpeg') }}) no-repeat;" data-overlay="2">
+                     style="background:#00ab46 url({{ asset('assets/img/banner-9.jpeg') }}) no-repeat;" data-overlay="2">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
 
-                                <div class="banner_caption text-right mb-5 typed-out">
-                                    <h1 class="banner_title ft-bold mb-1 uppercase "><span class="count"></span> In need
+                                <div class="banner_caption text-left mb-5 typed-out">
+                                    <h1 class="banner_title ft-bold mb-1 uppercase"><span class="count"></span> In need
                                         of a new staff?</h1>
-                                    <p class="fs-md ft-medium " >...Or seeking for a new job</p>
+                                    <p class="fs-md ft-medium">...Or seeking for a new job</p>
                                 </div>
 
-                                <div class="text-right align-items-center justify-content-center mt-5">
+                                <div class="text-left align-items-center justify-content-center mt-5">
                                     <a href="javascript:void(0);" class="btn bg-white hover-theme ft-regular mr-1"><i
                                                 class="lni lni-user mr-1"></i>I'm looking for a Job</a>
                                     <a href="javascript:void(0);"
@@ -41,20 +42,20 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item ">
                 <div class="home-banner margin-bottom-0"
-                     style="background:#00ab46 url({{ asset('assets/img/banner-6.png') }}) no-repeat;" data-overlay="2">
+                     style="background:#00ab46 url({{ asset('assets/img/banner-1.webp') }}) no-repeat;" data-overlay="2">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
 
-                                <div class="banner_caption text-left mb-5 typed-out">
-                                    <h1 class="banner_title ft-bold mb-1 uppercase"><span class="count"></span> In need
+                                <div class="banner_caption text-right mb-5 typed-out">
+                                    <h1 class="banner_title ft-bold mb-1 uppercase "><span class="count"></span> In need
                                         of a new staff?</h1>
-                                    <p class="fs-md ft-medium">...Or seeking for a new job</p>
+                                    <p class="fs-md ft-medium " >...Or seeking for a new job</p>
                                 </div>
 
-                                <div class="text-left align-items-center justify-content-center mt-5">
+                                <div class="text-right align-items-center justify-content-center mt-5">
                                     <a href="javascript:void(0);" class="btn bg-white hover-theme ft-regular mr-1"><i
                                                 class="lni lni-user mr-1"></i>I'm looking for a Job</a>
                                     <a href="javascript:void(0);"
@@ -120,16 +121,16 @@
                     <div class="position-relative py-5 px-4">
 
                         <h2 class="ft-bold mb-3 text-white text-center">FOR JOB SEEKERS</h2>
-                        <p class="mb-2" style="font-size: 18px !important;"> Global Skills Recruitment Agency, GSRA, is
-                            a recruiting,
-                            training and staffing agency. Our number one goal is to significantly
+                        <p class="mb-2" style="font-size: 18px !important;"> Our number one goal is to significantly
                             reduce the number of unemployed graduates in Nigeria. To achieve our primary objective,
                             we dedicate a lot of time to training and re-training candidates to be employable and
-                            fitted for the right job. We hire for fit by connecting
-                            qualified employees to their respective employers.
+                            fitted for the right job. We are a one-stop shop for the basic recruitment needs of both employers and
+                            job seekers and have inculcated <span class="font-weight-bold">SKILLS ACQUISITION</span> as a fundamental aspect of GSRA to
+                            help prepare our candidates to be successful in their next job.
                         </p>
+
                         <div class="col-lg-12 col-md-12 col-12 mt-3 ml-0 pl-0">
-                            <a href="http://127.0.0.1:8000/about-us" class="btn gray ft-medium apply-btn fs-sm rounded">See
+                            <a href="{{ route('about') }}" class="btn gray ft-medium apply-btn fs-sm rounded">See
                                 Details<i class="lni lni-arrow-right-circle ml-2"></i></a>
                         </div>
                     </div>
@@ -154,15 +155,16 @@
 
                             <h2 class="ft-bold mb-3 text-white text-center">FOR EMPLOYERS</h2>
                             <p class="mb-2" style="font-size: 18px !important;"> Global Skills Recruitment Agency, GSRA,
-                                is a recruiting,
-                                training and staffing agency. Our number one goal is to significantly
-                                reduce the number of unemployed graduates in Nigeria. To achieve our primary objective,
-                                we dedicate a lot of time to training and re-training candidates to be employable and
-                                fitted for the right job. We hire for fit by connecting
-                                qualified employees to their respective employers.
+                                is a recruiting. We dedicate a lot of time to training and re-training candidates to be employable and
+                                fitted for the right job. We hire qualified employees to their respective employers.
+
+                                At GSRA, we are focused on making candidates
+                                <span class="font-weight-bold">highly productive at the workplace</span>. To do that, <span class="font-weight-bold">we undertake a lot of training
+                                    on behalf of our clients and the candidates themselves</span> to ensure that they are equipped
+                                with the requisite knowledge and skills to perform their responsibilities effectively.
                             </p>
                             <div class="col-lg-12 col-md-12 col-12 mt-3 ml-0 pl-0">
-                                <a href="http://127.0.0.1:8000/about-us"
+                                <a href="{{ route('about') }}"
                                    class="btn gray ft-medium apply-btn fs-sm rounded">See Details<i
                                             class="lni lni-arrow-right-circle ml-2"></i></a>
                             </div>
@@ -191,7 +193,7 @@
                         <div class="position-relative">
                             <div class="mb-1"><span class="theme-bg-light theme-cl px-2 py-1 rounded">About Us</span>
                             </div>
-                            <h2 class="ft-bold mb-3">We Recruit and Train <br> Staffs For You</h2>
+                            <h2 class="ft-bold mb-3">We Recruit and Train <br> Staff For You</h2>
                             <p class="mb-2"> Global Skills Recruitment Agency, GSRA, is a recruiting,
                                 training and staffing agency. Our number one goal is to significantly
                                 reduce the number of unemployed graduates in Nigeria. To achieve our primary objective,
@@ -232,8 +234,8 @@
                 </div>
 
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                    <div class="position-relative" style="border-top-left-radius: 25px">
-                        <img src="assets/img/about-2.png" class="img-fluid rounded" alt="" />
+                    <div class="position-relative">
+                        <img src="{{ asset('assets/img/aboutus-01.jpg') }}" class="img-fluid rounded" alt="" width="350" />
                     </div>
                 </div>
             </div>

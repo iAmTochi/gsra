@@ -55,9 +55,8 @@
                                 <div class="blg_title"><h4>OUR VISION </h4></div>
 
                                 <div class="blg_desc">
-                                    <p>To significantly reduce the number of unemployed
-                                        persons in Nigeria; and retrain them
-                                        to be purposefully fit for the quality development of self and society.
+                                    <p>To provide right-peg employment and support
+                                        for workforce productivity through training and upskilling programs
                                     </p>
                                 </div>
                             </div>
@@ -71,10 +70,9 @@
 
                                 <div class="blg_title"><h4>OUR MISSION </h4></div>
                                 <div class="blg_desc">
-                                    <p>Our goal is multidimensional. We fit square pegs in square holes
-                                        and we recruit, train, retrain and equip individuals with the
-                                        appropriate skill-sets to be productive in the workplace.
-                                        We weave through the thick of applicants until we get out the right fit.
+                                    <p>
+                                        Talent recruitment, training, retraining and equipping
+                                        individuals with appropriate skill-sets for workplace productivity.
                                     </p>
                                 </div>
                             </div>
