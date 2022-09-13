@@ -18,7 +18,7 @@ class IsEmployer
     {
         if(!auth()->user()->isEmployer()) {
 
-            return redirect()->route('applicant.dashboard');
+            return redirect()->route('home');
         }
         return $next($request);
     }
