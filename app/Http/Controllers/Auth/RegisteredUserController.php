@@ -23,6 +23,12 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
+
+    public function registerEmployer()
+    {
+        return view('auth.register-employer');
+    }
+
     /**
      * Handle an incoming registration request.
      *
