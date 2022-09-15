@@ -3,6 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Applicant;
+use App\Models\CompanyCapacity;
+use App\Models\Industry;
+use App\Models\Recruiter;
+use App\Models\RecruiterPosition;
+use App\Models\State;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -26,7 +32,14 @@ class RegisteredUserController extends Controller
 
     public function registerEmployer()
     {
-        return view('auth.register-employer');
+
+        $data = [
+            'industries'    => Industry::all(),
+            'capacities'    => CompanyCapacity::all(),
+            'positions'     => RecruiterPosition::all(),
+            'states'        => State::all()
+        ];
+        return view('auth.register-employer', $data);
     }
 
     /**
@@ -46,12 +59,64 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if($request->has('employer'))
+        {
+
+            $request->validate([
+                'position' => ['required', 'string', 'max:255'],
+                'phone' => ['required', 'string', 'regex:/[0-9]{9}/', 'unique:recruiters','max:11'],
+                'company_name' => ['required', 'string', 'max:255'],
+                'industry' => ['required',],
+                'capacity' => ['required',],
+                'address' => ['required',],
+                'state' => ['required',],
+                'website' => ['required',],
+            ]);
+
+            $user = User::create([
+                'email'     => $request->email,
+                'role'      => $request->employer,
+                'is_banned' => false,
+                'password'  => Hash::make($request->password),
+            ]);
+
+            Recruiter::create([
+                'user_id'       => $user->id,
+                'last_name'     => $request->last_name,
+                'first_name'    => $request->first_name,
+                'recruiter_position_id' => $request->position ,
+                'company_name'          => $request->company_name,
+                'industry_id'           => $request->industry,
+                'company_capacity_id'   => $request->capacity,
+                'notification_email'    => $user->email,
+                'phone'         => $request->phone,
+                'address'       => $request->address,
+                'country_id'    => 1,
+            ]);
+
+        }
+
+
+        if($request->has('applicant'))
+        {
+
+
+            $user = User::create([
+                'email'     => $request->email,
+                'role'      => $request->applicant,
+                'is_banned' => false,
+                'password'  => Hash::make($request->password),
+            ]);
+
+            Applicant::create([
+                'user_id'       => $user->id,
+                'last_name'     => $request->last_name,
+                'first_name'    => $request->first_name,
+            ]);
+
+
+        }
+
 
         event(new Registered($user));
 

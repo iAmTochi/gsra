@@ -53,13 +53,20 @@ Route::middleware(['auth','verified'])->group(function(){
 
     });
 
+    Route::middleware('user.role')->group(function(){
+
+        Route::get('/dashboard', function () {
+            return to_route('admin.dashboard');
+        })->name('dashboard');
+    });
+
     #==================================
     #Employer Routes
     #===================================
     Route::middleware('employer')->prefix('employer')->group(function(){
         Route::get('/dashboard', function () {
             return view('employer.dashboard');
-        })->name('employer.dashboard');;
+        })->name('employer.dashboard');
         Route::resource('jobs',JobController::class);
     });
 

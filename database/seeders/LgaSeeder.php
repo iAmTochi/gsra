@@ -16,7 +16,7 @@ class LgaSeeder extends Seeder
     public function run()
     {
         DB::insert("
-        INSERT INTO lgas (id, state_id, lga_name) VALUES
+        INSERT INTO lgas (id, state_id, name) VALUES
             (2, 1, 'Aba North'),
             (3, 1, 'Aba South'),
             (4, 1, 'Arochukwu'),

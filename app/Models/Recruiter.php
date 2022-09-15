@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Recruiter extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'first_name',
+        'last_name',
+        'phone',
+        'company_name',
+        'contact_person',
+        'notification_email',
+        'address',
+        'industry_id',
+        'company_capacity_id',
+        'recruiter_position_id',
+        'country_id',
+        'referrals',
+    ];
 }

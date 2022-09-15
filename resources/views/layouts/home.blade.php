@@ -28,7 +28,7 @@
                         <ul>
                             @auth
                                 <li>
-                                    <a href="{{ route('login') }}"  class="theme-cl fs-lg" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
+                                    <a href="{{ route('dashboard') }}"  class="theme-cl fs-lg" data-toggle="tooltip" data-placement="bottom" title="Dashboard">
                                         <i class="lni lni-home"></i>
                                     </a>
                                 </li>
@@ -79,7 +79,7 @@
                     <ul class="nav-menu nav-menu-social align-to-right">
                         @auth
                             <li>
-                                <a href="{{ route('login') }}"  class="ft-medium">
+                                <a href="{{ route('dashboard') }}"  class="ft-medium">
                                     <i class="lni lni-dashboard mr-2"></i> My Dashboard
                                 </a>
                             </li>

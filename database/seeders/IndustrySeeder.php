@@ -48,6 +48,6 @@ class IndustrySeeder extends Seeder
             ]);
 
         }
-        //
+
     }
 }

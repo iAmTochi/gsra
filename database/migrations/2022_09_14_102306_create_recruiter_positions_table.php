@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lgas', function (Blueprint $table) {
+        Schema::create('recruiter_positions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('state_id');
             $table->string('name');
             $table->timestamps();
         });
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lgas');
+        Schema::dropIfExists('recruiter_positions');
     }
 };

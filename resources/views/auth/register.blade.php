@@ -18,6 +18,7 @@
 
                         <div class="row">
                             <div class="form-group col-md-6">
+                                <input type="hidden" name="applicant" value="applicant">
                                 <label>First Name *</label>
                                 <input type="text" name="first_name" value="{{ old('first_name') }}" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" placeholder="First Name">
                                 <span role="alert" class="invalid-feedback">

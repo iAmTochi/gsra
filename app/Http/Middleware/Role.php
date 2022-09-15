@@ -18,10 +18,22 @@ class Role
     public function handle(Request $request, Closure $next)
     {
         if(auth()->user()->isDeveloper() ) {
-            //dd(auth()->user()->role);
 
             return redirect()->route('admin.dashboard');
+
         }
+
+        if (auth()->user()->isEmployer()) {
+
+            return redirect()->route('employer.dashboard');
+        }
+
+        if (auth()->user()->isApplicant()) {
+
+            return redirect()->route('applicant.dashboard');
+        }
+
+
 
 
 

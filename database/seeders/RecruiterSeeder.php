@@ -32,7 +32,7 @@ class RecruiterSeeder extends Seeder
                 'user_id' => $employer->id,
                 'last_name' => 'Patience',
                 'first_name' => 'Doe',
-                'job_role' => 'HR',
+                'recruiter_position_id' =>  2 ,
                 'company_name' => 'Sawtrax Limited',
                 'industry_id' => 12,
                 'company_capacity_id' => 5,
