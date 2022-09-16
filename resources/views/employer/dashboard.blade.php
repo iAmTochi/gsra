@@ -21,34 +21,28 @@
 
         <div class="dashboard-widg-bar d-block">
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="dash-widgets py-5 px-4 bg-success rounded">
-                        <h2 class="ft-medium mb-1 fs-xl text-light">46</h2>
+                <div class=" col-md-4 ">
+                    <div class="dash-widgets py-5 px-4 bg-info  rounded">
+                        <h2 class="ft-medium mb-1 fs-xl text-light">{{ $jobs }}</h2>
                         <p class="p-0 m-0 text-light fs-md">Submit Jobs</p>
-                        <i class="lni lni-empty-file"></i>
+                        <i class="lni lni-book"></i>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="dash-widgets py-5 px-4 bg-purple rounded">
-                        <h2 class="ft-medium mb-1 fs-xl text-light">87</h2>
+                <div class=" col-md-4 ">
+                    <div class="dash-widgets py-5 px-4 bg-danger rounded">
+                        <h2 class="ft-medium mb-1 fs-xl text-light">{{ 0 }}</h2>
                         <p class="p-0 m-0 text-light fs-md">Applications</p>
                         <i class="lni lni-users"></i>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="dash-widgets py-5 px-4 bg-danger rounded">
-                        <h2 class="ft-medium mb-1 fs-xl text-light">312</h2>
+                <div class="col-md-4">
+                    <div class="dash-widgets py-5 px-4 bg-blue rounded">
+                        <h2 class="ft-medium mb-1 fs-xl text-light">{{ 0 }}</h2>
                         <p class="p-0 m-0 text-light fs-md">Notifications</p>
                         <i class="lni lni-bar-chart"></i>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                    <div class="dash-widgets py-5 px-4 bg-blue rounded">
-                        <h2 class="ft-medium mb-1 fs-xl text-light">32</h2>
-                        <p class="p-0 m-0 text-light fs-md">Bookmark</p>
-                        <i class="lni lni-heart"></i>
-                    </div>
-                </div>
+
             </div>
 
             <div class="row">
