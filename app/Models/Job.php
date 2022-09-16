@@ -17,7 +17,7 @@ class Job extends Model
         'industry_id',
         'work_type_id',
         'job_level_id',
-        'state',
+        'state_id',
         'min_qualification',
         'experience',
         'currency_id',
@@ -30,7 +30,7 @@ class Job extends Model
 
     protected $dates = ['feature_days'];
 
-    public function myJobPost(){
+    public function jobPosts(){
 
         if(auth()->user()->role == User::EMPLOYER){
             $jobs = $this->where('author', auth()->user()->id)->get();
