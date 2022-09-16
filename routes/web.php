@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeJobController;
 use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
@@ -33,22 +34,25 @@ Route::get('/reset-password1', function () {
 
 Route::get('/jobs-list', [HomeJobController::class,'jobList'])->name('home.jobs');
 Route::get('/jobs-grid', [HomeJobController::class,'jobListGrid'])->name('home.jobs.grid');
+Route::view('/job-details', 'job-details')->name('home.jobs.detail');
 
 
 
 
 
 Route::middleware(['auth','verified'])->group(function(){
+
+    Route::view('conversations','messages')->name('messages');
+    Route::view('my-profile','account.profile')->name('profile');
+    Route::view('change-password','account.change-password')->name('change.password');
+
     #==================================
     #Admin Routes
     #===================================
     Route::middleware('admin')->prefix('admin')->group(function(){
-        Route::get('/dashboard', function () {
-
-            return view('admin.dashboard');
-
-        })->name('admin.dashboard');
+        Route::get('/dashboard', [DashboardController::class,'adminDashboard'])->name('admin.dashboard');
         Route::get('manage-jobs',[JobController::class, 'index'])->name('manage-jobs.index');
+
 
 
     });
@@ -64,10 +68,10 @@ Route::middleware(['auth','verified'])->group(function(){
     #Employer Routes
     #===================================
     Route::middleware('employer')->prefix('employer')->group(function(){
-        Route::get('/dashboard', function () {
-            return view('employer.dashboard');
-        })->name('employer.dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'employerDashboard'])->name('employer.dashboard');
         Route::resource('jobs',JobController::class);
+        Route::view('manage-applicants','employer.manage-applicants')->name('applicants');
+
     });
 
     #==================================
@@ -77,6 +81,10 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::get('/dashboard', function () {
             return view('applicant.dashboard');
         })->name('applicant.dashboard');
+
+        Route::view('/my-jobs','applicant.applied-jobs' )->name('applicant.jobs');
+        Route::view('/add-resume','applicant.add-resume' )->name('applicant.add.resume');
+
     });
 });
 
