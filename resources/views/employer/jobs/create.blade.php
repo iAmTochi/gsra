@@ -9,7 +9,7 @@
 								<h1 class="ft-medium">Post A New Job</h1>
 								<nav aria-label="breadcrumb">
 									<ol class="breadcrumb">
-										<li class="breadcrumb-item text-muted"><a href="#">Home</a></li>
+										<li class="breadcrumb-item text-muted"><a href="#">{{  ucfirst(auth()->user()->role) }}</a></li>
 										<li class="breadcrumb-item text-muted"><a href="#">Dashboard</a></li>
 										<li class="breadcrumb-item"><a href="#" class="theme-cl">Post Job</a></li>
 									</ol>
@@ -201,7 +201,7 @@
 															<select class="form-control rounded @error('state') is-invalid @enderror" name="state">
 																<option value="">Select a State</option>
 																@foreach($states as $state)
-																	<option value="{{ $state->id }}" >{{ $state->state_name }}</option>
+																	<option value="{{ $state->id }}" >{{ $state->name }}</option>
 																@endforeach
 
 															</select>

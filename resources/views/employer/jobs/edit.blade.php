@@ -9,9 +9,9 @@
                     <h1 class="ft-medium">Edit A Job Post</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item text-muted"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-muted"><a href="#">{{  ucfirst(auth()->user()->role) }}</a></li>
                             <li class="breadcrumb-item text-muted"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="theme-cl">Post Job</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="theme-cl">Edit Job</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -246,11 +246,11 @@
                                                     @foreach($states as $state)
                                                         <option value="{{ $state->id }}"
                                                                 @isset($job)
-                                                                @if($state->id === $job->state)
+                                                                @if($state->id === $job->state_id)
                                                                 selected
                                                                 @endif
                                                                 @endisset
-                                                        >{{ $state->state_name }}</option>
+                                                        >{{ $state->name }}</option>
                                                     @endforeach
 
                                                 </select>

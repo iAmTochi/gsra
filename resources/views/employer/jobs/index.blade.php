@@ -10,9 +10,9 @@
                     <h1 class="ft-medium">Manage Jobs</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item text-muted"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-muted"><a href="#">{{  ucfirst(auth()->user()->role) }}</a></li>
                             <li class="breadcrumb-item text-muted"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="theme-cl">Manage Jobs</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="theme-cl">View Jobs</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -32,7 +32,6 @@
                                 <tr>
                                     <th scope="col">S/N</th>
                                     <th scope="col">Title</th>
-                                    <th scope="col">Filled</th>
                                     <th scope="col">Posted Date</th>
                                     <th scope="col">Expired</th>
                                     <th scope="col">Applications</th>
@@ -48,14 +47,7 @@
                                             <h4 class="mb-0 ft-medium fs-sm">{{ $job->title }}</h4>
                                         </div>
                                     </td>
-                                    <td>
-                                        <div class="dash-filled">
-                                            <span class="p-2 circle gray d-inline-flex align-items-center justify-content-center"><i class="lni lni-minus"></i></span>
-                                        </div>
-                                        <div class="dash-filled">
-                                            <span class="p-2 circle text-light bg-success d-inline-flex align-items-center justify-content-center"><i class="lni lni-checkmark"></i></span>
-                                        </div>
-                                    </td>
+
                                     <td>{{ $job->created_at->isoFormat('D MMM YYYY ') }}</td>
                                     <td>{{ $job->feature_days->isoFormat('D MMM YYYY ')}}</td>
                                     <td><a class="gray rounded px-3 py-2 ft-medium">----</a><a  class="theme-bg text-light rounded px-3 py-2 ft-medium">Total 04</a></td>

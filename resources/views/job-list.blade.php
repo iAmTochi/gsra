@@ -437,7 +437,7 @@
                             <!-- Single job -->
                             <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
                                 <div class="jb-list01">
-                                    <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="job-detail.html">{{ $job->title }}</a></h5></div>
+                                    <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="{{ route('home.jobs.detail') }}">{{ $job->title }}</a></h5></div>
                                     <div class="jb-list-01-info d-block mb-3">
                                         <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1 "></i>{{ucfirst( strtolower($job->state->name))}}, Nigeria</span>
                                         <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>{{ $job->work_type->name }}</span>
