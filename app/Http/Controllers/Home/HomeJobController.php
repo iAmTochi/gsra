@@ -17,47 +17,49 @@ use Illuminate\Http\Request;
 
 class HomeJobController extends Controller
 {
-    protected $jobLevel;
-    protected $job;
-    protected $workType;
-    protected $jobFunction;
-    protected $currency;
-    protected $state;
-    protected $qualification;
-    protected $experience;
-    protected $salary;
+
+//    protected $jobLevel;
+//    protected $job;
+//    protected $workType;
+//    protected $jobFunction;
+//    protected $currency;
+//    protected $state;
+//    protected $qualification;
+//    protected $experience;
+//    protected $salary;
 
 
 
     public function __construct()
     {
-        $this->jobLevel = new JobLevel();
-        $this->job = new Job();
-        $this->workType = new WorkType();
-        $this->jobFunction = new JobFunction();
-        $this->currency = new Currency();
-        $this->state = new State();
-        $this->qualification = new Qualification();
-        $this->experience = new Experience();
-        $this->salary = new Salary();
+//        $this->jobLevel = new JobLevel();
+//        $this->job = new Job();
+//        $this->workType = new WorkType();
+//        $this->jobFunction = new JobFunction();
+//        $this->currency = new Currency();
+//        $this->state = new State();
+//        $this->qualification = new Qualification();
+//        $this->experience = new Experience();
+//        $this->salary = new Salary();
 
     }
 
     public function jobList(){
+
         $data = [
-            'jobs' => $this->job->all(),
-            'workTypes'     => $this->workType->all(),
-            'qualifications'    => $this->qualification->all(),
-            'experiences'       => $this->experience->all(),
-            'salaries'          => $this->salary->all(),
-            'jobLevels'         => $this->jobLevel->all(),
+            'jobs'              => Job::all(),
+            'workTypes'         => WorkType::all(),
+            'qualifications'    => Qualification::all(),
+            'experiences'       => Experience::all(),
+            'salaries'          => Salary::all(),
+            'jobLevels'         =>JobLevel::all(),
         ];
 
-        return view('job_list', $data);
+        return view('job-list', $data);
     }
 
     public function jobListGrid(){
 
-        return view('job_grid');
+        return view('job-grid');
     }
 }
