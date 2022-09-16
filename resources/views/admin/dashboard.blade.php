@@ -23,30 +23,30 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <div class="dash-widgets py-5 px-4 bg-success rounded">
-                            <h2 class="ft-medium mb-1 fs-xl text-light">46</h2>
+                            <h2 class="ft-medium mb-1 fs-xl text-light">{{ $jobs }}</h2>
                             <p class="p-0 m-0 text-light fs-md">Submit Jobs</p>
-                            <i class="lni lni-empty-file"></i>
+                            <i class="lni lni-book"></i>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <div class="dash-widgets py-5 px-4 bg-purple rounded">
-                            <h2 class="ft-medium mb-1 fs-xl text-light">87</h2>
-                            <p class="p-0 m-0 text-light fs-md">Applications</p>
+                            <h2 class="ft-medium mb-1 fs-xl text-light">{{ $applicants }}</h2>
+                            <p class="p-0 m-0 text-light fs-md">Applicants</p>
                             <i class="lni lni-users"></i>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <div class="dash-widgets py-5 px-4 bg-danger rounded">
-                            <h2 class="ft-medium mb-1 fs-xl text-light">312</h2>
-                            <p class="p-0 m-0 text-light fs-md">Notifications</p>
+                            <h2 class="ft-medium mb-1 fs-xl text-light">{{ $recruiters }}</h2>
+                            <p class="p-0 m-0 text-light fs-md">Recruiters</p>
                             <i class="lni lni-bar-chart"></i>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <div class="dash-widgets py-5 px-4 bg-blue rounded">
-                            <h2 class="ft-medium mb-1 fs-xl text-light">32</h2>
-                            <p class="p-0 m-0 text-light fs-md">Bookmark</p>
-                            <i class="lni lni-heart"></i>
+                            <h2 class="ft-medium mb-1 fs-xl text-light">{{ $currency->symbol.' 0' }}</h2>
+                            <p class="p-0 m-0 text-light fs-md">Total Revenue</p>
+                            <i class="lni lni-invest-monitor"></i>
                         </div>
                     </div>
                 </div>
@@ -179,11 +179,7 @@
             </div>
 
             <!-- footer -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="py-3">© 2022 Workplex. Designd By ThemezHub.</div>
-                </div>
-            </div>
+            @include('partial._admin_foot')
 
         </div>
 
