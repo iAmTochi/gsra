@@ -17,43 +17,16 @@ use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
-    protected $industry;
-    protected $workType;
-    protected $jobFunction;
-    protected $currency;
-    protected $state;
-    protected $qualification;
-    protected $experience;
-    protected $salary;
-    protected $jobLevel;
-    protected $job;
-
-
-    public function __construct()
-    {
-        $this->industry = new Industry();
-        $this->workType = new WorkType();
-        $this->jobFunction = new JobFunction();
-        $this->currency = new Currency();
-        $this->state = new State();
-        $this->qualification = new Qualification();
-        $this->experience = new Experience();
-        $this->salary = new Salary();
-        $this->jobLevel = new JobLevel();
-        $this->job = new Job();
-    }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Job $job)
     {
-        $data = [
-            'jobs' => $this->job->myJobPost()
-        ];
-        return view('jobs.employer.index',$data)->withCount(0);
+          $jobs   = $job->jobPosts();
+
+        return view('employer.jobs.index',compact('jobs'))->withCount(0);
     }
 
     /**
@@ -64,17 +37,17 @@ class JobController extends Controller
     public function create()
     {
         $data = [
-            'industries'    => $this->industry->all(),
-            'workTypes'     => $this->workType->all(),
-            'jobFunctions'  => $this->jobFunction->all(),
-            'currencies'    => $this->currency->all(),
-            'states'        => $this->state->all(),
-            'qualifications'    => $this->qualification->all(),
-            'experiences'       => $this->experience->all(),
-            'salaries'          => $this->salary->all(),
-            'jobLevels'         => $this->jobLevel->all(),
+            'industries'    => Industry::all(),
+            'workTypes'     => WorkType::all(),
+            'jobFunctions'  => JobFunction::all(),
+            'currencies'    => Currency::all(),
+            'states'        => State::all(),
+            'qualifications'    => Qualification::all(),
+            'experiences'       => Experience::all(),
+            'salaries'          => Salary::all(),
+            'jobLevels'         => JobLevel::all(),
         ];
-        return view('jobs.employer.create', $data);
+        return view('employer.jobs.create', $data);
     }
 
     /**
@@ -86,8 +59,6 @@ class JobController extends Controller
     public function store(CreateJobRequest $request)
     {
 
-        //dd($request->all());
-        //
 
         $data = [
             'title'             => $request->title,
@@ -96,7 +67,7 @@ class JobController extends Controller
             'industry_id'       => $request->industry,
             'work_type_id'      => $request->work_type,
             'job_level_id'      => $request->job_level,
-            'state'             => $request->state,
+            'state_id'          => $request->state,
             'min_qualification' => $request->qualification,
             'experience'        => $request->experience,
             'currency_id'       => 1,
@@ -107,11 +78,11 @@ class JobController extends Controller
             'is_closed'         => false
         ];
 
-        $storeJob = $this->job->create($data);
+        Job::create($data);
 
         session()->flash('success',  "Job post added successfully");
 
-        return view('jobs.employer.index');
+        return to_route('jobs.index');
 
 
     }
@@ -136,20 +107,20 @@ class JobController extends Controller
     public function edit(Job $job)
     {
 
-
         $data = [
-            'industries'    => $this->industry->all(),
-            'workTypes'     => $this->workType->all(),
-            'jobFunctions'  => $this->jobFunction->all(),
-            'currencies'    => $this->currency->all(),
-            'states'        => $this->state->all(),
-            'qualifications'    => $this->qualification->all(),
-            'experiences'       => $this->experience->all(),
-            'salaries'          => $this->salary->all(),
-            'jobLevels'         => $this->jobLevel->all(),
-            'job' => $job
+            'industries'    => Industry::all(),
+            'workTypes'     => WorkType::all(),
+            'jobFunctions'  => JobFunction::all(),
+            'currencies'    => Currency::all(),
+            'states'        => State::all(),
+            'qualifications'    => Qualification::all(),
+            'experiences'       => Experience::all(),
+            'salaries'          => Salary::all(),
+            'jobLevels'         => JobLevel::all(),
+            'job'               => $job
         ];
-        return view('jobs.employer.edit', $data);
+
+        return view('employer.jobs.edit', $data);
     }
 
     /**
@@ -179,16 +150,11 @@ class JobController extends Controller
             'is_closed'         => false
         ];
 
-        $updateJob = $job->update($data);
+       $job->update($data);
 
-
-//        if ($job->isClean()) {
-//            session()->flash('info',  "You have made no changes!");
-//            return redirect()->back();
-//        }
         session()->flash('success',  "Job post updated successfully");
 
-        return redirect()->route('jobs.index');
+        return to_route('jobs.index');
     }
 
     /**
