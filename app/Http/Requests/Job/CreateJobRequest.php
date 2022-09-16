@@ -34,7 +34,7 @@ class CreateJobRequest extends FormRequest
             'qualification'     => 'required|string',
             'expected_salary'   => 'required|string',
             'gender'            => 'required|string',
-            'state'             => 'required|string',
+            'state'             => 'required',
             'deadline'          => 'required|string',
             'opening'           => 'required|string',
         ];
