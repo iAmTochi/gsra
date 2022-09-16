@@ -56,6 +56,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(Recruiter::class,'id', 'user_id');
     }
 
+    public function applicant(){
+
+        return $this->belongsTo(Applicant::class,'id', 'user_id');
+    }
+
 
     public function isDeveloper(): bool
     {
