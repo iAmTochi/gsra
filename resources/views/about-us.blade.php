@@ -260,7 +260,7 @@
                             <img src="assets/img/team2.jpeg" class="img-fluid" alt="">
                         </div>
                         <div class="blg_grid_caption">
-                            <div class="blg_tag"><span>MD, GSRA </span></div>
+                            <div class="blg_tag"><span>MANAGING PARTNER, GSRA </span></div>
                             <div class="blg_title d-flex justify-content-between">
                                 <h4>CHALYA PRINCESS MIRI-GAZHI</h4>
 

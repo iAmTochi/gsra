@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Jobs;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ class IsEmployer
     {
         if(!auth()->user()->isEmployer()) {
 
-            return redirect()->route('home');
+            return to_route('home');
         }
         return $next($request);
     }

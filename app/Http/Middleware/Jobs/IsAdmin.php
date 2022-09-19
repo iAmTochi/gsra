@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\Jobs;
 
-use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 
-class Role
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -17,26 +16,11 @@ class Role
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->isDeveloper() ) {
 
-            return redirect()->route('admin.dashboard');
+        if(!auth()->user()->isAdmin()) {
 
+            return to_route('home');
         }
-
-        if (auth()->user()->isEmployer()) {
-
-            return redirect()->route('employer.dashboard');
-        }
-
-        if (auth()->user()->isApplicant()) {
-
-            return redirect()->route('applicant.dashboard');
-        }
-
-
-
-
-
         return $next($request);
     }
 }

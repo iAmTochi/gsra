@@ -52,21 +52,33 @@
                 <li class="accordion">
                     <a href="" data-toggle="collapse" data-target="#manage-user" aria-expanded="true" aria-controls="manage-user"><i class="lni lni-add-files mr-2"></i>Manage Users</a>
                     <ul id="manage-user" class="collapse">
-                        <li><a href="dashboard-shortlisted-resume.html"><i class="lni lni-bookmark mr-2"></i>View All Users<span class="count-tag bg-warning">4</span></a></li>
+                        <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Users<span class="count-tag bg-warning">4</span></a></li>
                         <li><a href="dashboard-packages.html"><i class="lni lni-mastercard mr-2"></i>Add New User</a></li>
 
                     </ul>
 
                 </li>
+
                 @endif
 
                 <li><a href="{{ route('messages') }}"><i class="lni lni-envelope mr-2"></i>Messages<span class="count-tag">4</span></a></li>
 
-
-
-
+            </ul>
+            @if(auth()->user()->isAdmin())
+            <ul data-submenu-title="Site Settings">
+                <li class="accordion">
+                    <a href="" data-toggle="collapse" data-target="#homepage" aria-expanded="true" aria-controls="homepage"><i class="lni lni-add-files mr-2"></i>Home Settings</a>
+                    <ul id="homepage" class="collapse">
+                        <li><a href=""><i class="lni lni-bookmark mr-2"></i>Home Page</a></li>
+                        <li><a href="{{ route('testimonies.index') }}"><i class="lni lni-mastercard mr-2"></i>Testimonies</a></li>
+                        <li><a href=""><i class="lni lni-user mr-2"></i>About Page</a></li>
+                        <li><a href=""><i class="lni lni-lock-alt mr-2"></i>Contact Page</a></li>
+                    </ul>
+                </li>
+                <li><a href=""><i class="lni lni-user mr-2"></i>Seo Meta Data </a></li>
 
             </ul>
+            @endif
             <ul data-submenu-title="My Accounts">
                 <li><a href="{{ route('profile') }}"><i class="lni lni-user mr-2"></i>My Profile </a></li>
                 <li><a href="{{ route('change.password') }}"><i class="lni lni-lock-alt mr-2"></i>Change Password</a></li>

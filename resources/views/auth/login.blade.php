@@ -31,10 +31,10 @@
 
                         <div class="form-group">
                             <label>Password *</label>
-                            <input type="password" name="password" class="form-control" placeholder="Password*">
-{{--                            <span role="alert" class="invalid-feedback">--}}
-{{--                                <strong>{{$errors->first('first_name')}}</strong>--}}
-{{--                            </span>--}}
+                            <input type="password" name="password" class="form-control  @error('password') is-invalid @enderror" placeholder="Password*">
+                            <span role="alert" class="invalid-feedback">
+                                <strong>{{$errors->first('password')}}</strong>
+                            </span>
                         </div>
 
                         <div class="form-group">

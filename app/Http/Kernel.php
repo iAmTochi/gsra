@@ -2,9 +2,10 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\IsAdmin;
-use App\Http\Middleware\IsEmployer;
-use App\Http\Middleware\Role;
+use App\Http\Middleware\Jobs\IsAdmin;
+use App\Http\Middleware\Jobs\IsApplicant;
+use App\Http\Middleware\Jobs\IsEmployer;
+use App\Http\Middleware\Jobs\Role;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -66,8 +67,9 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'admin' => IsAdmin::class,
-        'employer' => IsEmployer::class,
+        'admin'     => IsAdmin::class,
+        'employer'  => IsEmployer::class,
+        'applicant' => IsApplicant::class,
         'user.role' => Role::class,
     ];
 }

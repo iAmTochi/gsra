@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\TestimonyController;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,17 +20,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
-Route::get('/about-us', function () {
-    return view('about-us');
-})->name('about');
 
-Route::get('/contact-us', function () {
-    return view('contact-us');
-})->name('contact');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'home')->name('home');
+    Route::get('/about-us', 'about')->name('about');
+    Route::get('/contact-us', 'contact')->name('contact');
+});
+
 
 Route::get('/reset-password1', function () {
     return view('auth.reset-password1');
@@ -42,6 +43,14 @@ Route::view('/job-details', 'job-details')->name('home.jobs.detail');
 
 Route::middleware(['auth','verified'])->group(function(){
 
+    Route::middleware('user.role')->group(function(){
+
+        Route::get('/dashboard', function () {
+            return to_route('admin.dashboard');
+        })->name('dashboard');
+    });
+
+
     Route::view('conversations','messages')->name('messages');
     Route::view('my-profile','account.profile')->name('profile');
     Route::view('change-password','account.change-password')->name('change.password');
@@ -50,19 +59,15 @@ Route::middleware(['auth','verified'])->group(function(){
     #Admin Routes
     #===================================
     Route::middleware('admin')->prefix('admin')->group(function(){
-        Route::get('/dashboard', [DashboardController::class,'adminDashboard'])->name('admin.dashboard');
+        Route::get('dashboard', [DashboardController::class,'adminDashboard'])->name('admin.dashboard');
         Route::get('manage-jobs',[JobController::class, 'index'])->name('manage-jobs.index');
+        Route::resource('users',UserController::class);
+        Route::resource('testimonies',TestimonyController::class);
 
 
 
     });
 
-    Route::middleware('user.role')->group(function(){
-
-        Route::get('/dashboard', function () {
-            return to_route('admin.dashboard');
-        })->name('dashboard');
-    });
 
     #==================================
     #Employer Routes
@@ -77,7 +82,7 @@ Route::middleware(['auth','verified'])->group(function(){
     #==================================
     #Applicants Routes
     #===================================
-    Route::prefix('job-seeker')->group(function(){
+    Route::middleware('applicant')->prefix('job-seeker')->group(function(){
         Route::get('/dashboard', function () {
             return view('applicant.dashboard');
         })->name('applicant.dashboard');

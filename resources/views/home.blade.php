@@ -593,22 +593,23 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="review-slide px-3">
 
+                        @foreach($testimonies as $testimony)
                         <!-- single review -->
                         <div class="single_review px-2">
                             <div class="reviews_wrap position-relative bg-white rounded py-4 px-4">
                                 <div class="rw-header d-flex align-items-center justify-content-start">
-                                    <div class="rv-110-thumb position-relative verified-author"><img src="assets/img/team-3.jpg" class="img-fluid circle" width="70" alt="" /></div>
+                                    <div class="rv-110-thumb position-relative verified-author"><img src="{{asset('storage/'.$testimony->passport ) }}" class="img-fluid circle" width="70" alt="" /></div>
                                     <div class="rv-110-caption pl-3">
-                                        <h4 class="ft-medium fs-md mb-0 lh-1">Alvin B. Washington</h4>
-                                        <p class="p-0 m-0">Co Founder</p>
+                                        <h4 class="ft-medium fs-md mb-0 lh-1">{{ $testimony->name }}</h4>
+                                        <p class="p-0 m-0">{{ $testimony->occupation }}</p>
                                     </div>
                                 </div>
                                 <div class="rw-header d-flex mt-3">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                    <p>{{ $testimony->description }}</p>
                                 </div>
                             </div>
                         </div>
-
+                        @endforeach
                         <!-- single review -->
                         <div class="single_review px-2">
                             <div class="reviews_wrap position-relative bg-white rounded py-4 px-4">
@@ -657,21 +658,7 @@
                             </div>
                         </div>
 
-                        <!-- single review -->
-                        <div class="single_review px-2">
-                            <div class="reviews_wrap position-relative bg-white rounded py-4 px-4">
-                                <div class="rw-header d-flex align-items-center justify-content-start">
-                                    <div class="rv-110-thumb position-relative verified-author"><img src="assets/img/team-1.jpg" class="img-fluid circle" width="70" alt="" /></div>
-                                    <div class="rv-110-caption pl-3">
-                                        <h4 class="ft-medium fs-md mb-0 lh-1">Mark Jukerberg</h4>
-                                        <p class="p-0 m-0">PHP Developer</p>
-                                    </div>
-                                </div>
-                                <div class="rw-header d-flex mt-3">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                        </div>
+
 
                     </div>
                 </div>

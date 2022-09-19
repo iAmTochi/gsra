@@ -83,4 +83,24 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $this->role === self::APPLICANT;
     }
+
+    public function authFullName(){
+
+        if($this->isAdmin()){
+
+          $name =  auth()->user()->admin->first_name.' '.auth()->user()->admin->last_name;
+        }
+
+        if($this->isEmployer()){
+
+            $name =  auth()->user()->employer->first_name.' '.auth()->user()->employer->last_name;
+        }
+
+        if($this->isApplicant()){
+
+            $name =  auth()->user()->applicant->first_name.' '.auth()->user()->applicant->last_name;
+        }
+
+        return $name;
+    }
 }
