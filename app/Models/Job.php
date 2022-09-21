@@ -44,10 +44,11 @@ class Job extends Model
 
 
 
-    public function work_type(){
+    public function workType(){
 
         return  $this->belongsTo(WorkType::class);
     }
+
     public function currency(){
 
         return  $this->belongsTo(Currency::class);
@@ -64,6 +65,11 @@ class Job extends Model
     public function state(){
 
         return  $this->belongsTo(State::class);
+    }
+
+    public function recruiter(){
+
+        return  $this->belongsTo(Recruiter::class,'author','user_id');
     }
 
 
