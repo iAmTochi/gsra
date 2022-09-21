@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('applicant.resume.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="dashboard-widg-bar d-block">
             <div class="row">
@@ -43,35 +43,36 @@
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Your Name</label>
-                                                <input type="text" class="form-control rounded" placeholder="Full Name">
+                                                <input type="text" name="user_id" class="form-control rounded" value="{{ auth()->user()->authFullName() }}" placeholder="Full Name" readonly>
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Professional Title</label>
-                                                <input type="text" class="form-control rounded" placeholder="e.g. Web Designer">
+                                                <input type="text" name="title" class="form-control rounded" placeholder="e.g. Web Designer">
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Job category</label>
-                                                <select class="form-control rounded">
-                                                    <option>Banking</option>
-                                                    <option>Hospital</option>
-                                                    <option>It Services</option>
+                                                <select name="job_function_id" class="form-control rounded">
+                                                    <option>Choose your job category</option>
+                                                    @foreach($jobFunctions as $jobFunction)
+                                                        <option value="{{ $jobFunction->id }}" >{{ $jobFunction->name }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Email</label>
-                                                <input type="email" class="form-control rounded" value="uppcl@gmail.com">
+                                                <input type="email" name="email" class="form-control rounded" value="{{ auth()->user()->email }}" readonly>
                                             </div>
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="form-group">
-                                                <label class="text-dark ft-medium">Resume Content</label>
-                                                <textarea class="form-control with-light" placeholder="Resume Content"></textarea>
+                                                <label class="text-dark ft-medium">Resume Summary</label>
+                                                <textarea class="form-control with-light" name="resume_summary" placeholder="Resume Summary"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -94,42 +95,42 @@
                         </div>
                         <div class="_dashboard_content_body py-3 px-3">
                             <div class="row">
-                                <div class="education col-12 row">
+                                <div class="education col-12 row mx-0">
                                     <div class="col-xl-12 col-lg-12 education-field">
-                                        <div class="gray rounded p-3 mb-3 position-relative text-center">
+                                        <div class="gray rounded p-3 mb-3 position-relative">
                                             <button class="aps-clone delete-education"><i class="fas fa-times"></i></button>
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">School Name</label>
-                                                <input type="text" class="form-control rounded" placeholder="School Name">
+                                                <input type="text" name="school[]" class="form-control rounded" placeholder="School Name">
                                             </div>
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Qualification</label>
-                                                <input type="text" class="form-control rounded" placeholder="Qualification Title">
+                                                <input type="text" name="qualification[]" class="form-control rounded" placeholder="Qualification Title">
                                             </div>
                                             <div class="form-row">
-                                                <div class="col-6">
+                                                <!--<div class="col-6">
                                                     <div class="form-group">
                                                         <label class="text-dark ft-medium">Start Date</label>
-                                                        <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                        <input type="date" name="_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label class="text-dark ft-medium">End Date</label>
-                                                        <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                        <input type="date" name="school_end_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                           <!-- <div class="form-group">
                                                 <label class="text-dark ft-medium">Note</label>
                                                 <textarea class="form-control ht-80" placeholder="Note Optional"></textarea>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-xl-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group ml-3">
                                         <button type="button" class="btn gray ft-medium apply-btn fs-sm rounded add-education"><i class="fas fa-plus mr-1"></i>Add Education</button>
                                     </div>
                                 </div>
@@ -152,40 +153,40 @@
 
                         <div class="_dashboard_content_body py-3 px-3">
                             <dive class="row">
-                                <div class="experience row col-xl-12 col-lg-12">
+                                <div class="experience row col-xl-12 col-lg-12 mx-0">
                                 <div class="experience-field col-xl-12 col-lg-12">
                                     <div class="gray rounded p-3 mb-3 position-relative">
                                         <button class="aps-clone delete-experience"><i class="fas fa-times"></i></button>
                                         <div class="form-group">
                                             <label class="text-dark ft-medium">Employer</label>
-                                            <input type="text" class="form-control rounded" placeholder="Employer Name">
+                                            <input type="text" name="employer[]" class="form-control rounded" placeholder="Employer Name">
                                         </div>
                                         <div class="form-group">
                                             <label class="text-dark ft-medium">Job Title</label>
-                                            <input type="text" class="form-control rounded" placeholder="Designation Title">
+                                            <input type="text" name="job_title[]" class="form-control rounded" placeholder="Designation Title">
                                         </div>
                                         <div class="form-row">
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="text-dark ft-medium">Start Date</label>
-                                                    <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                    <input type="date" name="job_start_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="text-dark ft-medium">End Date</label>
-                                                    <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                    <input type="date" name="job_end_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="text-dark ft-medium">Note</label>
-                                            <textarea class="form-control ht-80" placeholder="Note Optional"></textarea>
+                                            <textarea name="[]" class="form-control ht-80" placeholder="Note Optional"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 </div>
-                                <div class="col-xl-12 col-lg-12">
+                                <div class="col-xl-12 col-lg-12 ml-3">
                                     <div class="form-group">
                                         <button type="button" class="btn gray ft-medium apply-btn fs-sm rounded add-experience"><i class="fas fa-plus mr-1"></i>Add Experience</button>
                                     </div>
@@ -209,24 +210,20 @@
 
                         <div class="_dashboard_content_body py-3 px-3">
                             <div class="row ">
-                                <div class="skill col-12 row">
+                                <div class="skill col-12 row mx-0">
                                     <div class="col-xl-12 col-lg-12 skill-field">
                                         <div class="gray rounded p-3 mb-3 position-relative">
                                             <button class="aps-clone delete"><i class="fas fa-times"></i></button>
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Skills Name</label>
-                                                <input type="text" class="form-control rounded" placeholder="Skills Name">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="text-dark ft-medium">Percentage</label>
-                                                <input type="text" class="form-control rounded" placeholder="e.x. 80%">
+                                                <input type="text" name="skill_name[]" class="form-control rounded" placeholder="Skills Name">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-xl-12 col-lg-12">
-                                    <div class="form-group">
+                                    <div class="form-group ml-3">
                                         <button type="button" class="btn gray ft-medium apply-btn fs-sm rounded add-skill"><i class="fas fa-plus mr-1"></i>Add Skills</button>
                                     </div>
                                 </div>
@@ -237,7 +234,7 @@
                 </div>
             </div>
 
-            <!-- Add Skills -->
+            <!-- submit -->
             <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <button type="submit" class="btn btn-md ft-medium text-light rounded theme-bg">Save & Preview</button>
