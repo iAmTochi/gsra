@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
@@ -103,7 +104,8 @@ Route::middleware(['auth','verified'])->group(function(){
         })->name('applicant.dashboard');
 
         Route::view('/my-jobs','applicant.applied-jobs' )->name('applicant.jobs');
-        Route::view('/add-resume','applicant.add-resume' )->name('applicant.add.resume');
+        Route::get('/add-resume',[ResumeController::class, 'create'] )->name('applicant.add.resume');
+        Route::post('/add-resume',[ResumeController::class, 'store'] )->name('applicant.resume.store');
 
     });
 });
