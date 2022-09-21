@@ -17,8 +17,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="dashboard-widg-bar d-block">
+        <form action="" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="dashboard-widg-bar d-block">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="_dashboard_content bg-white rounded mb-4">
@@ -29,7 +30,7 @@
                         </div>
 
                         <div class="_dashboard_content_body py-3 px-3">
-                            <form class="row">
+                            <div class="row">
                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                                     <div class="custom-file avater_uploads">
                                         <input type="file" class="custom-file-input" id="customFile">
@@ -76,7 +77,7 @@
                                     </div>
                                 </div>
 
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,47 +92,49 @@
                                 <h4 class="mb-0 ft-medium fs-md"><i class="fas fa-graduation-cap mr-1 theme-cl fs-sm"></i>Education Details</h4>
                             </div>
                         </div>
-
                         <div class="_dashboard_content_body py-3 px-3">
-                            <form class="row">
-                                <div class="col-xl-12 col-lg-12">
-                                    <div class="gray rounded p-3 mb-3 position-relative">
-                                        <button class="aps-clone"><i class="fas fa-times"></i></button>
-                                        <div class="form-group">
-                                            <label class="text-dark ft-medium">School Name</label>
-                                            <input type="text" class="form-control rounded" placeholder="School Name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="text-dark ft-medium">Qualification</label>
-                                            <input type="text" class="form-control rounded" placeholder="Qualification Title">
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label class="text-dark ft-medium">Start Date</label>
-                                                    <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
+                            <div class="row">
+                                <div class="education col-12 row">
+                                    <div class="col-xl-12 col-lg-12 education-field">
+                                        <div class="gray rounded p-3 mb-3 position-relative text-center">
+                                            <button class="aps-clone delete-education"><i class="fas fa-times"></i></button>
+                                            <div class="form-group">
+                                                <label class="text-dark ft-medium">School Name</label>
+                                                <input type="text" class="form-control rounded" placeholder="School Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text-dark ft-medium">Qualification</label>
+                                                <input type="text" class="form-control rounded" placeholder="Qualification Title">
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label class="text-dark ft-medium">Start Date</label>
+                                                        <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label class="text-dark ft-medium">End Date</label>
+                                                        <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label class="text-dark ft-medium">End Date</label>
-                                                    <input type="date" class="form-control rounded" placeholder="dd-mm-yyyy">
-                                                </div>
+                                            <div class="form-group">
+                                                <label class="text-dark ft-medium">Note</label>
+                                                <textarea class="form-control ht-80" placeholder="Note Optional"></textarea>
                                             </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="text-dark ft-medium">Note</label>
-                                            <textarea class="form-control ht-80" placeholder="Note Optional"></textarea>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="form-group">
-                                        <button type="submit" class="btn gray ft-medium apply-btn fs-sm rounded"><i class="fas fa-plus mr-1"></i>Add Education</button>
+                                        <button type="button" class="btn gray ft-medium apply-btn fs-sm rounded add-education"><i class="fas fa-plus mr-1"></i>Add Education</button>
                                     </div>
                                 </div>
 
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -148,10 +151,11 @@
                         </div>
 
                         <div class="_dashboard_content_body py-3 px-3">
-                            <form class="row">
-                                <div class="col-xl-12 col-lg-12">
+                            <dive class="row">
+                                <div class="experience row col-xl-12 col-lg-12">
+                                <div class="experience-field col-xl-12 col-lg-12">
                                     <div class="gray rounded p-3 mb-3 position-relative">
-                                        <button class="aps-clone"><i class="fas fa-times"></i></button>
+                                        <button class="aps-clone delete-experience"><i class="fas fa-times"></i></button>
                                         <div class="form-group">
                                             <label class="text-dark ft-medium">Employer</label>
                                             <input type="text" class="form-control rounded" placeholder="Employer Name">
@@ -180,13 +184,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="form-group">
-                                        <button type="submit" class="btn gray ft-medium apply-btn fs-sm rounded"><i class="fas fa-plus mr-1"></i>Add Experience</button>
+                                        <button type="button" class="btn gray ft-medium apply-btn fs-sm rounded add-experience"><i class="fas fa-plus mr-1"></i>Add Experience</button>
                                     </div>
                                 </div>
 
-                            </form>
+                            </dive>
                         </div>
                     </div>
                 </div>
@@ -203,27 +208,30 @@
                         </div>
 
                         <div class="_dashboard_content_body py-3 px-3">
-                            <form class="row">
-                                <div class="col-xl-12 col-lg-12">
-                                    <div class="gray rounded p-3 mb-3 position-relative">
-                                        <button class="aps-clone"><i class="fas fa-times"></i></button>
-                                        <div class="form-group">
-                                            <label class="text-dark ft-medium">Skills Name</label>
-                                            <input type="text" class="form-control rounded" placeholder="Skills Name">
+                            <div class="row ">
+                                <div class="skill col-12 row">
+                                    <div class="col-xl-12 col-lg-12 skill-field">
+                                        <div class="gray rounded p-3 mb-3 position-relative">
+                                            <button class="aps-clone delete"><i class="fas fa-times"></i></button>
+                                            <div class="form-group">
+                                                <label class="text-dark ft-medium">Skills Name</label>
+                                                <input type="text" class="form-control rounded" placeholder="Skills Name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="text-dark ft-medium">Percentage</label>
+                                                <input type="text" class="form-control rounded" placeholder="e.x. 80%">
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="text-dark ft-medium">Percentage</label>
-                                            <input type="text" class="form-control rounded" placeholder="e.x. 80%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn gray ft-medium apply-btn fs-sm rounded"><i class="fas fa-plus mr-1"></i>Add Skills</button>
                                     </div>
                                 </div>
 
-                            </form>
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="form-group">
+                                        <button type="button" class="btn gray ft-medium apply-btn fs-sm rounded add-skill"><i class="fas fa-plus mr-1"></i>Add Skills</button>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -237,9 +245,98 @@
             </div>
 
         </div>
+        </form>
 
         <!-- footer -->
         @include('partial._admin_foot')
 
     </div>
+@endsection
+
+
+@section('scripts')
+
+    <script>
+
+
+        /**
+         * Add Education
+         */
+        //Clone the hidden element and shows it
+        $('.add-education').click(function(){
+            $('.education-field').first().clone().appendTo('.education').show();
+            removeEducationField();
+        });
+
+        //Attach functionality to delete buttons
+        function removeEducationField(){
+            $('.delete-education').off();
+            $('.delete-education').click(function(){
+                console.log("click");
+                $(this).closest('.education-field').remove();
+            });
+        }
+
+        /**
+         * Add Experience
+         */
+        //Clone the hidden element and shows it
+        $('.add-experience').click(function(){
+            $('.experience-field').first().clone().appendTo('.experience').show();
+            removeExperienceField();
+        });
+
+        //Attach functionality to delete buttons
+        function removeExperienceField(){
+            $('.delete-experience').off();
+            $('.delete-experience').click(function(){
+                console.log("click");
+                $(this).closest('.experience-field').remove();
+            });
+        }
+
+
+        /**
+         * Add Skills
+         */
+        //Clone the hidden element and shows it
+        $('.add-skill').click(function(){
+            $('.skill-field').first().clone().appendTo('.skill').show();
+            attach_delete();
+        });
+
+        //Attach functionality to delete buttons
+        function attach_delete(){
+            $('.delete').off();
+            $('.delete').click(function(){
+                console.log("click");
+                $(this).closest('.skill-field').remove();
+            });
+        }
+
+    </script>
+
+
+
+
+    <script>
+        /**
+         * Deprecated
+         */
+        //Clone the hidden element and shows it
+        // $('.add-one').click(function(){
+        //     $('.dynamic-element').first().clone().appendTo('.dynamic-stuff').show();
+        //     attach_delete();
+        // });
+        //
+
+        //Attach functionality to delete buttons
+        // function attach_delete(){
+        //     $('.delete').off();
+        //     $('.delete').click(function(){
+        //         console.log("click");
+               // $(this).closest('.form-group').remove();
+            // });
+        // }
+    </script>
 @endsection
