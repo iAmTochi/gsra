@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Job;
 use App\Models\Testimony;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class HomeController extends Controller
 
         $data = [
             'testimonies' => Testimony::all(),
+            'jobs' => Job::limit(4)->get(),
         ];
 
         return view('home', $data);
