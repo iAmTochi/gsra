@@ -31,11 +31,11 @@ class DatabaseSeeder extends Seeder
         $this->call(QualificationSeeder::class);
         $this->call(WorkTypeSeeder::class);
         $this->call(UserSeeder::class);
-        $this->call(AdminSeeder::class);
-        $this->call(RecruiterSeeder::class);
         $this->call(SalarySeeder::class);
         $this->call(ExperienceSeeder::class);
         $this->call(JobLevelSeeder::class);
         $this->call(RecruiterPositionSeeder::class);
+        $this->call(RecruiterSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

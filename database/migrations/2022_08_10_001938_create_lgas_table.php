@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('lgas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('state_id');
+            $table->foreignId('state_id')->constrained();
             $table->string('name');
             $table->timestamps();
         });

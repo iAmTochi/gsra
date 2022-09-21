@@ -15,19 +15,18 @@ return new class extends Migration
     {
         Schema::create('applicants', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone')->nullable();
             $table->date('dob')->nullable();
             $table->enum('gender',['male','female'])->nullable();
             $table->mediumText('image')->nullable();
-            $table->unsignedBigInteger('qualification_id',)->comment('highest_qualification')->nullable();;
-            $table->string('current_job_role')->nullable();;
-            $table->unsignedBigInteger('country_id')->nullable();;
-            $table->unsignedBigInteger('state_id')->nullable();;
-            $table->unsignedBigInteger('resume_id')->nullable();;
-            $table->unsignedBigInteger('availability_id')->nullable();;
+            $table->foreignId('qualification_id',)->comment('highest_qualification')->nullable()->constrained();
+            $table->string('current_job_role')->nullable();
+            $table->foreignId('country_id')->nullable()->constrained();
+            $table->foreignId('state_id')->nullable()->constrained();
+            $table->foreignId('availability_id')->nullable()->constrained();
             $table->timestamps();
             $table->softDeletes();
         });

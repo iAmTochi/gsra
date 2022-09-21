@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('resumes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->longText('resume_path');
+            $table->foreignId('applicant_id')->constrained();
+            $table->json('resume_data');
+            $table->text('doc')->nullable();
             $table->timestamps();
         });
     }

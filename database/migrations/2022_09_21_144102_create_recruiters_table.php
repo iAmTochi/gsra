@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('recruiters', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone')->unique();
@@ -23,10 +23,10 @@ return new class extends Migration
             $table->string('contact_person')->nullable();
             $table->string('notification_email');
             $table->mediumText('address');
-            $table->unsignedBigInteger('industry_id');
-            $table->unsignedBigInteger('company_capacity_id');
-            $table->unsignedBigInteger('recruiter_position_id');
-            $table->unsignedBigInteger('country_id');
+            $table->foreignId('industry_id')->constrained();
+            $table->foreignId('company_capacity_id')->constrained();
+            $table->foreignId('recruiter_position_id')->constrained();
+            $table->foreignId('country_id')->constrained();
             $table->string('referrals')->nullable();
             $table->timestamps();
             $table->softDeletes();
