@@ -26,7 +26,7 @@ class CreateTestimonyRequest extends FormRequest
         return [
             'name'             => 'required|string',
             'description'       => 'required|string',
-            'occupation'      => 'required|string',
+            'occupation'      => 'nullable|string',
             'passport'          => 'required|required|mimes:jpeg,png,jpg',
         ];
     }

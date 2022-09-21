@@ -12,7 +12,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item text-muted"><a href="#">{{  ucfirst(auth()->user()->role) }}</a></li>
                             <li class="breadcrumb-item text-muted"><a href="#">Dashboard</a></li>
-                            <li class="breadcrumb-item"><a href="#" class="theme-cl">{{ $testimony?'Edit ':'Add '}} Testimony</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="theme-cl">{{ isset($testimony) ?'Edit ':'Add '}} Testimony</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -25,12 +25,12 @@
                     <div class="_dashboard_content bg-white rounded mb-4">
                         <div class="_dashboard_content_header br-bottom py-3 px-3">
                             <div class="_dashboard__header_flex">
-                                <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-file mr-1 theme-cl fs-sm"></i>{{ $testimony?'Edit ':'Add '}} Testimony</h4>
+                                <h4 class="mb-0 ft-medium fs-md"><i class="fa fa-file mr-1 theme-cl fs-sm"></i>{{ isset($testimony) ?'Edit ':'Add '}} Testimony</h4>
                             </div>
                         </div>
 
                         <div class="_dashboard_content_body py-3 px-3">
-                            <form class="row" action="{{  $testimony ? route('testimonies.update', $testimony->id) : route('testimonies.store') }}" method="post" enctype="multipart/form-data">
+                            <form class="row" action="{{  isset($testimony) ? route('testimonies.update', $testimony->id) : route('testimonies.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
 
 
@@ -50,7 +50,7 @@
                                         <div class=" col-md-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Client Occupation/More Info</label>
-                                                <input type="text" name="occupation" value="{{ old('occupation') ? old('occupation') : (isset($testimony) ? $testimony->occupation : '')}}" class="form-control rounded @error('occupation') is-invalid @enderror" placeholder="E.g Chief">
+                                                <input type="text" name="occupation" value="{{ old('occupation') ? old('occupation') : (isset($testimony) ? $testimony->occupation : '')}}" class="form-control rounded @error('occupation') is-invalid @enderror" placeholder="E.g Chef">
                                                 <span role="alert" class="invalid-feedback">
                                                     <strong>{{$errors->first('occupation')}}</strong>
                                                 </span>
@@ -68,7 +68,7 @@
                                         <div class=" col-md-6">
 
                                             <div class="form-group">
-                                                <label class="text-dark ft-medium">{{ $testimony ? 'Change Passport?':'Passport' }}</label>
+                                                <label class="text-dark ft-medium">{{ isset($testimony) ? 'Change Passport?':'Passport' }}</label>
                                                 <input type="file" value="{{ old('passport') }}" name="passport" class="form-control rounded @error('passport') is-invalid @enderror">
                                                 <span role="alert" class="invalid-feedback">
 																<strong>{{$errors->first('passport')}}</strong>
@@ -89,7 +89,7 @@
 
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-md ft-medium text-light rounded theme-bg">{{ $testimony?'Update ':'Add '}} Testimony</button>
+                                                <button type="submit" class="btn btn-md ft-medium text-light rounded theme-bg">{{ isset($testimony) ?'Update ':'Add '}} Testimony</button>
                                             </div>
                                         </div>
 
