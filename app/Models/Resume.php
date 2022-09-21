@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Resume extends Model
 {
     use HasFactory;
+
+
+    protected $fillable = [
+        'applicant_id',
+        'resume_data',
+        'doc',
+    ];
+
+    protected $casts = [
+        'resume_data' => 'array'
+    ];
 }
