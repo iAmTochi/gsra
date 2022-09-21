@@ -437,10 +437,10 @@
                             <!-- Single job -->
                             <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
                                 <div class="jb-list01">
-                                    <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="{{ route('home.jobs.detail') }}">{{ $job->title }}</a></h5></div>
+                                    <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="{{ route('home.jobs.detail', $job->id) }}">{{ $job->title }}</a></h5></div>
                                     <div class="jb-list-01-info d-block mb-3">
-                                        <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1 "></i>{{ucfirst( strtolower($job->state->name))}}, Nigeria</span>
-                                        <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>{{ $job->work_type->name }}</span>
+                                        <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1 "></i>{{ucwords( strtolower($job->state->name))}}, Nigeria</span>
+                                        <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>{{ $job->workType->name }}</span>
 {{--                                        <span class="text-muted mr-2"><i class="lni lni-star-filled mr-1"></i>Urgent</span>--}}
                                         <span class="text-muted mr-2"><i class="lni lni-money-protection mr-1"></i>{{$job->currency->symbol.$job->salary->range}}</span>
                                     </div>
@@ -456,20 +456,7 @@
                             @empty
                                     <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
                                         <div class="jb-list01">
-                                            <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="job-detail.html">Senior UI/UX Web Designer</a></h5></div>
-                                            <div class="jb-list-01-info d-block mb-3">
-                                                <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                                <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Freelance</span>
-                                                <span class="text-muted mr-2"><i class="lni lni-star-filled mr-1"></i>Urgent</span>
-                                                <span class="text-muted mr-2"><i class="lni lni-money-protection mr-1"></i>$80k - $100k</span>
-                                            </div>
-                                            <div class="jb-list-01-title">
-                                                <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                                <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                                <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                                <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-info bg-light-info">CSS3</span>
-                                                <span class="px-2 mb-2 d-inline-flex py-1 rounded text-purple bg-light-purple">HTML5</span>
-                                            </div>
+                                            <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="job-detail.html">No Job post yet!</a></h5></div>
                                         </div>
                                     </div>
 

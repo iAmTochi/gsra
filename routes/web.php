@@ -21,21 +21,36 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/storage-link', function() {
+    $output = [];
+    \Artisan::call('storage:link', $output);
+    dd($output);
+});
+
+
 
 Route::controller(HomeController::class)->group(function () {
+
     Route::get('/', 'home')->name('home');
     Route::get('/about-us', 'about')->name('about');
     Route::get('/contact-us', 'contact')->name('contact');
+
 });
 
+Route::view('/employer/browse-resume','resume-list')->name('resume.browse');
 
 Route::get('/reset-password1', function () {
     return view('auth.reset-password1');
 });
 
-Route::get('/jobs-list', [HomeJobController::class,'jobList'])->name('home.jobs');
-Route::get('/jobs-grid', [HomeJobController::class,'jobListGrid'])->name('home.jobs.grid');
-Route::view('/job-details', 'job-details')->name('home.jobs.detail');
+
+Route::controller(HomeJobController::class)->group(function () {
+
+    Route::get('/jobs-list',    'jobList')->name('home.jobs');
+    Route::get('/jobs-grid',    'jobListGrid')->name('home.jobs.grid');
+    Route::get('/job-details/{job}',  'show')->name('home.jobs.detail');
+
+});
 
 
 

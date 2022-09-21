@@ -328,67 +328,9 @@
             <!-- row -->
             <div class="row align-items-center">
 
-                <!-- Single -->
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
-                        <div class="position-absolute ab-left">
-                            <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
-                                <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
-                        </div>
-                        <div class="position-absolute ab-right"><span
-                                    class="medium theme-cl theme-bg-light px-2 py-1 rounded">Full Time</span></div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-1.png"
-                                                                                              class="img-fluid"
-                                                                                              width="70" alt=""/></a>
-                        </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
-                            <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
-                            </div>
-                        </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single -->
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
-                        <div class="position-absolute ab-left">
-                            <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
-                                <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
-                        </div>
-                        <div class="position-absolute ab-right"><span
-                                    class="medium bg-light-warning text-warning px-2 py-1 rounded">Part Time</span>
-                        </div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-2.png"
-                                                                                              class="img-fluid"
-                                                                                              width="70" alt=""/></a>
-                        </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
-                            <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
-                            </div>
-                        </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
-                        </div>
-                    </div>
-                </div>
 
+                @foreach($jobs as $job)
                 <!-- Single -->
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                     <div class="job_grid border rounded ">
@@ -398,62 +340,34 @@
                                 <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
                         </div>
                         <div class="position-absolute ab-right"><span
-                                    class="medium bg-light-purple text-purple px-2 py-1 rounded">Contract</span></div>
+                                    class="medium bg-light-success text-success px-2 py-1 rounded">{{ $job->workType->name }}</span>
+                        </div>
                         <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-3.png"
+                            <a href="{{ route('home.jobs.detail', $job->id) }}" class="d-block text-center m-auto"><img src="assets/img/c-2.png"
                                                                                               class="img-fluid"
                                                                                               width="70" alt=""/></a>
                         </div>
                         <div class="job_grid_caption text-center pb-5 px-3">
                             <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
+                                                                      class="text-muted medium">{{ $job->recruiter->company_name }}</a></h6>
+                            <h4 class="mb-0 ft-medium medium"><a href="{{ route('home.jobs.detail', $job->id) }}" class="text-dark fs-md">{{ $job->title }}</a></h4>
+                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>{{ ucwords( strtolower($job->state->name)) }}</span>
                             </div>
                         </div>
                         <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
                             <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
+                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>{{ $job->created_at->diffForHumans() }}</div>
                         </div>
                     </div>
                 </div>
+                @endforeach
 
-                <!-- Single -->
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
-                        <div class="position-absolute ab-left">
-                            <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
-                                <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
-                        </div>
-                        <div class="position-absolute ab-right"><span
-                                    class="medium bg-light-danger text-danger px-2 py-1 rounded">Enternship</span></div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="job-detail.html" class="d-block text-center m-auto"><img src="assets/img/c-4.png"
-                                                                                              class="img-fluid"
-                                                                                              width="70" alt=""/></a>
-                        </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
-                            <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
-                                                                      class="text-muted medium">Google Inc</a></h6>
-                            <h4 class="mb-0 ft-medium medium"><a href="job-detail.html" class="text-dark fs-md">UI/UX
-                                    Web Designer</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>San Francisco</span>
-                            </div>
-                        </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>3 days ago</div>
-                        </div>
-                    </div>
-                </div>
 
 
             </div>
             <!-- row -->
             <div class="position-relative text-center">
-                <a href="" class="btn btn-md theme-bg rounded text-light hover-theme">Explore More
+                <a href="{{ route('home.jobs') }}" class="btn btn-md theme-bg rounded text-light hover-theme">Explore More
                     Jobs<i class="lni lni-arrow-right-circle ml-2"></i></a>
             </div>
 
@@ -610,55 +524,6 @@
                             </div>
                         </div>
                         @endforeach
-                        <!-- single review -->
-                        <div class="single_review px-2">
-                            <div class="reviews_wrap position-relative bg-white rounded py-4 px-4">
-                                <div class="rw-header d-flex align-items-center justify-content-start">
-                                    <div class="rv-110-thumb"><img src="assets/img/team-4.jpg" class="img-fluid circle" width="70" alt="" /></div>
-                                    <div class="rv-110-caption pl-3">
-                                        <h4 class="ft-medium fs-md mb-0 lh-1">Lavera C. Clifford</h4>
-                                        <p class="p-0 m-0">Team Manager</p>
-                                    </div>
-                                </div>
-                                <div class="rw-header d-flex mt-3">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single review -->
-                        <div class="single_review px-2">
-                            <div class="reviews_wrap position-relative bg-white rounded py-4 px-4">
-                                <div class="rw-header d-flex align-items-center justify-content-start">
-                                    <div class="rv-110-thumb position-relative verified-author"><img src="assets/img/team-2.jpg" class="img-fluid circle" width="70" alt="" /></div>
-                                    <div class="rv-110-caption pl-3">
-                                        <h4 class="ft-medium fs-md mb-0 lh-1">Linda S. Riggs</h4>
-                                        <p class="p-0 m-0">Project Manager</p>
-                                    </div>
-                                </div>
-                                <div class="rw-header d-flex mt-3">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single review -->
-                        <div class="single_review px-2">
-                            <div class="reviews_wrap position-relative bg-white rounded py-4 px-4">
-                                <div class="rw-header d-flex align-items-center justify-content-start">
-                                    <div class="rv-110-thumb"><img src="assets/img/team-5.jpg" class="img-fluid circle" width="70" alt="" /></div>
-                                    <div class="rv-110-caption pl-3">
-                                        <h4 class="ft-medium fs-md mb-0 lh-1">Chris L. Hazel</h4>
-                                        <p class="p-0 m-0">Web Designer</p>
-                                    </div>
-                                </div>
-                                <div class="rw-header d-flex mt-3">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
 
                     </div>
                 </div>

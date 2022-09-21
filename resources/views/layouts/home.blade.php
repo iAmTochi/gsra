@@ -66,8 +66,14 @@
 
                         <li><a href="javascript:void(0);">Employers</a>
                             <ul class="nav-dropdown nav-submenu">
+                                @auth
+
+                                    @if(auth()->user()->isEmployer() || auth()->user()->isEmployer())
+                                        <li><a href="{{ route('resume.browse') }}">Browse Resumes</a></li>
+                                    @endif
+                                @else
                                 <li><a href="{{ route('register.employer') }}">Sign Up</a></li>
-                                <li><a href="browse-resumes.html">Browse Resumes</a></li>
+                                @endauth
                                 <li><a href="browse-category.html">Browse Categories</a></li>
 
                             </ul>

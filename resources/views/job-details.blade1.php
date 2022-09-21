@@ -74,9 +74,85 @@
                     <div class="bg-white rounded mb-4">
                         <div class="jbd-01 px-3 py-4">
                             <div class="jbd-details mb-4">
-                                {!! $job->job_summary !!}
+                                <h5 class="ft-medium fs-md">Job description</h5>
+                                <p>We are looking for a PHP Developer responsible for managing back-end services and the interchange of data between the server and the users. Your primary focus will be the development of all server-side logic, definition and maintenance of the central database</p>
+                                <p>Across our network, we strive to provide rapid, performance-based, industry-focused and technology-enabled services, which reflect a shared knowledge of global and local industries and our experience of the Indian business environment.</p>
                             </div>
 
+                            <div class="jbd-details mb-3">
+                                <h5>Requirements:</h5>
+                                <div class="position-relative row">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-light-success theme-cl p-1 small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check small"></i>
+                                                </div>
+                                                <h6 class="mb-0 ml-3 text-muted fs-sm">Strong core PHP Hands on experience.</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-light-success theme-cl p-1 small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check small"></i>
+                                                </div>
+                                                <h6 class="mb-0 ml-3 text-muted fs-sm">Strong Expertise in CodeIgniter Framework .</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-light-success theme-cl p-1 small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check small"></i>
+                                                </div>
+                                                <h6 class="mb-0 ml-3 text-muted fs-sm">Understanding of MVC design pattern.</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-light-success theme-cl p-1 small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check small"></i>
+                                                </div>
+                                                <h6 class="mb-0 ml-3 text-muted fs-sm">Expertise in PHP, MVC Frameworks and good technology exposure of Codeigniter .</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-light-success theme-cl p-1 small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check small"></i>
+                                                </div>
+                                                <h6 class="mb-0 ml-3 text-muted fs-sm">Basic understanding of front-end technologies, such as JavaScript, HTML5, and CSS3</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-light-success theme-cl p-1 small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check small"></i>
+                                                </div>
+                                                <h6 class="mb-0 ml-3 text-muted fs-sm">Good knowledge of relational databases, version control tools and of developing web services.</h6>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2 mr-4 ml-lg-0 mr-lg-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="rounded-circle bg-light-success theme-cl p-1 small d-flex align-items-center justify-content-center">
+                                                    <i class="fas fa-check small"></i>
+                                                </div>
+                                                <h6 class="mb-0 ml-3 text-muted fs-sm">Proficient understanding of code versioning tools, such as Git.</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="jbd-details mb-4">
+                                <h5 class="ft-medium fs-md">Skills Required</h5>
+                                <div class="other-details">
+                                    <div class="details ft-medium"><label class="text-muted">Role</label><span class="text-dark">Database Architect / Designer</span></div>
+                                    <div class="details ft-medium"><label class="text-muted">Industry Type</label><span class="text-dark">Advertising & Marketing</span></div>
+                                    <div class="details ft-medium"><label class="text-muted">Functional Area</label><span class="text-dark">Engineering - Software</span></div>
+                                    <div class="details ft-medium"><label class="text-muted">Employment Type</label><span class="text-dark">Full Time, Permanent</span></div>
+                                    <div class="details ft-medium"><label class="text-muted">Role Category</label><span class="text-dark">DBA / Data warehousing</span></div>
+                                </div>
+                            </div>
 
                             <div class="jbd-details mb-1">
                                 <h5 class="ft-medium fs-md">Key Skills</h5>
@@ -123,41 +199,40 @@
                     <div class="jb-apply-form bg-white rounded py-3 px-4 box-static">
                         <h4 class="ft-medium fs-md mb-3">Intrested in this job?</h4>
 
-                        <form class="_apply_form_form" action="" method="post">
-                            @csrf
+                        <form class="_apply_form_form">
 
                             <div class="form-group">
                                 <label class="text-dark mb-1 ft-medium medium">First Name</label>
-                                <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                                <input type="text" class="form-control" placeholder="First Name">
                             </div>
 
                             <div class="form-group">
                                 <label class="text-dark mb-1 ft-medium medium">Your Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="info@gsrajobs.com">
+                                <input type="email" class="form-control" placeholder="themezhub@gmail.com">
                             </div>
 
                             <div class="form-group">
                                 <label class="text-dark mb-1 ft-medium medium">Phone Number:</label>
-                                <input type="tel" name="phone" class="form-control" placeholder="+234 803 603 7038">
+                                <input type="text" class="form-control" placeholder="+91 245 256 2548">
                             </div>
 
                             <div class="form-group">
                                 <label class="text-dark mb-1 ft-medium medium">Upload Resume:<font>pdf, doc, docx</font></label>
                                 <div class="custom-file">
-                                    <input type="file" name="resume" class="custom-file-input" id="customFile">
+                                    <input type="file" class="custom-file-input" id="customFile">
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="terms_con">
-                                    <input id="aa3" name="policy" class="checkbox-custom" name="Coffee" type="checkbox">
+                                    <input id="aa3" class="checkbox-custom" name="Coffee" type="checkbox">
                                     <label for="aa3" class="checkbox-custom-label">I agree to pirvacy policy</label>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-md rounded theme-bg text-light ft-medium fs-sm full-width">Apply For This Job</button>
+                                <button type="button" class="btn btn-md rounded theme-bg text-light ft-medium fs-sm full-width">Apply For This Job</button>
                             </div>
 
                         </form>
