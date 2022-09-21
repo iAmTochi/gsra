@@ -52,33 +52,26 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
 
         if($request->has('employer'))
         {
-
-            $request->validate([
-                'position' => ['required', 'string', 'max:255'],
-                'phone' => ['required', 'string', 'regex:/[0-9]{9}/', 'unique:recruiters','max:11'],
+            dd($request->all());
+            $employerData = [
+                'position'  => ['required', 'string', 'max:255'],
+                'phone'     => ['required', 'string', 'regex:/[0-9]{9}/', 'unique:recruiters','max:11'],
                 'company_name' => ['required', 'string', 'max:255'],
-                'industry' => ['required',],
-                'capacity' => ['required',],
-                'address' => ['required',],
-                'state' => ['required',],
-                'website' => ['required',],
-            ]);
+                'industry'  => ['required',],
+                'capacity'  => ['required',],
+                'address'   => ['required',],
+                'state'     => ['required',],
+                'website'   => ['required',],
+            ];
 
-            $user = User::create([
-                'email'     => $request->email,
-                'role'      => $request->employer,
-                'is_banned' => false,
-                'password'  => Hash::make($request->password),
-            ]);
+            $data = array_merge($this->userValidationData(), $employerData);
+
+            $request->validate($data);
+
+            $user = $this->userCreationData($request, $request->employer);
 
             Recruiter::create([
                 'user_id'       => $user->id,
@@ -91,6 +84,7 @@ class RegisteredUserController extends Controller
                 'notification_email'    => $user->email,
                 'phone'         => $request->phone,
                 'address'       => $request->address,
+                'state_id'       => $request->state,
                 'country_id'    => 1,
             ]);
 
@@ -99,14 +93,9 @@ class RegisteredUserController extends Controller
 
         if($request->has('applicant'))
         {
+            $request->validate($this->userValidationData());
 
-
-            $user = User::create([
-                'email'     => $request->email,
-                'role'      => $request->applicant,
-                'is_banned' => false,
-                'password'  => Hash::make($request->password),
-            ]);
+            $user = $this->userCreationData($request, $request->applicant);
 
             Applicant::create([
                 'user_id'       => $user->id,
@@ -124,4 +113,28 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+    private function userValidationData(){
+
+      return [
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ];
+
+    }
+
+    private function userCreationData($request, $role){
+
+        return User::create([
+            'email'     => $request->email,
+            'role'      => $role,
+            'is_banned' => false,
+            'password'  => Hash::make($request->password),
+        ]);
+
+
+    }
+
 }

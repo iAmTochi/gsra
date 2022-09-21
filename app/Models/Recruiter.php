@@ -21,6 +21,7 @@ class Recruiter extends Model
         'industry_id',
         'company_capacity_id',
         'recruiter_position_id',
+        'state_id',
         'country_id',
         'referrals',
     ];

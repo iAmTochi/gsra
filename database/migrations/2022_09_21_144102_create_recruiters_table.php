@@ -26,6 +26,7 @@ return new class extends Migration
             $table->foreignId('industry_id')->constrained();
             $table->foreignId('company_capacity_id')->constrained();
             $table->foreignId('recruiter_position_id')->constrained();
+            $table->foreignId('state_id')->constrained();
             $table->foreignId('country_id')->constrained();
             $table->string('referrals')->nullable();
             $table->timestamps();

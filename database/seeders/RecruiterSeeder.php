@@ -29,18 +29,19 @@ class RecruiterSeeder extends Seeder
             ]);
 
             Recruiter::create([
-                'user_id' => $employer->id,
-                'last_name' => 'Patience',
-                'first_name' => 'Doe',
+                'user_id'               => $employer->id,
+                'last_name'             => 'Patience',
+                'first_name'            => 'Doe',
                 'recruiter_position_id' =>  2 ,
-                'company_name' => 'Sawtrax Limited',
-                'industry_id' => 12,
-                'company_capacity_id' => 5,
-                'notification_email' => 'employer@sawtraxltd.com',
+                'company_name'          => 'Sawtrax Limited',
+                'industry_id'           => 12,
+                'company_capacity_id'   => 5,
+                'notification_email'    => 'employer@sawtraxltd.com',
 
-                'phone'=> '+2348000000001',
-                'address'=> 'Ox Street, Lagos',
-                'country_id'=> 1,
+                'phone'                 => '+2348000000001',
+                'address'               => 'Ox Street, Lagos',
+                'country_id'            => 1,
+                'state_id'              => 25,
 
 
             ]);
