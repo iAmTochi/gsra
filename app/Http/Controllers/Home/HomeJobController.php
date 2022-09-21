@@ -62,4 +62,9 @@ class HomeJobController extends Controller
 
         return view('job-grid');
     }
+
+    public function show(Job $job){
+
+        return view('job-details',compact('job'));
+    }
 }
