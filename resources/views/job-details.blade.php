@@ -65,9 +65,13 @@
                                 </div>
                             </div>
                             <div class="jbd-01-right text-right hide-1023">
+                                @if(!$hasApplied)
+
                                 <div class="jbl_button mb-2"><button type="button" onclick="event.preventDefault();
-                                        document.getElementById('job-application-form').submit();" class="btn rounded theme-bg-light theme-cl fs-sm ft-medium">Apply This Job</button></div>
-{{--                                <div class="jbl_button"><a href="javascript:void(0);" class="btn rounded bg-white border fs-sm ft-medium">View Company</a></div>--}}
+                                        document.getElementById('job-application-form').submit();" class="btn rounded theme-bg-light theme-cl fs-sm ft-medium">Apply This Job</button>
+                                </div>
+
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -111,10 +115,11 @@
                                 </div>
                                 <div class="jbd-02-aply">
                                     <div class="jbl_button mb-2">
-{{--                                        <a href="#" class="btn btn-md rounded gray fs-sm ft-medium mr-2">Save This Job</a>--}}
+                                       @if(!$hasApplied)
                                         <button type="button"
                                            onclick="event.preventDefault();
                                         document.getElementById('job-application-form').submit();" class="btn btn-md rounded theme-bg text-light fs-sm ft-medium">Apply Job</button>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -123,40 +128,117 @@
 
                 </div>
 
-                <!-- Sidebar -->
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="jb-apply-form bg-white rounded py-3 px-4 box-static">
-                        <h4 class="ft-medium fs-md mb-3">Intrested in this job?</h4>
+                @auth
+                    @if(!auth()->user()->isApplicant())
+                        <!-- Sidebar -->
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="jb-apply-form bg-white rounded py-3 px-4 box-static">
 
-                        <form  id="job-application-form" class="_apply_form_form" action="" method="post" enctype="multipart/form-data">
-                            @csrf
+                                <h4 class="ft-medium fs-md mb-3 text-danger">Only a Jobseeker can apply!</h4>
 
-                            <div class="form-group">
-                                <label class="text-dark mb-1 ft-medium medium">Cover Letter(Optional)</label>
-                                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Write a cover to personalise the job application"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label class="text-dark mb-1 ft-medium medium">Upload Resume:<font>pdf, doc, docx</font></label>
-                                <div class="custom-file">
-                                    <input type="file" name="resume" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                            </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div class="terms_con">
-                                    <input id="aa3" name="policy" class="checkbox-custom" name="Coffee" type="checkbox">
-                                    <label for="aa3" class="checkbox-custom-label">I agree to pirvacy policy</label>
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-md rounded theme-bg text-light ft-medium fs-sm full-width">Apply For This Job</button>
-                            </div>
+                    @else
 
-                        </form>
+                        <!-- Sidebar -->
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                            <div class="jb-apply-form bg-white rounded py-3 px-4 box-static">
+                                @if(!$hasApplied)
+                                    <h4 class="ft-medium fs-md mb-3">Intrested in this job?</h4>
+
+                                    <form  id="job-application-form" class="_apply_form_form" action="{{ route('job-application.store') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+
+                                        <div class="form-group">
+                                            <label class="text-dark mb-1 ft-medium medium">Cover Letter(Optional)</label>
+                                            <input type="hidden" name="_job_id" value="{{ $job->id }}">
+                                            <textarea class="form-control" name="cover_letter" id="" cols="30" rows="10" placeholder="Write a cover letter to personalise the job application"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-dark mb-1 ft-medium medium">Upload Resume:<font>pdf, doc, docx</font></label>
+                                            <input type="file" name="doc" id="doc" class="form-control  {{ $errors->has('doc') ? ' is-invalid' : '' }}">
+                                            {{--                                <div class="custom-file">--}}
+                                            {{--                                    <input type="file" name="doc" class="custom-file-input {{ $errors->has('doc') ? ' is-invalid' : '' }}" id="customFile">--}}
+                                            {{--                                    <label class="custom-file-label" for="customFile">Choose file</label>--}}
+                                            {{--                                </div>--}}
+                                            <span role="alert" class="invalid-feedback">
+                                    <strong>{{$errors->first('doc')}}</strong>
+                                </span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="terms_con">
+                                                <input id="aa3" name="policy" class="checkbox-custom" name="Coffee" type="checkbox">
+                                                <label for="aa3" class="checkbox-custom-label">I agree to pirvacy policy</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-md rounded theme-bg text-light ft-medium fs-sm full-width">Apply For This Job</button>
+                                        </div>
+
+                                    </form>
+
+                                @else
+                                    <h4 class="ft-medium fs-md mb-3 text-danger">You applied for this job on {{ $hasApplied->created_at->diffForHumans() }}</h4>
+                                @endif
+                            </div>
+                        </div>
+
+
+                    @endif
+
+                @endauth
+
+                @guest
+                    <!-- Sidebar -->
+                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                        <div class="jb-apply-form bg-white rounded py-3 px-4 box-static">
+                            @if(!$hasApplied)
+                                <h4 class="ft-medium fs-md mb-3">Intrested in this job?</h4>
+
+                                <form  id="job-application-form" class="_apply_form_form" action="{{ route('job-application.store') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
+
+                                    <div class="form-group">
+                                        <label class="text-dark mb-1 ft-medium medium">Cover Letter(Optional)</label>
+                                        <input type="hidden" name="_job_id" value="{{ $job->id }}">
+                                        <textarea class="form-control" name="cover_letter" id="" cols="30" rows="10" placeholder="Write a cover letter to personalise the job application"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-dark mb-1 ft-medium medium">Upload Resume:<font>pdf, doc, docx</font></label>
+                                        <input type="file" name="doc" id="doc" class="form-control  {{ $errors->has('doc') ? ' is-invalid' : '' }}">
+                                        {{--                                <div class="custom-file">--}}
+                                        {{--                                    <input type="file" name="doc" class="custom-file-input {{ $errors->has('doc') ? ' is-invalid' : '' }}" id="customFile">--}}
+                                        {{--                                    <label class="custom-file-label" for="customFile">Choose file</label>--}}
+                                        {{--                                </div>--}}
+                                        <span role="alert" class="invalid-feedback">
+                                    <strong>{{$errors->first('doc')}}</strong>
+                                </span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="terms_con">
+                                            <input id="aa3" name="policy" class="checkbox-custom" name="Coffee" type="checkbox">
+                                            <label for="aa3" class="checkbox-custom-label">I agree to pirvacy policy</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-md rounded theme-bg text-light ft-medium fs-sm full-width">Apply For This Job</button>
+                                    </div>
+
+                                </form>
+
+                            @else
+                                <h4 class="ft-medium fs-md mb-3 text-danger">You applied for this job on {{ $hasApplied->created_at->diffForHumans() }}</h4>
+                            @endif
+                        </div>
                     </div>
-                </div>
+                @endguest
+
 
             </div>
         </div>
@@ -279,5 +361,20 @@
             background-size: cover !important;
         }
     </style>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/36sx8xuffx9sspexlaoh2wizbah5jr2o3ph5dffp7iyd8mtq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+
+@endsection
+@section('scripts')
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'advlist autolink lists link image charmap preview anchor pagebreak',
+            toolbar_mode: 'floating',
+        });
+    </script>
 
 @endsection

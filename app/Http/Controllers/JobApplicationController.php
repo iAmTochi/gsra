@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use App\Models\JobApplication;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,29 @@ class JobApplicationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $job = Job::findOrFail($request->_job_id);
+
+
+        $data = [
+            'job_id' => $job->id,
+            'applicant_id' => auth()->user()->applicant->id,
+            'cover_letter' => $request->cover_letter
+        ];
+
+        if ($request->hasFile('doc')) {
+
+            $request->validate(['doc' => 'mimes:doc,pdf,docx']);
+
+            $docPath = $request->file('doc')->store('resumes');
+
+            $data['doc'] = $docPath;
+        }
+
+        JobApplication::create($data);
+
+        session()->flash('success',  "Your job application was successful!");
+
+        return redirect()->back();
     }
 
     /**

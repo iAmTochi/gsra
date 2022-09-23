@@ -76,5 +76,10 @@ class Job extends Model
         return  $this->belongsTo(Recruiter::class,'author','user_id');
     }
 
+    public function jobApplications() {
+        
+        return $this->hasMany(JobApplication::class);
+    }
+
 
 }

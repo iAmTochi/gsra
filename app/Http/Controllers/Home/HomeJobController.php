@@ -7,6 +7,7 @@ use App\Models\Currency;
 use App\Models\Experience;
 use App\Models\Industry;
 use App\Models\Job;
+use App\Models\JobApplication;
 use App\Models\JobFunction;
 use App\Models\JobLevel;
 use App\Models\Qualification;
@@ -39,6 +40,11 @@ class HomeJobController extends Controller
 
     public function show(Job $job){
 
-        return view('job-details',compact('job'));
+        $hasApplied = JobApplication::where('job_id',$job->id)
+            ->where('applicant_id', auth()->user()?->applicant?->id)
+            ->first();
+
+
+        return view('job-details',compact('job', 'hasApplied'));
     }
 }

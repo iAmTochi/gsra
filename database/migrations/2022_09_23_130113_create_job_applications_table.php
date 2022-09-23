@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('job_id')->constrained();
             $table->foreignId('applicant_id')->constrained();
-            $table->foreignId('resume_id')->nullable()->constrained();
-            $table->text('doc');
+            $table->longText('cover_letter')->nullable();
+            $table->text('doc')->nullable();
             $table->timestamps();
         });
     }

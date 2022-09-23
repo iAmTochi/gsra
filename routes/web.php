@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
 use App\Http\Controllers\Home\HomeResumeController;
+use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResumeController;
@@ -125,6 +126,10 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::get('/edit-resume',        [ResumeController::class, 'edit'] )->name('applicant.add.edit');
         Route::put('/update-resume/{id}',   [ResumeController::class, 'update'] )->name('applicant.resume.update');
 
+    });
+
+    Route::controller(JobApplicationController::class)->group(function(){
+        Route::post('job-application','store')->name('job-application.store');
     });
 });
 
