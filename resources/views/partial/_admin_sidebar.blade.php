@@ -2,7 +2,9 @@
     <div class="dashboard-nav">
         <div class="dashboard-inner">
             <ul data-submenu-title="Main Navigation">
+                @if(auth()->user()->isAdmin()|| auth()->user()->isEmployer())
                 <li class="active"><a href="{{ route('login') }}"><i class="lni lni-dashboard mr-2"></i>Dashboard</a></li>
+                @endif
                 <li class="accordion">
                     @if(auth()->user()->isEmployer())
 
@@ -23,9 +25,18 @@
                     @else
                 </li>
 
+
+                @if(isset(auth()->user()->applicant->resume) )
+                    <li class="">
+                        <a href="{{ route('applicant.add.edit') }}"><i class="lni lni-add-files mr-2"></i>Update Resume</a>
+                    </li>
+                @else
+
                     <li class="">
                         <a href="{{ route('applicant.add.resume') }}"><i class="lni lni-add-files mr-2"></i>Create Resume</a>
                     </li>
+
+                @endif
                     <li>
                         <a href="{{ route('applicant.jobs') }}"><i class="lni lni-files mr-2"></i>Applied Jobs<span class="count-tag bg-warning">4</span></a>
                     </li>
@@ -53,7 +64,7 @@
                     <a href="" data-toggle="collapse" data-target="#manage-user" aria-expanded="true" aria-controls="manage-user"><i class="lni lni-add-files mr-2"></i>Manage Users</a>
                     <ul id="manage-user" class="collapse">
                         <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Users<span class="count-tag bg-warning">4</span></a></li>
-                        <li><a href="dashboard-packages.html"><i class="lni lni-mastercard mr-2"></i>Add New User</a></li>
+                        <li><a href="dashboard-packages.html"><i class="lni lni-mastercard mr-2"></i>Add New Admin</a></li>
 
                     </ul>
 

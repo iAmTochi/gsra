@@ -5,11 +5,14 @@
                 <a class="nav-brand" href="{{ url('/') }}" target="_blank">
                     <img src="{{asset('assets/img/logo.png')}}" class="logo" alt="" />
                 </a>
-                <div class="nav-toggle"></div>
+{{--                <div class="nav-toggle"></div>--}}
                 <div class="mobile_nav">
                     <ul>
                         <li>
-                            <a href="javascript:void(0);" data-toggle="modal" data-target="#login" class="crs_yuo12 w-auto text-dark gray">
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                           document.getElementById('logout-form-nav').submit();"
+                               data-toggle="modal" data-target="#login" class="crs_yuo12 w-auto text-dark gray">
                                 <span class="embos_45"><i class="lni lni-power-switch mr-1 mr-1"></i>Logout</span>
                             </a>
                         </li>
@@ -24,10 +27,10 @@
 
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();">
+                           document.getElementById('logout-form-nav').submit();">
                             <i class="lni lni-power-switch mr-1"></i> Logout
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        <form id="logout-form-nav" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
                     </li>
