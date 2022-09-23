@@ -465,7 +465,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-12">
                             <div class="row align-items-center justify-content-between mx-0 bg-white rounded py-2 mb-4">
                                 <div class="col-xl-3 col-lg-4 col-md-5 col-sm-12">
-                                    <h6 class="mb-0 ft-medium fs-sm">302 New Jobs Found</h6>
+                                    <h6 class="mb-0 ft-medium fs-sm">{{$resumes->count()}} Resumes Found</h6>
                                 </div>
 
                                 <div class="col-xl-9 col-lg-8 col-md-7 col-sm-12">
@@ -493,6 +493,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-12">
 
+                            @foreach($resumes as $resume)
                             <!-- Single -->
                             <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
                                 <div class="jb-list01-flex d-flex align-items-start justify-content-start">
@@ -501,222 +502,52 @@
                                     </div>
 
                                     <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Nancy I. Chin<img src="assets/img/verify.svg" class="ml-1" width="12" alt=""></a></h5></div>
+                                        <div class="jb-list-01-title">
+                                            <h5 class="ft-medium mb-1">
+                                                <a href="{{ route('resume.show', $resume->id) }}">{{ $resume->applicant->user->fullName() }}
+                                                    <img src="assets/img/verify.svg" class="ml-1" width="12" alt="">
+                                                </a>
+                                            </h5>
+                                        </div>
                                         <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
+                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>{{ $resume->applicant->user->location()}}</span>
+                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>{{ $resume->title }}</span>
                                             <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
                                             <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
                                         </div>
                                         <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
+                                            @php  $i = 1; @endphp
+                                            @foreach($resume->skills as $skill)
+
+                                                @if($i == 1)
+
+                                                 <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-purple bg-light-purple ">{{ $skill->name }}</span>
+
+                                                @elseif($i == 2)
+
+                                                    <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">{{ $skill->name }}</span>
+
+                                                @elseif($i == 3)
+
+                                                    <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">{{ $skill->name }}</span>
+
+                                                @else
+
+                                                    <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
+
+                                                @endif
+
+                                                    @php  $i++ @endphp
+
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-2.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
 
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Elwood K. Gray</a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-3.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
-
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Edward C. Bethel</a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-4.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
-
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">John K. Wheeler<img src="assets/img/verify.svg" class="ml-1" width="12" alt=""></a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-5.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
-
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Claudia R. Gilbert</a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-6.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
-
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Beverly M. Johnston</a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-7.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
-
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Fannie S. Ross<img src="assets/img/verify.svg" class="ml-1" width="12" alt=""></a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-8.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
-
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Tina S. Blakely</a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single -->
-                            <div class="job_grid d-block border rounded px-3 pt-3 pb-2">
-                                <div class="jb-list01-flex d-flex align-items-start justify-content-start">
-                                    <div class="jb-list01-thumb">
-                                        <img src="assets/img/t-9.png" class="img-fluid circle" width="90" alt="" />
-                                    </div>
-
-                                    <div class="jb-list01 pl-3">
-                                        <div class="jb-list-01-title"><h5 class="ft-medium mb-1"><a href="candidate-detail.html">Janet T. Ybarra<img src="assets/img/verify.svg" class="ml-1" width="12" alt=""></a></h5></div>
-                                        <div class="jb-list-01-info d-block mb-3">
-                                            <span class="text-muted mr-2"><i class="lni lni-map-marker mr-1"></i>Liverpool, UK</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-tag mr-1"></i>PHP Developer</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                            <span class="text-muted mr-2"><i class="lni lni-graduation mr-1"></i>4 Year Exp.</span>
-                                        </div>
-                                        <div class="jb-list-01-title d-inline">
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded theme-cl theme-bg-light">Photoshop</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-warning bg-light-warning">WordPress</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-danger bg-light-danger">Magento</span>
-                                            <span class="mr-2 mb-2 d-inline-flex px-2 py-1 rounded text-light bg-info">+3 More</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
