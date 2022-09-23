@@ -80,6 +80,6 @@ class ApplicantController extends Controller
      */
     public function destroy(Applicant $applicant)
     {
-        //
+
     }
 }
