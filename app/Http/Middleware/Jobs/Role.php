@@ -29,7 +29,7 @@ class Role
 
         if (auth()->user()->isApplicant()) {
 
-            return redirect()->route('applicant.dashboard');
+            return redirect()->route('profile');
         }
 
 
