@@ -65,7 +65,8 @@
                                 </div>
                             </div>
                             <div class="jbd-01-right text-right hide-1023">
-                                <div class="jbl_button mb-2"><a href="javascript:void(0);" class="btn rounded theme-bg-light theme-cl fs-sm ft-medium">Apply This Job</a></div>
+                                <div class="jbl_button mb-2"><button type="button" onclick="event.preventDefault();
+                                        document.getElementById('job-application-form').submit();" class="btn rounded theme-bg-light theme-cl fs-sm ft-medium">Apply This Job</button></div>
 {{--                                <div class="jbl_button"><a href="javascript:void(0);" class="btn rounded bg-white border fs-sm ft-medium">View Company</a></div>--}}
                             </div>
                         </div>
@@ -73,7 +74,9 @@
 
                     <div class="bg-white rounded mb-4">
                         <div class="jbd-01 px-3 py-4">
+                            <h5 class="ft-medium fs-md">Job description</h5>
                             <div class="jbd-details mb-4">
+
                                 {!! $job->job_summary !!}
                             </div>
 
@@ -108,8 +111,10 @@
                                 </div>
                                 <div class="jbd-02-aply">
                                     <div class="jbl_button mb-2">
-                                        <a href="#" class="btn btn-md rounded gray fs-sm ft-medium mr-2">Save This Job</a>
-                                        <a href="#" class="btn btn-md rounded theme-bg text-light fs-sm ft-medium">Apply Job</a>
+{{--                                        <a href="#" class="btn btn-md rounded gray fs-sm ft-medium mr-2">Save This Job</a>--}}
+                                        <button type="button"
+                                           onclick="event.preventDefault();
+                                        document.getElementById('job-application-form').submit();" class="btn btn-md rounded theme-bg text-light fs-sm ft-medium">Apply Job</button>
                                     </div>
                                 </div>
                             </div>
@@ -123,24 +128,13 @@
                     <div class="jb-apply-form bg-white rounded py-3 px-4 box-static">
                         <h4 class="ft-medium fs-md mb-3">Intrested in this job?</h4>
 
-                        <form class="_apply_form_form" action="" method="post">
+                        <form  id="job-application-form" class="_apply_form_form" action="" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
-                                <label class="text-dark mb-1 ft-medium medium">First Name</label>
-                                <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                                <label class="text-dark mb-1 ft-medium medium">Cover Letter(Optional)</label>
+                                <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Write a cover to personalise the job application"></textarea>
                             </div>
-
-                            <div class="form-group">
-                                <label class="text-dark mb-1 ft-medium medium">Your Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="info@gsrajobs.com">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="text-dark mb-1 ft-medium medium">Phone Number:</label>
-                                <input type="tel" name="phone" class="form-control" placeholder="+234 803 603 7038">
-                            </div>
-
                             <div class="form-group">
                                 <label class="text-dark mb-1 ft-medium medium">Upload Resume:<font>pdf, doc, docx</font></label>
                                 <div class="custom-file">
