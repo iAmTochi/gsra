@@ -18,32 +18,6 @@ use Illuminate\Http\Request;
 class HomeJobController extends Controller
 {
 
-//    protected $jobLevel;
-//    protected $job;
-//    protected $workType;
-//    protected $jobFunction;
-//    protected $currency;
-//    protected $state;
-//    protected $qualification;
-//    protected $experience;
-//    protected $salary;
-
-
-
-    public function __construct()
-    {
-//        $this->jobLevel = new JobLevel();
-//        $this->job = new Job();
-//        $this->workType = new WorkType();
-//        $this->jobFunction = new JobFunction();
-//        $this->currency = new Currency();
-//        $this->state = new State();
-//        $this->qualification = new Qualification();
-//        $this->experience = new Experience();
-//        $this->salary = new Salary();
-
-    }
-
     public function jobList(){
 
         $data = [
