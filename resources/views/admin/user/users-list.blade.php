@@ -30,6 +30,8 @@
                                 <th scope="col">Full Name</th>
                                 <th scope="col">Role</th>
                                 <th scope="col">Location</th>
+                                <th scope="col">Email Verification</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Posted Date</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -40,7 +42,9 @@
                                 <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ ++$count }}</h4></div></td>
                                 <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ $user->fullName() }}</h4></div></td>
                                 <td><span class="ft-medium">{{ ucfirst($user->role) }}</span> </td>
-                                <td>{{ $user->location() }}, USA</td>
+                                <td>{{ $user->location()}}</td>
+                                <td class="{{ isset($user->email_verified_at)?'text-success':'text-danger' }} font-weight-bold">{{ isset($user->email_verified_at)?'Verified':'Unverified' }}</td>
+                                <td class="{{ $user->is_banned == 0 ?'text-success':'text-danger' }} font-weight-bold">{{ $user->is_banned == 0 ? "Active" : "Banned"}}</td>
                                 <td>12 Nov 2021</td>
                                 <td>
                                     <div class="dash-action">
