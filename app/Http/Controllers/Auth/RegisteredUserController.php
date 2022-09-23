@@ -55,7 +55,7 @@ class RegisteredUserController extends Controller
 
         if($request->has('employer'))
         {
-            dd($request->all());
+
             $employerData = [
                 'position'  => ['required', 'string', 'max:255'],
                 'phone'     => ['required', 'string', 'regex:/[0-9]{9}/', 'unique:recruiters','max:11'],
