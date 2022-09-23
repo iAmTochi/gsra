@@ -16,7 +16,8 @@ class Applicant extends Model
         'first_name',
         'phone',
         'dob',
-        'gender','image',
+        'gender',
+        'image',
         'qualification_id',
         'current_job_role',
         'current_job_role',
@@ -24,4 +25,26 @@ class Applicant extends Model
         'resume_id',
         'availability_id',
     ];
+
+    public function country(){
+
+        return  $this->belongsTo(Country::class);
+    }
+    public function state(){
+
+        return  $this->belongsTo(State::class);
+    }
+
+    public function user(){
+
+        return $this->belongsTo(User::class);
+
+    }
+
+    public function resume(){
+
+        return $this->hasOne(Resume::class);
+
+    }
+
 }
