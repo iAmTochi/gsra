@@ -58,7 +58,7 @@
                     <ul class="nav-menu">
                         <li><a href="javascript:void(0);">Find Job</a>
                             <ul class="nav-dropdown nav-submenu">
-                                <li><a href="browse-resumes.html">Upload Resumes</a></li>
+                                <li><a href="{{ route('applicant.add.resume') }}">Upload Resumes</a></li>
                                 <li><a href="{{ route('home.jobs') }}">Browse Jobs</a></li>
                             </ul>
 
@@ -66,14 +66,14 @@
 
                         <li><a href="javascript:void(0);">Employers</a>
                             <ul class="nav-dropdown nav-submenu">
-                                @auth
+{{--                                @auth--}}
 
-                                    @if(auth()->user()->isEmployer() || auth()->user()->isEmployer())
+{{--                                    @if(auth()->user()->isEmployer() || auth()->user()->isEmployer())--}}
                                         <li><a href="{{ route('resume.browse') }}">Browse Resumes</a></li>
-                                    @endif
-                                @else
+{{--                                    @endif--}}
+{{--                                @else--}}
                                 <li><a href="{{ route('register.employer') }}">Sign Up</a></li>
-                                @endauth
+{{--                                @endauth--}}
                                 <li><a href="browse-category.html">Browse Categories</a></li>
 
                             </ul>
