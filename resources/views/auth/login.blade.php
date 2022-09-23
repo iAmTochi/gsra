@@ -44,7 +44,7 @@
                                     <label for="dd" class="checkbox-custom-label">Remember Me</label>
                                 </div>
                                 <div class="eltio_k2">
-                                    <a href="{{ route('password.request') }}" class="theme-cl">Lost Your Password?</a>
+                                    <a href="{{ route('password.request') }}" class="theme-cl text-danger">Lost Your Password?</a>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                             <button type="submit" class="btn btn-md full-width theme-bg text-light fs-md ft-medium">Login</button>
                         </div>
                         <div class="form-group text-center mb-0">
-                            <p class="extra">Not a member?<a href="{{ route('register') }}" class="text-dark"> Register</a></p>
+                            <p class="extra">Not a member?<a href="{{ route('register') }}" class="text-danger"> Register</a></p>
                         </div>
                     </form>
                 </div>
