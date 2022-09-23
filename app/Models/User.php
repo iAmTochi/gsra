@@ -84,6 +84,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->role === self::APPLICANT;
     }
 
+
     public function authFullName(){
 
         if($this->isAdmin()){
@@ -103,4 +104,103 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $name;
     }
+
+
+    public function fullName()
+    {
+
+        if($this->isAdmin()){
+
+          $name =  $this->admin->first_name.' '.$this->admin->last_name;
+        }
+
+        if($this->isEmployer()){
+
+        $name =  $this->employer->first_name.' '.$this->employer->last_name;
+
+        }
+
+        if($this->isApplicant()){
+
+            $name =  $this->applicant->first_name.' '.$this->applicant->last_name;
+        }
+
+
+        return $name;
+    }
+
+    public function firstName()
+    {
+
+        if($this->isAdmin()){
+
+          $name =  $this->admin->first_name;
+        }
+
+        if($this->isEmployer()){
+
+        $name =  $this->employer->first_name;
+
+        }
+
+        if($this->isApplicant()){
+
+            $name =  $this->applicant?->first_name;
+        }
+
+
+        return $name;
+    }
+
+    public function lastName()
+    {
+
+        if($this->isAdmin()){
+
+            $name =   $this->admin->last_name;
+        }
+
+        if($this->isEmployer()){
+
+        $name = $this->employer->last_name;
+
+        }
+
+        if($this->isApplicant()){
+
+            $name =  $this->applicant?->last_name;
+        }
+
+
+        return $name;
+    }
+
+//    public function country(){
+//
+//        return  $this->belongsTo(Country::class,'');
+//    }
+//    public function state(){
+//
+//        return  $this->belongsTo(State::class);
+//    }
+
+    public function location(){
+
+        if($this->isEmployer()) {
+            $location = ucfirst(strtolower($this->employer->state->name)) . ', ' . strtoupper($this->employer->country->alpha_2_code);
+        }
+
+        if($this->isAdmin()) {
+            $location = strtoupper('Nigeria');
+        }
+
+        if($this->isApplicant()) {
+            $location = ucfirst(strtolower($this->applicant->state->name??Null)) . ', ' . strtoupper($this->applicant->country->alpha_2_code??Null);
+        }
+        return  $location;
+    }
+
+
+
+
 }

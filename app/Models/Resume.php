@@ -12,11 +12,37 @@ class Resume extends Model
 
     protected $fillable = [
         'applicant_id',
-        'resume_data',
+        'title',
+        'job_function_id',
+        'about_me',
         'doc',
+        'passport',
+
     ];
 
-    protected $casts = [
-        'resume_data' => 'array'
-    ];
+
+    public function applicant(){
+
+        return $this->belongsTo(Applicant::class);
+
+    }
+
+    public function educations(){
+
+        return $this->hasMany(ApplicantEducation::class);
+
+    }
+
+    public function experiences(){
+
+        return $this->hasMany(ApplicantExperience::class);
+
+    }
+    public function skills(){
+
+        return $this->hasMany(ApplicantSkill::class);
+
+    }
+
+
 }

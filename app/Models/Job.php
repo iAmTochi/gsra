@@ -42,6 +42,10 @@ class Job extends Model
       return  $jobs;
     }
 
+    public function applicants(){
+
+        return $this->hasMany(Applicant::class);
+    }
 
 
     public function workType(){
