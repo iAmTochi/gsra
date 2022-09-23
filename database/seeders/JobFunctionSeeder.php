@@ -27,7 +27,7 @@ class JobFunctionSeeder extends Seeder
             'Driver & Transport Services',
             'Engineering & Technology',
             'Estate Agents & Property Management',
-            'arming & Agriculture',
+            'Farming & Agriculture',
             'Food Services & Catering',
             'Health & Safety',
             'Hospitality & Leisure',

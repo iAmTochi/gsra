@@ -17,12 +17,12 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::where('email','ugwukelvintochukwu@gmail.com')->first();
+        $user = User::where('email','tochukwu@sawtraxltd.com')->first();
 
         if(!$user){
 
             $admin = User::create([
-                'email'     => 'ugwukelvintochuku@gmail.com',
+                'email'     => 'tochukwu@sawtraxltd.com',
                 'role'      => 'admin',
                 'is_banned' => false,
                 'password'  => Hash::make('password'),
@@ -30,10 +30,10 @@ class AdminSeeder extends Seeder
 
             Admin::create([
                 'user_id' => $admin->id,
-                'last_name' => 'Ugwu',
+                'last_name' => 'Sawtrax',
                 'first_name' => 'Tochukwu',
                 'phone'=> '+2348036037038',
-                'address'=> '8 Oba Fatai Aileru Street, Lagos',
+                'address'=> '55a Lafia Street',
                 'dob' => '1991-01-24',
                 'gender'=> 'Male',
                 'created_by'=>$admin->id,
