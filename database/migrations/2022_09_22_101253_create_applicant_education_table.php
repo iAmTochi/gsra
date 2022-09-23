@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('resumes', function (Blueprint $table) {
+        Schema::create('applicant_education', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('applicant_id')->unique()->constrained();
-            $table->foreignId('job_function_id')->constrained();
-            $table->mediumText('about_me');
-            $table->string('title');
-            $table->text('doc')->nullable();
-            $table->text('passport')->nullable();
+            $table->foreignId('resume_id')->constrained();
+            $table->string('institution');
+            $table->string('qualification');
+            $table->date('started_at')->nullable();
+            $table->date('graduated_at')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resumes');
+        Schema::dropIfExists('applicant_education');
     }
 };
