@@ -3,7 +3,9 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
+use App\Http\Controllers\Home\HomeResumeController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\UserController;
@@ -38,7 +40,11 @@ Route::controller(HomeController::class)->group(function () {
 
 });
 
-Route::view('/employer/browse-resume','resume-list')->name('resume.browse');
+Route::controller(HomeResumeController::class)->group(function (){
+
+    Route::get('/employer/browse-resume','index')->name('resume.browse');
+    Route::get('/show-resume/{id}','show')->name('resume.show');
+});
 
 Route::get('/reset-password1', function () {
     return view('auth.reset-password1');
@@ -68,7 +74,8 @@ Route::middleware(['auth','verified'])->group(function(){
 
 
     Route::view('conversations','messages')->name('messages');
-    Route::view('my-profile','account.profile')->name('profile');
+
+
     Route::view('change-password','account.change-password')->name('change.password');
 
     #==================================
@@ -103,9 +110,20 @@ Route::middleware(['auth','verified'])->group(function(){
             return view('applicant.dashboard');
         })->name('applicant.dashboard');
 
+
+        Route::controller(ProfileController::class)->group(function (){
+
+            Route::get('my-profile','index')->name('profile');
+            Route::get('edit-my-profile','edit')->name('profile.edit');
+            Route::put('my-profile','update')->name('profile.update');
+
+        });
+
         Route::view('/my-jobs','applicant.applied-jobs' )->name('applicant.jobs');
-        Route::get('/add-resume',[ResumeController::class, 'create'] )->name('applicant.add.resume');
-        Route::post('/add-resume',[ResumeController::class, 'store'] )->name('applicant.resume.store');
+        Route::get('/add-resume',           [ResumeController::class, 'create'] )->name('applicant.add.resume');
+        Route::post('/add-resume',          [ResumeController::class, 'store'] )->name('applicant.resume.store');
+        Route::get('/edit-resume',        [ResumeController::class, 'edit'] )->name('applicant.add.edit');
+        Route::put('/update-resume/{id}',   [ResumeController::class, 'update'] )->name('applicant.resume.update');
 
     });
 });
