@@ -33,46 +33,64 @@
                             <div class="row">
                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                                     <div class="custom-file avater_uploads">
-                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <input type="file" class="custom-file-input {{ $errors->has('passport') ? ' is-invalid' : '' }}" name="passport" id="customFile">
                                         <label class="custom-file-label" for="customFile"><i class="fa fa-user"></i></label>
+
                                     </div>
+                                    <span role="" class="text-danger">
+                                                <strong>{{$errors->first('passport')}}</strong>
+                                        </span><br>
+                                    <i class="text-info">Click the image icon to upload your passport</i>
                                 </div>
+
 
                                 <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12">
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Your Name</label>
-                                                <input type="text" name="user_id" class="form-control rounded" value="{{ auth()->user()->authFullName() }}" placeholder="Full Name" readonly>
+                                                <input type="text" name="name"  class="form-control rounded" value="{{ auth()->user()->authFullName() }}" placeholder="Full Name" readonly>
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Professional Title</label>
-                                                <input type="text" name="title" class="form-control rounded" placeholder="e.g. Web Designer">
+                                                <input value="{{ old('title') }}" type="text" name="title" class="form-control rounded {{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="e.g. Web Designer">
+                                                <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('title')}}</strong>
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Job category</label>
-                                                <select name="job_function_id" class="form-control rounded">
-                                                    <option>Choose your job category</option>
+                                                <select name="job_function_id" class="form-control rounded {{ $errors->has('job_function_id') ? ' is-invalid' : '' }}">
+                                                    <option value="">Choose your job category</option>
                                                     @foreach($jobFunctions as $jobFunction)
                                                         <option value="{{ $jobFunction->id }}" >{{ $jobFunction->name }}</option>
                                                     @endforeach
                                                 </select>
+                                                <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('job_function_id')}}</strong>
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Email</label>
                                                 <input type="email" name="email" class="form-control rounded" value="{{ auth()->user()->email }}" readonly>
+                                                <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('email')}}</strong>
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-xl-12 col-lg-12">
                                             <div class="form-group">
-                                                <label class="text-dark ft-medium">Resume Summary</label>
-                                                <textarea class="form-control with-light" name="resume_summary" placeholder="Resume Summary"></textarea>
+                                                <label class="text-dark ft-medium">About Me</label>
+                                                <textarea class="form-control with-light {{ $errors->has('about_me') ? ' is-invalid' : '' }}" name="about_me" placeholder="About Me"></textarea>
+                                                <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('about_me')}}</strong>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -101,23 +119,32 @@
                                             <button class="aps-clone delete-education"><i class="fas fa-times"></i></button>
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">School Name</label>
-                                                <input type="text" name="school[]" class="form-control rounded" placeholder="School Name">
+                                                <input type="text" name="school[]" class="form-control rounded {{ $errors->has('school[]') ? ' is-invalid' : '' }}" placeholder="School Name">
+                                                <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('school[]')}}</strong>
+                                                </span>
                                             </div>
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Qualification</label>
-                                                <input type="text" name="qualification[]" class="form-control rounded" placeholder="Qualification Title">
+                                                <input type="text" name="qualification[]" class="form-control rounded {{ $errors->has('qualification[]') ? ' is-invalid' : '' }}" placeholder="Qualification Title">
+                                                <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('qualification')}}</strong>
+                                                </span>
                                             </div>
                                             <div class="form-row">
-                                                <!--<div class="col-6">
+                                                <div class="col-6">
                                                     <div class="form-group">
                                                         <label class="text-dark ft-medium">Start Date</label>
-                                                        <input type="date" name="_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                        <input type="date" name="state_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
                                                     </div>
-                                                </div> -->
+                                                </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
                                                         <label class="text-dark ft-medium">End Date</label>
-                                                        <input type="date" name="school_end_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                        <input type="date" name="school_end_date[]" class="form-control rounded {{ $errors->has('school_end_date[]') ? ' is-invalid' : '' }}" placeholder="dd-mm-yyyy">
+                                                        <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('school_end_date[]')}}</strong>
+                                                </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -159,29 +186,58 @@
                                         <button class="aps-clone delete-experience"><i class="fas fa-times"></i></button>
                                         <div class="form-group">
                                             <label class="text-dark ft-medium">Employer</label>
-                                            <input type="text" name="employer[]" class="form-control rounded" placeholder="Employer Name">
+                                            <input type="text" name="employer[]" class="form-control rounded {{ $errors->has('employer[]') ? ' is-invalid' : '' }}" placeholder="Employer Name">
+                                            <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('employer[]')}}</strong>
+                                                </span>
                                         </div>
+
+                                        <div class="form-row">
+                                            <div class="col-6">
                                         <div class="form-group">
                                             <label class="text-dark ft-medium">Job Title</label>
-                                            <input type="text" name="job_title[]" class="form-control rounded" placeholder="Designation Title">
+                                            <input type="text" name="job_title[]" class="form-control rounded {{ $errors->has('job_title[]') ? ' is-invalid' : '' }}" placeholder="Designation Title">
+                                            <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('job_title[]')}}</strong>
+                                                </span>
+                                        </div>
+                                            </div>
+                                            <div class="col-6">
+                                        <div class="form-group">
+                                            <label class="text-dark ft-medium">Location</label>
+                                            <input type="text" name="location[]" class="form-control rounded {{ $errors->has('location[]') ? ' is-invalid' : '' }}" placeholder="E.g. Lagos, NG">
+                                            <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('location[]')}}</strong>
+                                                </span>
+                                        </div>
+                                            </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="text-dark ft-medium">Start Date</label>
-                                                    <input type="date" name="job_start_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                    <input type="date" name="job_start_date[]" class="form-control rounded {{ $errors->has('job_start_date[]') ? ' is-invalid' : '' }}" placeholder="dd-mm-yyyy">
+                                                    <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('job_start_date[]')}}</strong>
+                                                </span>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-group">
                                                     <label class="text-dark ft-medium">End Date</label>
-                                                    <input type="date" name="job_end_date[]" class="form-control rounded" placeholder="dd-mm-yyyy">
+                                                    <input type="date" name="job_end_date[]" class="form-control rounded {{ $errors->has('job_end_date[]') ? ' is-invalid' : '' }}" placeholder="dd-mm-yyyy">
+                                                    <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('job_end_date[]')}}</strong>
+                                                </span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="text-dark ft-medium">Note</label>
-                                            <textarea name="[]" class="form-control ht-80" placeholder="Note Optional"></textarea>
+                                            <label class="text-dark ft-medium">Responsibilities</label>
+                                            <textarea name="responsibility[]" class="form-control ht-80 {{ $errors->has('responsibility') ? ' is-invalid' : '' }}" placeholder="Job Responsibilites"></textarea>
+                                            <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('responsibility')}}</strong>
+                                                </span>
                                         </div>
                                     </div>
                                 </div>
@@ -216,7 +272,10 @@
                                             <button class="aps-clone delete"><i class="fas fa-times"></i></button>
                                             <div class="form-group">
                                                 <label class="text-dark ft-medium">Skills Name</label>
-                                                <input type="text" name="skill_name[]" class="form-control rounded" placeholder="Skills Name">
+                                                <input type="text" name="skill_name[]" class="form-control rounded {{ $errors->has('skill_name[]') ? ' is-invalid' : '' }}" placeholder="Skills Name">
+                                                <span role="alert" class="invalid-feedback">
+                                                        <strong>{{$errors->first('skill_name[]')}}</strong>
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
