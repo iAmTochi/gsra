@@ -15,4 +15,9 @@ class JobApplication extends Model
         'cover_letter',
         'doc',
     ];
+
+
+    public function applicant(){
+        return $this->belongsTo(Applicant::class);
+    }
 }

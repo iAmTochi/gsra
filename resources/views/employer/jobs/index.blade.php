@@ -44,13 +44,16 @@
                                     <td>{{ ++$count }}</td>
                                     <td>
                                         <div class="dash-title">
-                                            <h4 class="mb-0 ft-medium fs-sm">{{ $job->title }}</h4>
+                                            <a href="{{ route('job.applicants', $job->id) }}"><h4 class="mb-0 ft-medium fs-sm">{{ $job->title }}</h4></a>
                                         </div>
                                     </td>
 
                                     <td>{{ $job->created_at->isoFormat('D MMM YYYY ') }}</td>
                                     <td>{{ $job->feature_days->isoFormat('D MMM YYYY ')}}</td>
-                                    <td><a class="gray rounded px-3 py-2 ft-medium">----</a><a  class="theme-bg text-light rounded px-3 py-2 ft-medium">Total 04</a></td>
+                                    <td>
+{{--                                        <a class=""></a>--}}
+                                        <a class="{{ $job->jobApplications->count() < 1 ? " gray rounded px-3 py-2 ft-medium ":" bg-success text-light rounded px-3 py-2 ft-medium "  }} ">{{ $job->jobApplications->count() }}</a>
+                                    </td>
                                     <td>
                                         <div class="dash-action">
                                             <a href="javascript:void(0);" class="p-2 circle text-info bg-light-info d-inline-flex align-items-center justify-content-center mr-1"><i class="lni lni-eye"></i></a>

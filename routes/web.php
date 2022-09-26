@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
 use App\Http\Controllers\Home\HomeResumeController;
+use App\Http\Controllers\JobApplicantController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProfileController;
@@ -99,7 +100,10 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::middleware('employer')->prefix('employer')->group(function(){
         Route::get('/dashboard', [DashboardController::class, 'employerDashboard'])->name('employer.dashboard');
         Route::resource('jobs',JobController::class);
-        Route::view('manage-applicants','employer.manage-applicants')->name('applicants');
+        Route::controller(JobApplicantController::class)->group(function(){
+            Route::get('/{id}/job-applicants','index')->name('job.applicants');
+        });
+        //Route::view('manage-applicants','employer.manage-applicants')->name('applicants');
 
     });
 

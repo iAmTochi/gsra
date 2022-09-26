@@ -56,7 +56,7 @@
 {{--                        </ul>--}}
 
 {{--                    </li>--}}
-                    <li class="active"><a href="{{ route('applicants') }}"><i class="lni lni-briefcase mr-2"></i>Manage Applicants</a></li>
+{{--                    <li class="active"><a href="{{ route('applicants') }}"><i class="lni lni-briefcase mr-2"></i>Manage Applicants</a></li>--}}
                 @endif
 
                 @if(auth()->user()->isAdmin())
