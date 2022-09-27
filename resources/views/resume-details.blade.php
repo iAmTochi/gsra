@@ -82,7 +82,7 @@
                     </div>
 
                     <div class="cdt_caps py-5 px-3">
-                        <a href="#" class="btn btn-md theme-bg text-light rounded full-width">Download Resume</a>
+                        <a href="{{ asset('storage/'.$resume->doc) }}" class="btn btn-md theme-bg text-light rounded full-width">Download Resume</a>
                     </div>
 
                 </div>

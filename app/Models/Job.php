@@ -76,8 +76,16 @@ class Job extends Model
         return  $this->belongsTo(Recruiter::class,'author','user_id');
     }
 
+    public function location(){
+
+
+        $location = ucfirst(strtolower($this->state->name)) . ', ' . strtoupper($this->country?->alpha_2_code);
+
+        return  $location;
+    }
+
     public function jobApplications() {
-        
+
         return $this->hasMany(JobApplication::class);
     }
 

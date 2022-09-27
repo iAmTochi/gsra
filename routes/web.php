@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppliedJobController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
@@ -124,7 +125,11 @@ Route::middleware(['auth','verified'])->group(function(){
 
         });
 
-        Route::view('/my-jobs','applicant.applied-jobs' )->name('applicant.jobs');
+        Route::controller( AppliedJobController::class)->group(function (){
+
+            Route::get('/my-job-applications','index' )->name('applicant.jobs');
+
+        });
         Route::get('/add-resume',           [ResumeController::class, 'create'] )->name('applicant.add.resume');
         Route::post('/add-resume',          [ResumeController::class, 'store'] )->name('applicant.resume.store');
         Route::get('/edit-resume',        [ResumeController::class, 'edit'] )->name('applicant.add.edit');

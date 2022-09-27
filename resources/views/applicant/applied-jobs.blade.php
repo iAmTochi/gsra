@@ -24,7 +24,7 @@
                     <div class="cl-justify">
 
                         <div class="cl-justify-first">
-                            <p class="m-0 p-0 ft-sm">You have applied <span class="text-dark ft-medium">26</span> jobs</p>
+                            <p class="m-0 p-0 ft-sm">You have applied <span class="text-dark ft-medium">{{ $appliedJobs->count() }}</span> job{{ $appliedJobs->count() >1 ? 's':'' }}</p>
                         </div>
 
                         <div class="cl-justify-last">
@@ -60,6 +60,7 @@
                             <table class="table">
                                 <thead class="thead-dark">
                                 <tr>
+                                    <th scope="col">S/N</th>
                                     <th scope="col">Job Title</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Applied Date</th>
@@ -67,72 +68,34 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="cats-box rounded bg-white d-flex align-items-center">
-                                            <div class="text-center"><img src="{{ asset('assets/img/c-1.png') }}" class="img-fluid" width="55" alt=""></div>
-                                            <div class="cats-box-caption px-2">
-                                                <h4 class="fs-md mb-0 ft-medium">Fresher UI/UX Designer (3 Year Exp.)</h4>
-                                                <div class="d-block mb-2 position-relative">
-                                                    <span class="text-muted medium"><i class="lni lni-map-marker mr-1"></i>Liverpool, London</span>
-                                                    <span class="muted medium ml-2 theme-cl"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
+                                @foreach($appliedJobs as $appliedJob)
+                                    <tr>
+                                        <td>{{ ++$count }}</td>
+                                        <td>
+                                            <div class="cats-box rounded bg-white d-flex align-items-center">
+                                                <div class="text-center"><img src="{{ asset('assets/img/c-1.png') }}" class="img-fluid" width="55" alt=""></div>
+                                                <div class="cats-box-caption px-2">
+                                                    <h4 class="fs-md mb-0 ft-medium">{{$appliedJob->job->title}}</h4>
+                                                    <div class="d-block mb-2 position-relative">
+                                                        <span class="text-muted medium"><i class="lni lni-map-marker mr-1"></i>{{ ucfirst(strtolower($appliedJob->job->state->name)) }}</span>
+                                                        <span class="muted medium ml-2 theme-cl"><i class="lni lni-briefcase mr-1"></i>{{ $appliedJob->job->workType->name }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td><span class="text-info">Active</span></td>
-                                    <td>10 Sep 2021</td>
-                                    <td>
-                                        <div class="dash-action">
-                                            <a href="javascript:void(0);" class="p-2 circle text-info bg-light-info d-inline-flex align-items-center justify-content-center mr-1"><i class="lni lni-eye"></i></a>
-                                            <a href="javascript:void(0);" class="p-2 circle text-danger bg-light-danger d-inline-flex align-items-center justify-content-center ml-1"><i class="lni lni-trash-can"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="cats-box rounded bg-white d-flex align-items-center">
-                                            <div class="text-center"><img src="{{ asset('assets/img/c-6.png') }}" class="img-fluid" width="55" alt=""></div>
-                                            <div class="cats-box-caption px-2">
-                                                <h4 class="fs-md mb-0 ft-medium">Advance Magento Developer</h4>
-                                                <div class="d-block mb-2 position-relative">
-                                                    <span class="text-muted medium"><i class="lni lni-map-marker mr-1"></i>Liverpool, London</span>
-                                                    <span class="muted medium ml-2 text-warning"><i class="lni lni-briefcase mr-1"></i>Part Time</span>
-                                                </div>
+                                        </td>
+                                        <td><span class="text-info">Active</span></td>
+                                        <td>{{ $appliedJob->created_at->diffForHumans() }}</td>
+                                        <td>
+                                            <div class="dash-action">
+                                                <a target="_blank" href="{{ route('home.jobs.detail', $appliedJob->id) }}" class="p-2 circle text-info bg-light-info d-inline-flex align-items-center justify-content-center mr-1"><i class="lni lni-eye"></i></a>
+                                                <a href="{{ $appliedJob->id }}" class="p-2 circle text-danger bg-light-danger d-inline-flex align-items-center justify-content-center ml-1"><i class="lni lni-close"></i></a>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td><span class="text-info">Active</span></td>
-                                    <td>18 Sep 2021</td>
-                                    <td>
-                                        <div class="dash-action">
-                                            <a href="javascript:void(0);" class="p-2 circle text-info bg-light-info d-inline-flex align-items-center justify-content-center mr-1"><i class="lni lni-eye"></i></a>
-                                            <a href="javascript:void(0);" class="p-2 circle text-danger bg-light-danger d-inline-flex align-items-center justify-content-center ml-1"><i class="lni lni-trash-can"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="cats-box rounded bg-white d-flex align-items-center">
-                                            <div class="text-center"><img src="{{ asset('assets/img/c-5.png') }}" class="img-fluid" width="55" alt=""></div>
-                                            <div class="cats-box-caption px-2">
-                                                <h4 class="fs-md mb-0 ft-medium">Senior IOS App Developer</h4>
-                                                <div class="d-block mb-2 position-relative">
-                                                    <span class="text-muted medium"><i class="lni lni-map-marker mr-1"></i>Liverpool, London</span>
-                                                    <span class="muted medium ml-2 theme-cl"><i class="lni lni-briefcase mr-1"></i>Full Time</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td><span class="text-info">Active</span></td>
-                                    <td>07 Sep 2021</td>
-                                    <td>
-                                        <div class="dash-action">
-                                            <a href="javascript:void(0);" class="p-2 circle text-info bg-light-info d-inline-flex align-items-center justify-content-center mr-1"><i class="lni lni-eye"></i></a>
-                                            <a href="javascript:void(0);" class="p-2 circle text-danger bg-light-danger d-inline-flex align-items-center justify-content-center ml-1"><i class="lni lni-trash-can"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+
+                                @endforeach
+
+
 
 
                                 </tbody>
