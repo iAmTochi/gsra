@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="dashboard-gravity-list with-icons">
-                        <h4 class="mb-0 ft-medium">Recent Activities</h4>
+                        <h4 class="mb-0 ft-medium">Top Jobs Applications </h4>
                         <ul>
                             <li>
                                 <i class="dash-icon-box ti-layers text-purple bg-light-purple"></i> Your job for <strong class="ft-medium text-dark"><a href="#">IOS Developer</a></strong> has been approved!
@@ -90,7 +90,7 @@
 
                 <div class="col-lg-6 col-md-12">
                     <div class="dashboard-gravity-list invoices with-icons">
-                        <h4 class="mb-0 ft-medium">Invoices</h4>
+                        <h4 class="mb-0 ft-medium">Out Standing Payment</h4>
                         <ul>
 
                             <li><i class="dash-icon-box ti-files text-warning bg-light-warning"></i>

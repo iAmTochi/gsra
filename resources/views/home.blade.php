@@ -30,9 +30,9 @@
                                 </div>
 
                                 <div class="text-left align-items-center justify-content-center mt-5">
-                                    <a href="javascript:void(0);" class="btn bg-white hover-theme ft-regular mr-1"><i
+                                    <a href="{{ route('applicant.add.resume') }}" class="btn bg-white hover-theme ft-regular mr-1"><i
                                                 class="lni lni-user mr-1"></i>I'm looking for a Job</a>
-                                    <a href="javascript:void(0);"
+                                    <a href="{{ route('register.employer') }}"
                                        class="btn bg-dark hover-theme text-light ft-regular ml-1"><i
                                                 class="lni lni-briefcase mr-1"></i>I'm Hiring</a>
                                 </div>
@@ -56,9 +56,9 @@
                                 </div>
 
                                 <div class="text-right align-items-center justify-content-center mt-5">
-                                    <a href="javascript:void(0);" class="btn bg-white hover-theme ft-regular mr-1"><i
+                                    <a href="{{ route('applicant.add.resume') }}" class="btn bg-white hover-theme ft-regular mr-1"><i
                                                 class="lni lni-user mr-1"></i>I'm looking for a Job</a>
-                                    <a href="javascript:void(0);"
+                                    <a href="{{ route('register.employer') }}"
                                        class="btn bg-dark hover-theme text-light ft-regular ml-1"><i
                                                 class="lni lni-briefcase mr-1"></i>I'm Hiring</a>
                                 </div>
@@ -82,9 +82,9 @@
                                 </div>
 
                                 <div class="text-center align-items-center justify-content-center mt-5">
-                                    <a href="javascript:void(0);" class="btn bg-white hover-theme ft-regular mr-1"><i
+                                    <a href="{{ route('applicant.add.resume') }}" class="btn bg-white hover-theme ft-regular mr-1"><i
                                                 class="lni lni-user mr-1"></i>I'm looking for a Job</a>
-                                    <a href="javascript:void(0);"
+                                    <a href="{{ route('register.employer') }}"
                                        class="btn bg-dark hover-theme text-light ft-regular ml-1"><i
                                                 class="lni lni-briefcase mr-1"></i>I'm Hiring</a>
                                 </div>
