@@ -56,6 +56,7 @@
                 </div>
                 <div class="nav-menus-wrapper" style="transition-property: none;">
                     <ul class="nav-menu">
+                        <li><a href="{{ route('home') }}">Home</a></li>
                         <li><a href="javascript:void(0);">Find Job</a>
                             <ul class="nav-dropdown nav-submenu">
                                 <li><a href="{{ route('applicant.add.resume') }}">Upload Resumes</a></li>

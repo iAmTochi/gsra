@@ -2,31 +2,19 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Job;
 use App\Models\JobApplication;
+use App\Models\User;
+use App\Notifications\AdminJobApplied;
+use App\Notifications\ApplicantJobApplied;
+use App\Notifications\EmployerJobApplied;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class JobApplicationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -54,7 +42,19 @@ class JobApplicationController extends Controller
             $data['doc'] = $docPath;
         }
 
-        JobApplication::create($data);
+        $jobApplication = JobApplication::create($data);
+
+
+        auth()->user()->notify(new ApplicantJobApplied($jobApplication));
+
+        $jobApplication->job->recruiter->user->notify(new EmployerJobApplied($jobApplication));
+
+        $admins = User::where('role', User::ADMIN)->get('email');
+
+        Notification::send($admins, new AdminJobApplied($jobApplication));
+
+
+
 
         session()->flash('success',  "Your job application was successful!");
 
