@@ -12,6 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Admin\Messages\ListConversationAndMessages;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -89,6 +90,8 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::get('manage-jobs',[JobController::class, 'index'])->name('manage-jobs.index');
         Route::resource('users',UserController::class);
         Route::resource('testimonies',TestimonyController::class);
+
+        Route::get('messages',  ListConversationAndMessages::class)->name('messages');
 
 
 
