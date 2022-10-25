@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('conversation_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->longText('body');
             $table->timestamps();
         });
     }
