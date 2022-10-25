@@ -49,7 +49,7 @@ class ApplicantJobApplied extends Notification
                     ->greeting('Congratulation '. $this->application->applicant->first_name.'!' )
                     ->line('Your application for '. $this->application->job->title .' has been sent to the hiring 
                                     team of '.$this->application->job->recruiter->company_name.'.')
-                    ->action('Notification Action', url('/'))->success()
+                    ->action('View Application', route('applicant.jobs'))->success()
                     ->line('Thank you for trusting our platform!');
     }
 
