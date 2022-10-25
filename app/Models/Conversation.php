@@ -11,16 +11,16 @@ class Conversation extends Model
 
     public function messages()
     {
-        $this->hasMany(Message::class);
+        return $this->hasMany(Message::class);
     }
 
     public function sender()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function receiver()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }
