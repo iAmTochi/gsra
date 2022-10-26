@@ -68,7 +68,9 @@
 
                                                 <ul>
                                                     <li><a href="{{ asset('storage/'.$application->doc) }}" target="_blank" class="px-2 py-1 medium bg-light-success rounded text-success"><i class="lni lni-download mr-1"></i>Download CV</a></li>
-                                                    <li><a href="#" data-toggle="modal" data-target="#message" class="px-2 py-1 medium bg-light-info rounded text-info"><i class="lni lni-envelope mr-1"></i>Message</a></li>
+{{--                                                    <li><a href="#" data-toggle="modal" data-target="#message" class="px-2 py-1 medium bg-light-info rounded text-info"><i class="lni lni-envelope mr-1"></i>Message</a></li>--}}
+                                                    <li><a href="{{ route('send-message', $application->applicant->user->id) }}" class="px-2 py-1 medium bg-light-info rounded text-info"><i class="lni lni-envelope mr-1"></i>Message</a></li>
+
                                                 </ul>
                                             </div>
                                         </div>

@@ -30,25 +30,22 @@
                     <li class="">
                         <a href="{{ route('applicant.add.edit') }}"><i class="lni lni-add-files mr-2"></i>Update Resume</a>
                     </li>
+                    <li><a href="{{ route('applicant.messages') }}"><i class="lni lni-envelope mr-2"></i>Messages<span class="count-tag">4</span></a></li>
                 @else
 
                     <li class="">
                         <a href="{{ route('applicant.add.resume') }}"><i class="lni lni-add-files mr-2"></i>Create Resume</a>
                     </li>
 
+
                 @endif
                     <li>
                         <a href="{{ route('applicant.jobs') }}"><i class="lni lni-files mr-2"></i>Applied Jobs<span class="count-tag bg-warning">4</span></a>
                     </li>
-
-
-
-
-
-
                     @endif
 
                 @if(auth()->user()->isEmployer())
+                        <li><a href="{{ route('employer.messages') }}"><i class="lni lni-envelope mr-2"></i>Messages<span class="count-tag">4</span></a></li>
 {{--                    <li class="accordion">--}}
 {{--                        <a  data-toggle="collapse" data-target="#manage-applicant" aria-expanded="true" aria-controls="manage-applicant"><i class="lni lni-briefcase mr-2"></i>Manage Applicants</a>--}}
 {{--                        <ul id="manage-applicant" class="collapse">--}}
@@ -69,10 +66,9 @@
                     </ul>
 
                 </li>
+                        <li><a href="{{ route('admin.messages') }}"><i class="lni lni-envelope mr-2"></i>Messages<span class="count-tag">4</span></a></li>
 
                 @endif
-
-                <li><a href="{{ route('messages') }}"><i class="lni lni-envelope mr-2"></i>Messages<span class="count-tag">4</span></a></li>
 
             </ul>
             @if(auth()->user()->isAdmin())
