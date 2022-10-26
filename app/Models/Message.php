@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Message extends Model
 {
     use HasFactory;
-    
+
 
     public function conversation()
     {
-        $this->belongsTo(Conversation::class);
+        return $this->belongsTo(Conversation::class);
     }
 
     public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }
