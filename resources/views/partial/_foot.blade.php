@@ -53,7 +53,7 @@
     })();
 </script>
 <!--End of Tawk.to Script-->
-
+<livewire:scripts />
 </body>
 
 </html>

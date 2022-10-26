@@ -47,5 +47,5 @@
 
         gtag('config', 'UA-240061875-1');
     </script>
-
+    <livewire:styles />
 </head>
