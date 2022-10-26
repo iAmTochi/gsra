@@ -78,6 +78,7 @@ Route::middleware(['auth','verified'])->group(function(){
 
 
     Route::view('conversations','messages')->name('messages');
+//    Route::get('messages',  ListConversationAndMessages::class)->name('messages');
 
 
     Route::view('change-password','account.change-password')->name('change.password');
@@ -91,7 +92,6 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::resource('users',UserController::class);
         Route::resource('testimonies',TestimonyController::class);
 
-        Route::get('messages',  ListConversationAndMessages::class)->name('messages');
 
 
 
