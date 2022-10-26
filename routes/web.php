@@ -8,10 +8,12 @@ use App\Http\Controllers\Home\HomeResumeController;
 use App\Http\Controllers\JobApplicantController;
 use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResumeController;
 use App\Http\Controllers\TestimonyController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Admin\Messages\ListConversationAndMessages;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -76,7 +78,9 @@ Route::middleware(['auth','verified'])->group(function(){
     });
 
 
-    Route::view('conversations','messages')->name('messages');
+    //Route::view('messages','messages')->name('messages');
+//    Route::get('send-message/{id}',[MessageController::class,'store'])->name('send-message');
+//    Route::get('messages',  ListConversationAndMessages::class)->name('messages');
 
 
     Route::view('change-password','account.change-password')->name('change.password');
@@ -89,6 +93,8 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::get('manage-jobs',[JobController::class, 'index'])->name('manage-jobs.index');
         Route::resource('users',UserController::class);
         Route::resource('testimonies',TestimonyController::class);
+        Route::view('messages','messages')->name('admin.messages');
+
 
 
 
@@ -103,10 +109,16 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::resource('jobs',JobController::class);
         Route::controller(JobApplicantController::class)->group(function(){
             Route::get('/{id}/job-applicants','index')->name('job.applicants');
+            Route::get('messages/{id}','sendMessages')->name('send-message');
         });
-        //Route::view('manage-applicants','employer.manage-applicants')->name('applicants');
+        Route::view('messages','messages')->name('employer.messages');
+
+
 
     });
+
+
+
 
     #==================================
     #Applicants Routes
@@ -140,6 +152,7 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::controller(JobApplicationController::class)->group(function(){
         Route::post('job-application','store')->name('job-application.store');
     });
+    Route::view('messages','messages')->name('applicant.messages');
 });
 
 
