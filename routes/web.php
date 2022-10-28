@@ -55,6 +55,10 @@ Route::get('/articles', function () {
     return view('home.article.index');
 })->name('articles');
 
+Route::get('/articles-details', function () {
+    return view('home.article.show');
+})->name('articles.show');
+
 
 Route::controller(HomeJobController::class)->group(function () {
 
