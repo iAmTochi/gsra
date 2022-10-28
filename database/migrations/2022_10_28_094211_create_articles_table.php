@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('articles');
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('user_id')->constrained();
 
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('article_category_id')->constrained();
 
             $table->string('title');
 
