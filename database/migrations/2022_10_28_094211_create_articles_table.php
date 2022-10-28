@@ -15,6 +15,21 @@ return new class extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('user_id')->constrained();
+
+            $table->foreignId('category_id')->constrained();
+
+            $table->string('title');
+
+            $table->text('description');
+
+            $table->text('content');
+
+            $table->string('image');
+
+            $table->softDeletes();
+
             $table->timestamps();
         });
     }
