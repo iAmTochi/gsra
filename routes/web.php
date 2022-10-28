@@ -51,9 +51,9 @@ Route::controller(HomeResumeController::class)->group(function (){
     Route::get('/show-resume/{id}','show')->name('resume.show');
 });
 
-Route::get('/reset-password1', function () {
-    return view('auth.reset-password1');
-});
+Route::get('/articles', function () {
+    return view('home.article.index');
+})->name('articles');
 
 
 Route::controller(HomeJobController::class)->group(function () {
