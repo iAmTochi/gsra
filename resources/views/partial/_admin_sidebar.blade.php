@@ -61,7 +61,7 @@
                     <a href="" data-toggle="collapse" data-target="#manage-user" aria-expanded="true" aria-controls="manage-user"><i class="lni lni-add-files mr-2"></i>Manage Users</a>
                     <ul id="manage-user" class="collapse">
                         <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Users<span class="count-tag bg-warning">4</span></a></li>
-                        <li><a href="dashboard-packages.html"><i class="lni lni-mastercard mr-2"></i>Add New Admin</a></li>
+                        <li><a href="#"><i class="lni lni-mastercard mr-2"></i>Add New Admin</a></li>
 
                     </ul>
 
