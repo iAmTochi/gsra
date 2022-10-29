@@ -36,7 +36,13 @@ class ArticleCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        ArticleCategory::create([
+            'name' => $request->name
+        ]);
+
+        session()->flash('success', 'Category created successfully');
+
+        return to_route('categories.index');
     }
 
     /**
@@ -58,7 +64,7 @@ class ArticleCategoryController extends Controller
      */
     public function edit(ArticleCategory $articleCategory)
     {
-        //
+        return view('admin.categories.create')->with('category', $articleCategory);
     }
 
     /**
@@ -70,7 +76,13 @@ class ArticleCategoryController extends Controller
      */
     public function update(Request $request, ArticleCategory $articleCategory)
     {
-        //
+        $articleCategory->update([
+            'name' => $request->name
+        ]);
+
+        session()->flash('success', 'Category updated successfully');
+
+        return to_route('categories.index');
     }
 
     /**
@@ -81,6 +93,16 @@ class ArticleCategoryController extends Controller
      */
     public function destroy(ArticleCategory $articleCategory)
     {
-        //
+        if ($articleCategory->articles()->count() > 0){
+
+            session()->flash('error', 'Category cannot be deleted because it has some articles.');
+            return redirect()->back();
+        }
+
+        $articleCategory->delete();
+
+        session()->flash('success', 'Category deleted successfully');
+
+        return to_route('categories.index'));
     }
 }
