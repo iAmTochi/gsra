@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppliedJobController;
+use App\Http\Controllers\ArticleCategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
@@ -98,6 +99,7 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::resource('users',UserController::class);
         Route::resource('testimonies',TestimonyController::class);
         Route::view('messages','messages')->name('admin.messages');
+        Route::resource('article-categories',ArticleCategoryController::class);
 
 
 
