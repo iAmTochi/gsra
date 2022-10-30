@@ -57,16 +57,28 @@
                 @endif
 
                 @if(auth()->user()->isAdmin())
-                <li class="accordion">
-                    <a href="" data-toggle="collapse" data-target="#manage-user" aria-expanded="true" aria-controls="manage-user"><i class="lni lni-add-files mr-2"></i>Manage Users</a>
-                    <ul id="manage-user" class="collapse">
-                        <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Users<span class="count-tag bg-warning">4</span></a></li>
-                        <li><a href="#"><i class="lni lni-mastercard mr-2"></i>Add New Admin</a></li>
 
-                    </ul>
+                    <li class="accordion">
+                        <a href="" data-toggle="collapse" data-target="#manage-user" aria-expanded="true" aria-controls="manage-user"><i class="lni lni-add-files mr-2"></i>Manage Users</a>
+                        <ul id="manage-user" class="collapse">
+                            <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Users<span class="count-tag bg-warning">4</span></a></li>
+                            <li><a href="#"><i class="lni lni-mastercard mr-2"></i>Add New Admin</a></li>
 
-                </li>
-                        <li><a href="{{ route('admin.messages') }}"><i class="lni lni-envelope mr-2"></i>Messages </a></li>
+                        </ul>
+
+                    </li>
+                    <li class="accordion">
+                        <a href="" data-toggle="collapse" data-target="#article" aria-expanded="true" aria-controls="article"><i class="lni lni-add-files mr-2"></i>Articles</a>
+                        <ul id="article" class="collapse">
+                            <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Articles</a></li>
+                            <li><a href="#"><i class="lni lni-mastercard mr-2"></i> Category</a></li>
+                            <li><a href="#"><i class="lni lni-mastercard mr-2"></i> Tags</a></li>
+                            <li><a href="#"><i class="lni lni-mastercard mr-2"></i>Add  Article</a></li>
+
+                        </ul>
+
+                    </li>
+                    <li><a href="{{ route('admin.messages') }}"><i class="lni lni-envelope mr-2"></i>Messages </a></li>
 
                 @endif
 

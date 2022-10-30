@@ -27,7 +27,9 @@ return new class extends Migration
 
             $table->text('content');
 
-            $table->string('image');
+            $table->text('image');
+
+            $table->boolean('is_published')->default(true);
 
             $table->softDeletes();
 
