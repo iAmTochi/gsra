@@ -103,6 +103,6 @@ class ArticleCategoryController extends Controller
 
         session()->flash('success', 'Category deleted successfully');
 
-        return to_route('categories.index'));
+        return to_route('categories.index');
     }
 }
