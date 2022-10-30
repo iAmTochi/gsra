@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ArticleCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ArticleCategoryController extends Controller
 {
@@ -15,7 +16,7 @@ class ArticleCategoryController extends Controller
     public function index()
     {
         return view('admin.article.categories.index')
-            ->with(['categories', ArticleCategory::all()]);
+            ->with('categories', ArticleCategory::all());
     }
 
     /**
@@ -36,8 +37,12 @@ class ArticleCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:article_categories'
+        ]);
         ArticleCategory::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'slug' => Str::slug($request->name)
         ]);
 
         session()->flash('success', 'Category created successfully');
