@@ -32,6 +32,9 @@
                         <div class="_dashboard_content_body py-3 px-3">
                             <form class="row" action="{{  isset($category) ? route('article-categories.update', $category->id) : route('article-categories.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
+                                @isset($category)
+                                    @method('PUT')
+                                @endisset
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     <div class="row">
 
