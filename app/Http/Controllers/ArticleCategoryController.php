@@ -50,16 +50,6 @@ class ArticleCategoryController extends Controller
         return to_route('article-categories.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ArticleCategory  $articleCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ArticleCategory $articleCategory)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -82,7 +72,8 @@ class ArticleCategoryController extends Controller
     public function update(Request $request, ArticleCategory $articleCategory)
     {
         $articleCategory->update([
-            'name' => $request->name
+            'name' => $request->name,
+            'slug' => Str::slug($request->name)
         ]);
 
         session()->flash('success', 'Category updated successfully');
