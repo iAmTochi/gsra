@@ -10,9 +10,9 @@ class ArticleTag extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $guarded = [];
 
-    public function articles(): BelongsToMany
+    public function articles()
     {
 
         return $this->belongsToMany(Article::class);
