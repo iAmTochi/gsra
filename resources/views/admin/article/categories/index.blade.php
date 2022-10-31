@@ -93,13 +93,13 @@
                 @method('DELETE')
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel">Delete Testimony</h5>
+                        <h5 class="modal-title" id="deleteModalLabel">Delete Category</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p class="text-center font-weight-bold">Are you sure you want to delete this testimony? </p>
+                        <p class="text-center font-weight-bold">Are you sure you want to delete this category? </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Go back</button>
@@ -118,7 +118,7 @@
     <script>
         function handleDelete(id) {
             const form = document.getElementById('deleteCourseForm');
-            form.action = '/admin/testimonies/' + id;
+            form.action = '/admin/article-categories/' + id;
             //console.log("deleting..", form);
             $('#deleteModal').modal('show')
 
