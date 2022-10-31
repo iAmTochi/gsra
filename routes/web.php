@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppliedJobController;
 use App\Http\Controllers\ArticleCategoryController;
+use App\Http\Controllers\ArticleTagController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
@@ -94,12 +95,15 @@ Route::middleware(['auth','verified'])->group(function(){
     #Admin Routes
     #===================================
     Route::middleware('admin')->prefix('admin')->group(function(){
-        Route::get('dashboard', [DashboardController::class,'adminDashboard'])->name('admin.dashboard');
-        Route::get('manage-jobs',[JobController::class, 'index'])->name('manage-jobs.index');
-        Route::resource('users',UserController::class);
-        Route::resource('testimonies',TestimonyController::class);
+
+        Route::get('dashboard',                     [DashboardController::class,'adminDashboard'])->name('admin.dashboard');
+        Route::get('manage-jobs',                   [JobController::class, 'index'])->name('manage-jobs.index');
+        Route::resource('users',                UserController::class);
+        Route::resource('testimonies',          TestimonyController::class);
+        Route::resource('article-categories',   ArticleCategoryController::class);
+        Route::resource('article-tags',         ArticleTagController::class);
+
         Route::view('messages','messages')->name('admin.messages');
-        Route::resource('article-categories',ArticleCategoryController::class);
 
 
 
@@ -111,12 +115,14 @@ Route::middleware(['auth','verified'])->group(function(){
     #Employer Routes
     #===================================
     Route::middleware('employer')->prefix('employer')->group(function(){
+
         Route::get('/dashboard', [DashboardController::class, 'employerDashboard'])->name('employer.dashboard');
         Route::resource('jobs',JobController::class);
         Route::controller(JobApplicantController::class)->group(function(){
             Route::get('/{id}/job-applicants','index')->name('job.applicants');
             Route::get('messages/{id}','sendMessages')->name('send-message');
         });
+
         Route::view('messages','messages')->name('employer.messages');
 
 
