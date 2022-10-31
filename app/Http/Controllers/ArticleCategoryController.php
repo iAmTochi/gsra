@@ -69,7 +69,7 @@ class ArticleCategoryController extends Controller
      */
     public function edit(ArticleCategory $articleCategory)
     {
-        return view('admin.categories.create')->with('category', $articleCategory);
+        return view('admin.article.categories.create')->with('category', $articleCategory);
     }
 
     /**
