@@ -4,27 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\ArticleTag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ArticleTagController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        //
+        return view('admin.article.tags.index')
+            ->with('tags', ArticleTag::all());
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        //
+        return view('admin.article.tags.create');
     }
 
     /**
@@ -35,51 +33,62 @@ class ArticleTagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:article_categories'
+        ]);
+        ArticleTag::create([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name)
+        ]);
+
+        session()->flash('success', 'Tag created successfully');
+
+        return to_route('article-tags.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ArticleTag  $articleTag
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ArticleTag $articleTag)
-    {
-        //
-    }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ArticleTag  $articleTag
-     * @return \Illuminate\Http\Response
+     * @param ArticleTag $articleTag
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(ArticleTag $articleTag)
     {
-        //
+        return view('admin.article.tags.create')->with('tag', $articleTag);
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ArticleTag  $articleTag
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param ArticleTag $articleTag
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, ArticleTag $articleTag)
     {
-        //
+        $articleTag->update([
+            'name' => $request->name,
+            'slug' => Str::slug($request->name)
+        ]);
+
+        session()->flash('success', 'Tag updated successfully');
+
+        return to_route('article-tags.index');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ArticleTag  $articleTag
-     * @return \Illuminate\Http\Response
+     * @param ArticleTag $articleTag
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(ArticleTag $articleTag)
     {
-        //
+        if ($articleTag->articles()->count() > 0){
+
+            session()->flash('error', 'Tag cannot be deleted because it has some articles.');
+            return redirect()->back();
+        }
+
+        $articleTag->delete();
+
+        session()->flash('success', 'Tag deleted successfully');
+
+        return to_route('article-tags.index');
     }
 }

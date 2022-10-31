@@ -72,7 +72,7 @@
                         <ul id="article" class="collapse">
                             <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Articles</a></li>
                             <li><a href="{{ route('article-categories.index')}}"><i class="lni lni-mastercard mr-2"></i> Category</a></li>
-                            <li><a href="#"><i class="lni lni-mastercard mr-2"></i> Tags</a></li>
+                            <li><a href="{{ route('article-tags.index')}}"><i class="lni lni-mastercard mr-2"></i> Tags</a></li>
                             <li><a href="#"><i class="lni lni-mastercard mr-2"></i>Add  Article</a></li>
                         </ul>
                     </li>
