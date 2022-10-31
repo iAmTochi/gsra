@@ -59,7 +59,7 @@
                                         <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ $loop->iteration }}</h4></div></td>
 
                                         <td><span class="ft-medium">{{ $tag->name }}</span></td>
-                                        <td>{{ $tag->articles }}</td>
+                                        <td>{{ $tag->articles->count() }}</td>
                                         <td style="width: 25px">
                                             <div class="dash-action">
                                                 <a href="{{ route('article-tags.edit', $tag->id)}}" class="p-2 circle text-success bg-light-success d-inline-flex align-items-center justify-content-center my-2"><i class="lni lni-pencil"></i></a>

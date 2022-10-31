@@ -10,11 +10,16 @@ class ArticleTag extends Model
 {
     use HasFactory;
 
+    protected $table = 'article_tags';
+
     protected $guarded = [];
+
 
     public function articles()
     {
 
         return $this->belongsToMany(Article::class);
     }
+
+
 }

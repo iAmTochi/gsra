@@ -79,9 +79,10 @@ class ArticleTagController extends Controller
      */
     public function destroy(ArticleTag $articleTag)
     {
-        if ($articleTag->articles()->count() > 0){
 
-            session()->flash('error', 'Tag cannot be deleted because it has some articles.');
+        if ($articleTag->articles->count() > 0)
+        {
+            session()->flash('error', 'Tag cannot be deleted because it is associated to some posts.');
             return redirect()->back();
         }
 
