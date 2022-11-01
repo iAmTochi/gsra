@@ -62,8 +62,6 @@ class Article extends Model
     }
 
 
-
-
     public function scopeSearched($query)
     {
 

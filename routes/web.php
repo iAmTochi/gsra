@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppliedJobController;
 use App\Http\Controllers\ArticleCategoryController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticleTagController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Home\HomeController;
@@ -100,6 +101,7 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::get('manage-jobs',                   [JobController::class, 'index'])->name('manage-jobs.index');
         Route::resource('users',                UserController::class);
         Route::resource('testimonies',          TestimonyController::class);
+        Route::resource('articles',             ArticleController::class);
         Route::resource('article-categories',   ArticleCategoryController::class);
         Route::resource('article-tags',         ArticleTagController::class);
 

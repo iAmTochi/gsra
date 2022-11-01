@@ -70,7 +70,7 @@
                     <li class="accordion">
                         <a href="" data-toggle="collapse" data-target="#article" aria-expanded="true" aria-controls="article"><i class="lni lni-add-files mr-2"></i>Articles</a>
                         <ul id="article" class="collapse">
-                            <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Articles</a></li>
+                            <li><a href="{{ route('articles.index') }}"><i class="lni lni-bookmark mr-2"></i>View Articles</a></li>
                             <li><a href="{{ route('article-categories.index')}}"><i class="lni lni-mastercard mr-2"></i> Category</a></li>
                             <li><a href="{{ route('article-tags.index')}}"><i class="lni lni-mastercard mr-2"></i> Tags</a></li>
                             <li><a href="#"><i class="lni lni-mastercard mr-2"></i>Add  Article</a></li>

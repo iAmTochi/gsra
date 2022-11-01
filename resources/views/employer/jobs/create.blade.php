@@ -47,7 +47,7 @@
 													<div class="col-xl-12 col-lg-12 col-md-12">
 														<div class="form-group">
 															<label class="text-dark ft-medium">Job Description</label>
-															<textarea class="form-control summernote rounded @error('description') is-invalid @enderror" name="description"  placeholder="Job Description">{{ old('description') ? old('description') : (isset($dish) ? $dish->description : '') }}</textarea>
+															<textarea class="form-control summernote rounded @error('description') is-invalid @enderror" name="description"  placeholder="Job Description">{{ old('description')  }}</textarea>
 															<span role="alert" class="invalid-feedback">
 																<strong>{{$errors->first('description')}}</strong>
 															</span>
