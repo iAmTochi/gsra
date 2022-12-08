@@ -24,9 +24,18 @@ class RegisteredUserController extends Controller
      *
      * @return \Illuminate\View\View
      */
+    public function index(){
+
+        return view('auth.register');
+    }
+    /**
+     * Display the registration view.
+     *
+     * @return \Illuminate\View\View
+     */
     public function create()
     {
-        return view('auth.register');
+        return view('auth.register-job-seeker');
     }
 
 
