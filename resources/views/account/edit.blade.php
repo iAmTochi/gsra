@@ -99,7 +99,6 @@
 
                             <div class="_dashboard_content_body py-3 px-3">
                                 <div class="row">
-
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                                         <div class="form-group">
                                             <label class="text-dark ft-medium">LinkedIn</label>

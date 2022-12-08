@@ -51,6 +51,7 @@
                     </div>
                 </div>
 
+                @if(false)
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="dashboard-gravity-list with-icons">
@@ -175,6 +176,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
             </div>
 

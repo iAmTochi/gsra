@@ -42,10 +42,10 @@
                         <i class="lni lni-bar-chart"></i>
                     </div>
                 </div>
-
             </div>
 
-            <div class="row">
+            @if(false)
+                <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="dashboard-gravity-list with-icons">
                         <h4 class="mb-0 ft-medium">Top Jobs Applications </h4>
@@ -169,6 +169,7 @@
                     </div>
                 </div>
             </div>
+            @endif
 
         </div>
 

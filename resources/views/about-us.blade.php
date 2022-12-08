@@ -310,7 +310,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                     <div class="blg_grid_box">
                         <div class="blg_grid_thumb">
-                            <img src="assets/img/team3.jpg" class="img-fluid" alt="" width="100%">
+                            <img src="assets/img/team3.jpeg" class="img-fluid" alt="" width="100%">
                         </div>
                         <div class="blg_grid_caption">
                             <div class="blg_tag"><span>SENIOR RECRUITMENT CONSULTANT, GSRA </span></div>
