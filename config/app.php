@@ -195,7 +195,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Creativeorange\Gravatar\GravatarServiceProvider::class
+        Creativeorange\Gravatar\GravatarServiceProvider::class,
+        Lab404\Impersonate\ImpersonateServiceProvider::class
 
     ],
 
