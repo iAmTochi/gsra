@@ -4,15 +4,16 @@
     <!-- ============================ Page Title Start================================== -->
     <section class="page-title gray">
         <div class="container">
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-lg-12 col-md-12">
 
                     <div class="breadcrumbs-wrap">
-                        <h2 class="mb-0 ft-medium">Let' Start New Design in Adobe Photoshop</h2>
+                        <h2 class="mb-0 ft-medium">{{ $article->title }}</h2>
                             <nav class="transparent">
                                 <ol class="breadcrumb p-0">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active theme-cl" aria-current="page">Blog Detail</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ route('home.articles') }}">Articles</a></li>
+                                    <li class="breadcrumb-item active theme-cl" aria-current="page">{{ $article->title }}</li>
                                 </ol>
                             </nav>
                     </div>
@@ -37,46 +38,25 @@
                         <div class="article_body_wrap">
 
                             <div class="article_featured_image">
-                                <img class="img-fluid" src="assets/img/b-6.jpg" alt="">
+                                <img class="img-fluid" src="{{ asset('storage/'. $article->image) }}" alt="">
                             </div>
 
                             <div class="article_top_info">
                                 <ul class="article_middle_info">
-                                    <li><a href="#"><span class="icons"><i class="ti-user"></i></span>by Rosalina Doe</a></li>
-                                    <li><a href="#"><span class="icons"><i class="ti-calendar"></i></span>24 Jan 2022</a></li>
+                                    <li><a href="#"><span class="icons"><i class="ti-user"></i></span>by Admin</a></li>
+                                    <li><a href="#"><span class="icons"><i class="ti-calendar"></i></span> {{ $article->created_at->isoFormat('DD MMM YYYY') }}</a></li>
                                 </ul>
                             </div>
-                            <h2 class="post-title">Lorem ipsum dolor sit amet, cons pisicing elit, sed do.</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem. <br><br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
-                            <blockquote>
-                                <span class="icon"><i class="fas fa-quote-left"></i></span>
-                                <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                    tem
-                                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ullamco laboris nisi ut aliquip ex ea commodo onsequat.</p>
-                                <h5 class="name">- Rosalina Pong</h5>
-                            </blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
-                                voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
-                                ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-                                dolorem. <br><br>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis
-                                iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-                                sed quia consequuntur magni dolores eos qui ratione voluptatem.</p>
+                            <h2 class="post-title">{{ $article->title }}</h2>
+                            <p>
+                                {!! $article->content !!}
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Author Detail -->
+                    @if(false)
+                    <!-- Author Detail TODO: Add Article Author -->
+
                     <div class="article_detail_wrapss single_article_wrap format-standard">
 
                         <div class="article_posts_thumb">
@@ -95,6 +75,7 @@
                         </div>
 
                     </div>
+                        @endif
 
 
 
@@ -117,17 +98,15 @@
                     <div class="single_widgets widget_category">
                         <h4 class="title">Categories</h4>
                         <ul>
-                            <li><a href="#">Lifestyle <span>09</span></a></li>
-                            <li><a href="#">Travel <span>12</span></a></li>
-                            <li><a href="#">Fashion <span>19</span></a>
-                            </li><li><a href="#">Branding <span>17</span></a></li>
-                            <li><a href="#">Music <span>10</span></a></li>
+                            @foreach($categories as $category)
+                            <li><a href="#">{{ $category->name }} <span>{{ $category->articles->count() }}</span></a></li>
+                            @endforeach
                         </ul>
                     </div>
 
                     <!-- Trending Posts -->
                     <div class="single_widgets widget_thumb_post">
-                        <h4 class="title">Trending Posts</h4>
+                        <h4 class="title">Latest Articles</h4>
                         <ul>
                             <li>
 										<span class="left">
@@ -179,13 +158,12 @@
 
                     <!-- Tags Cloud -->
                     <div class="single_widgets widget_tags">
-                        <h4 class="title">Tags Cloud</h4>
+                        <h4 class="title">Tags</h4>
                         <ul>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Branding</a></li>
-                            <li><a href="#">Music</a></li>
+                            @foreach($tags as $tag)
+                            <li><a href="#">{{ $tag->name }}</a></li>
+                            @endforeach
+
                         </ul>
                     </div>
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\ArticleCategory;
+use App\Models\ArticleTag;
 use Illuminate\Http\Request;
 
 class HomeArticleController extends Controller
@@ -28,7 +30,9 @@ class HomeArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('home.article.show', compact('article'));
+        $categories = ArticleCategory::all();
+        $tags       = ArticleTag::all();
+        return view('home.article.show', compact(['article','categories','tags']));
     }
 
 

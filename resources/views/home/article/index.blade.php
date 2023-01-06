@@ -19,90 +19,19 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="_blog_wrap">
                     <div class="_blog_thumb mb-2">
-                        <a href="#" class="d-block"><img src="{{ asset('storage/'. $article->image) }}" class="img-fluid rounded" alt="" style="min-height: 300px; width: 300px" /></a>
+                        <a href="{{ route('home.articles.show', $article) }}" class="d-block"><img src="{{ asset('storage/'. $article->image) }}" class="img-fluid rounded" alt="" style="min-height: 300px; width: 400px" /></a>
                     </div>
                     <div class="_blog_caption">
-                        <span class="text-muted">{{ $article->created_at->diffForHumans() }}</span>
-                        <h5 class="bl_title lh-1"><a href="#">{{ $article->title }}</a></h5>
+                        <span class="text-muted">{{ $article->created_at->isoFormat('LL') }}</span>
+                        <h5 class="bl_title lh-1"><a href="{{ route('home.articles.show', $article) }}">{{ $article->title }}</a></h5>
                         <p>
-                            {!! $article->content !!}
+                            {!! substr($article->content,0, 200) !!}
                         </p>
-                        <a href="#" class="text-dark fs-sm">Continue Reading..</a>
+                        <a href="{{ route('home.articles.show', $article) }}" class="text-dark fs-sm">Continue Reading..</a>
                     </div>
                 </div>
             </div>
             @endforeach
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="_blog_wrap">
-                    <div class="_blog_thumb mb-2">
-                        <a href="blog-detail.html" class="d-block"><img src="assets/img/bl-2.png" class="img-fluid rounded" alt="" /></a>
-                    </div>
-                    <div class="_blog_caption">
-                        <span class="text-muted">17 July 2021</span>
-                        <h5 class="bl_title lh-1"><a href="blog-detail.html">Let's start bring sale on this saummer vacation.</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                        <a href="blog-detail.html" class="text-dark fs-sm">Continue Reading..</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="_blog_wrap">
-                    <div class="_blog_thumb mb-2">
-                        <a href="blog-detail.html" class="d-block"><img src="assets/img/bl-3.png" class="img-fluid rounded" alt="" /></a>
-                    </div>
-                    <div class="_blog_caption">
-                        <span class="text-muted">10 Aug 2021</span>
-                        <h5 class="bl_title lh-1"><a href="blog-detail.html">Let's start bring sale on this saummer vacation.</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                        <a href="blog-detail.html" class="text-dark fs-sm">Continue Reading..</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="_blog_wrap">
-                    <div class="_blog_thumb mb-2">
-                        <a href="blog-detail.html" class="d-block"><img src="assets/img/bl-1.png" class="img-fluid rounded" alt="" /></a>
-                    </div>
-                    <div class="_blog_caption">
-                        <span class="text-muted">10 Aug 2021</span>
-                        <h5 class="bl_title lh-1"><a href="blog-detail.html">Let's start bring sale on this saummer vacation.</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                        <a href="blog-detail.html" class="text-dark fs-sm">Continue Reading..</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="_blog_wrap">
-                    <div class="_blog_thumb mb-2">
-                        <a href="blog-detail.html" class="d-block"><img src="assets/img/bl-2.png" class="img-fluid rounded" alt="" /></a>
-                    </div>
-                    <div class="_blog_caption">
-                        <span class="text-muted">10 Aug 2021</span>
-                        <h5 class="bl_title lh-1"><a href="blog-detail.html">Let's start bring sale on this saummer vacation.</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                        <a href="blog-detail.html" class="text-dark fs-sm">Continue Reading..</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                <div class="_blog_wrap">
-                    <div class="_blog_thumb mb-2">
-                        <a href="blog-detail.html" class="d-block"><img src="assets/img/bl-3.png" class="img-fluid rounded" alt="" /></a>
-                    </div>
-                    <div class="_blog_caption">
-                        <span class="text-muted">10 Aug 2021</span>
-                        <h5 class="bl_title lh-1"><a href="blog-detail.html">Let's start bring sale on this saummer vacation.</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
-                        <a href="blog-detail.html" class="text-dark fs-sm">Continue Reading..</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
         <div class="row justify-content-center">
