@@ -50,9 +50,8 @@
                         </div>
                     </div>
                 </div>
-
                 @if(false)
-                <div class="row">
+                    <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="dashboard-gravity-list with-icons">
                             <h4 class="mb-0 ft-medium">Top Recruiters  Jobs</h4>
@@ -177,9 +176,7 @@
                     </div>
                 </div>
                 @endif
-
             </div>
-
             <!-- footer -->
             @include('partial._admin_foot')
 
