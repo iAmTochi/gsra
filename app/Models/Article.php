@@ -20,6 +20,11 @@ class Article extends Model
         return Attribute::get(fn () => $this->products->sum('pivot.amount'));
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     /**
      * Delete post image from storage
      *

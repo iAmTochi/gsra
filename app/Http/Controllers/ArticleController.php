@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\ArticleTag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ArticleController extends Controller
 {
@@ -58,6 +59,7 @@ class ArticleController extends Controller
             'published_at'          => $request->published_at,
             'article_category_id'   => $request->category,
             'user_id'               => auth()->user()->id,
+            'slug'                  => Str::slug($request->title)
         ]);
 
         if($request->tags){
@@ -109,7 +111,8 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $data = $request->only(['title','published_at','content']);
-        $data['content'] = $request->description;
+        $data['content']    = $request->description;
+        $data['slug']       = Str::slug($request->title);
 
         // check id new image
         if ($request->hasFile('image')){
