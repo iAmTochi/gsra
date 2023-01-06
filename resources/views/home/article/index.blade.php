@@ -2,19 +2,28 @@
 
 @section('content')
 <!-- ======================= Article Start ============================ -->
-<section class="middle mt-5">
+<section class="page-title gray">
     <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-12 col-md-12">
 
-        <div class="row justify-content-center">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                <div class="sec_title position-relative text-center">
-                    <h2 class="off_title">Latest Articles</h2>
-                    <h3 class="ft-bold pt-3">New Updates</h3>
+                <div class="breadcrumbs-wrap">
+                    <h2 class="mb-0 ft-medium">Latest Articles</h2>
+                    <nav class="transparent">
+                        <ol class="breadcrumb p-0">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="breadcrumb-item active theme-cl" aria-current="page">Articles</li>
+                        </ol>
+                    </nav>
                 </div>
+
             </div>
         </div>
-
-        <div class="row">
+    </div>
+</section>
+<section class="middle">
+    <div class="container">
+        <div class="row mt-5">
             @foreach($articles as $article)
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="_blog_wrap">
@@ -34,13 +43,15 @@
             @endforeach
         </div>
 
-        <div class="row justify-content-center">
+        @if(false)
+            <div class="row justify-content-center">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div class="position-relative text-center">
                     <a href="javascript:void(0);" class="btn stretched-link borders">Load More Blogs<i class="lni lni-arrow-right ml-2"></i></a>
                 </div>
             </div>
         </div>
+        @endif
 
     </div>
 </section>
