@@ -76,7 +76,7 @@
                                             <div class="col-xl-12 col-lg-12">
                                                 <div class="form-group">
                                                     <label class="text-dark ft-medium">About Me</label>
-                                                    <textarea name="about_me" class="form-control with-light">{{ auth()->user()->applicant?->resume->about_me }}</textarea>
+                                                    <textarea name="about_me" class="form-control with-light">{{ auth()->user()->applicant?->resume?->about_me }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
