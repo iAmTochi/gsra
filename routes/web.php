@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleCategoryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticleTagController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Home\HomeArticleController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
 use App\Http\Controllers\Home\HomeResumeController;
@@ -54,13 +55,9 @@ Route::controller(HomeResumeController::class)->group(function (){
     Route::get('/show-resume/{id}','show')->name('resume.show');
 });
 
-Route::get('/articles', function () {
-    return view('home.article.index');
-})->name('articles');
+Route::get('articles',          [HomeArticleController::class,'index'])->name('articles');
+Route::get('articles-details',  [HomeArticleController::class,'show'])->name('articles.show');
 
-Route::get('/articles-details', function () {
-    return view('home.article.show');
-})->name('articles.show');
 
 
 Route::controller(HomeJobController::class)->group(function () {
