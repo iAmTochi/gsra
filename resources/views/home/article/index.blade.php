@@ -15,20 +15,23 @@
         </div>
 
         <div class="row">
-
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+            @foreach($articles as $article)
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="_blog_wrap">
                     <div class="_blog_thumb mb-2">
-                        <a href="#" class="d-block"><img src="assets/img/bl-1.png" class="img-fluid rounded" alt="" /></a>
+                        <a href="#" class="d-block"><img src="{{ asset('storage/'. $article->image) }}" class="img-fluid rounded" alt="" style="min-height: 300px; width: 300px" /></a>
                     </div>
                     <div class="_blog_caption">
-                        <span class="text-muted">26 Jan 2021</span>
-                        <h5 class="bl_title lh-1"><a href="#">Let's start bring sale on this saummer vacation.</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis</p>
+                        <span class="text-muted">{{ $article->created_at->diffForHumans() }}</span>
+                        <h5 class="bl_title lh-1"><a href="#">{{ $article->title }}</a></h5>
+                        <p>
+                            {!! $article->content !!}
+                        </p>
                         <a href="#" class="text-dark fs-sm">Continue Reading..</a>
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
                 <div class="_blog_wrap">
