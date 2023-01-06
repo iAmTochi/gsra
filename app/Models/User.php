@@ -6,11 +6,12 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Impersonate;
 
     const ADMIN     = 'admin';
     const DEVELOPER = 'developer';
@@ -47,6 +48,26 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Determine if the user can impersonate another user.
+     *
+     * @return bool
+     */
+    public function canImpersonate()
+    {
+        return $this->isAdmin();
+    }
+
+    /**
+     * Determine if the user can be impersonated by another user.
+     *
+     * @return bool
+     */
+    public function canBeImpersonated()
+    {
+        return ! $this->isAdmin();
+    }
 
     public function admin(){
         return $this->belongsTo(Admin::class,'id','user_id');
@@ -174,15 +195,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
         return $name;
     }
-
-//    public function country(){
-//
-//        return  $this->belongsTo(Country::class,'');
-//    }
-//    public function state(){
-//
-//        return  $this->belongsTo(State::class);
-//    }
 
     public function location(){
 

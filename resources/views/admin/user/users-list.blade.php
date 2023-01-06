@@ -39,7 +39,7 @@
                             <tbody>
                             @foreach($users as $user)
                             <tr>
-                                <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ ++$count }}</h4></div></td>
+                                <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ $user->iteration }}</h4></div></td>
                                 <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ $user->fullName() }}</h4></div></td>
                                 <td><span class="ft-medium">{{ ucfirst($user->role) }}</span> </td>
                                 <td>{{ $user->location()}}</td>
@@ -49,8 +49,12 @@
                                 <td>
                                     <div class="dash-action">
                                         <a href="javascript:void(0);" class="p-2 circle text-info bg-light-info d-inline-flex align-items-center justify-content-center mr-1"><i class="lni lni-eye"></i></a>
-{{--                                        <a href="javascript:void(0);" class="p-2 circle text-success bg-light-success d-inline-flex align-items-center justify-content-center"><i class="lni lni-pencil"></i></a>--}}
+{{--                                        @admin--}}
+                                        @canBeImpersonated($user)
+                                        <a href="{{ route('impersonate', $user) }}" class="p-2 circle text-success bg-light-success d-inline-flex align-items-center justify-content-center"><i class="lni lni-pencil"></i></a>
 {{--                                        <a href="javascript:void(0);" class="p-2 circle text-danger bg-light-danger d-inline-flex align-items-center justify-content-center ml-1"><i class="lni lni-trash-can"></i></a>--}}
+                                        @endCanBeImpersonated
+{{--                                        @endadmin--}}
                                     </div>
                                 </td>
                             </tr>
