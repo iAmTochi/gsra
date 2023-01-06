@@ -55,8 +55,8 @@ Route::controller(HomeResumeController::class)->group(function (){
     Route::get('/show-resume/{id}','show')->name('resume.show');
 });
 
-Route::get('articles',          [HomeArticleController::class,'index'])->name('articles');
-Route::get('articles-details',  [HomeArticleController::class,'show'])->name('articles.show');
+Route::get('articles',          [HomeArticleController::class,'index'])->name('home.articles');
+Route::get('articles/{article}',  [HomeArticleController::class,'show'])->name('home.articles.show');
 
 
 
