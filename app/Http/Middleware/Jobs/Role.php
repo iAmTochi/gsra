@@ -32,10 +32,6 @@ class Role
             return redirect()->route('profile');
         }
 
-
-
-
-
         return $next($request);
     }
 }
