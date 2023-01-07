@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('applicants');
         Schema::create('applicants', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();

@@ -30,6 +30,11 @@ class Job extends Model
 
     protected $dates = ['feature_days'];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function jobPosts(){
 
         if(auth()->user()->role == User::EMPLOYER){
