@@ -29,6 +29,7 @@ return new class extends Migration
             $table->Enum('gender',['M','F','Both']);
             $table->unsignedBigInteger('openings');
             $table->unsignedBigInteger('author');
+            $table->mediumText('slug')->nullable()->unique();
             $table->date('feature_days');
             $table->boolean('is_closed')->default(false);
             $table->timestamps();
