@@ -18,8 +18,7 @@ class TestimonyController extends Controller
     public function index()
     {
         $testimonies = Testimony::all();
-        $count = 0;
-        return view('admin.testimony.index',compact('testimonies','count'));
+        return view('admin.testimony.index',compact('testimonies'));
     }
 
     /**
@@ -55,16 +54,6 @@ class TestimonyController extends Controller
         return to_route('testimonies.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Testimony  $testimony
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Testimony $testimony)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
