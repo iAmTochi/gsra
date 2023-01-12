@@ -57,7 +57,7 @@
                                             <div class="form-group col-md-6">
                                                 <label>Work Email *</label>
                                                 <input type="text" name="email" value="{{ old('email') }}"
-                                                       class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                                       class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}"
                                                        placeholder="Work Email*">
                                                 <span role="alert" class="invalid-feedback">
                                                     <strong>{{$errors->first('email')}}</strong>
