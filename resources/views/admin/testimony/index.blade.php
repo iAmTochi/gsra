@@ -58,7 +58,7 @@
                                 <tbody>
                                 @foreach($testimonies as $testimony)
                                 <tr>
-                                    <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ ++$count }}</h4></div></td>
+                                    <td><div class="dash-title"><h4 class="mb-0 ft-medium fs-sm">{{ $loop->iteration }}</h4></div></td>
                                     <td><img src="{{asset('storage/'.$testimony->passport ) }}" class="img-fluid circle" width="70" alt="" /></td>
                                     <td><span class="ft-medium">{{ $testimony->name }}</span></td>
                                     <td>{{ $testimony->description }}</td>
