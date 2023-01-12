@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleCategoryController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArticleTagController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\Home\HomeArticleController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Home\HomeJobController;
@@ -43,9 +44,10 @@ Route::get('/storage-link', function() {
 
 Route::controller(HomeController::class)->group(function () {
 
-    Route::get('/', 'home')->name('home');
-    Route::get('/about-us', 'about')->name('about');
-    Route::get('/contact-us', 'contact')->name('contact');
+    Route::get('/',             'home')->name('home');
+    Route::get('/about-us',     'about')->name('about');
+    Route::get('/contact-us',   'contact')->name('contact');
+    Route::get('/gallery',      'gallery')->name('gallery');
 
 });
 
@@ -98,6 +100,7 @@ Route::middleware(['auth','verified'])->group(function(){
         Route::get('manage-jobs',                   [JobController::class, 'index'])->name('manage-jobs.index');
         Route::resource('users',                UserController::class);
         Route::resource('testimonies',          TestimonyController::class);
+        Route::resource('galleries',          GalleryController::class);
         Route::resource('articles',             ArticleController::class);
         Route::resource('article-categories',   ArticleCategoryController::class);
         Route::resource('article-tags',         ArticleTagController::class);

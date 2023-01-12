@@ -90,6 +90,7 @@
                         <li><a href="{{ route('testimonies.index') }}"><i class="lni lni-mastercard mr-2"></i>Testimonies</a></li>
                         <li><a href=""><i class="lni lni-user mr-2"></i>About Page</a></li>
                         <li><a href=""><i class="lni lni-lock-alt mr-2"></i>Contact Page</a></li>
+                        <li><a href="{{ route('galleries.index') }}"><i class="lni lni-gallery mr-2"></i>Galleries</a></li>
                     </ul>
                 </li>
                 <li><a href=""><i class="lni lni-user mr-2"></i>Seo Meta Data </a></li>
