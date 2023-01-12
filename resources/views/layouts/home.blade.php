@@ -64,7 +64,6 @@
                             </ul>
 
                         </li>
-
                         <li><a href="javascript:void(0);">Employers</a>
                             <ul class="nav-dropdown nav-submenu">
 {{--                                @auth--}}
@@ -79,9 +78,9 @@
 
                             </ul>
                         </li>
-
-                        <li><a href="{{ route('home.articles') }}">Articles</a></li>
                         <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                        <li><a href="{{ route('home.articles') }}">Articles</a></li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
 
