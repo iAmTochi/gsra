@@ -105,11 +105,13 @@
                                 </a>
                             </li>
                         @endauth
-                        <li class="add-listing theme-bg">
-                            <a href="{{ route('jobs.create') }}" >
-                                <i class="lni lni-circle-plus mr-1"></i> Post a Job
-                            </a>
-                        </li>
+                        @if(false)
+                            <li class="add-listing theme-bg">
+                                <a href="{{ route('jobs.create') }}" >
+                                    <i class="lni lni-circle-plus mr-1"></i> Post a Job
+                                </a>
+                            </li>
+                        @endif
                     </ul>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
