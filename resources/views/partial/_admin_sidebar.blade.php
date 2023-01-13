@@ -40,7 +40,7 @@
 
                 @endif
                     <li>
-                        <a href="{{ route('applicant.jobs') }}"><i class="lni lni-files mr-2"></i>Applied Jobs<span class="count-tag bg-warning">4</span></a>
+                        <a href="{{ route('applicant.jobs') }}"><i class="lni lni-files mr-2"></i>Applied Jobs<span class="count-tag bg-warning">0</span></a>
                     </li>
                     @endif
 
@@ -61,7 +61,7 @@
                     <li class="accordion">
                         <a href="" data-toggle="collapse" data-target="#manage-user" aria-expanded="true" aria-controls="manage-user"><i class="lni lni-users mr-2"></i>Manage Users</a>
                         <ul id="manage-user" class="collapse">
-                            <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Users<span class="count-tag bg-warning">4</span></a></li>
+                            <li><a href="{{ route('users.index') }}"><i class="lni lni-bookmark mr-2"></i>View Users</a></li>
                             <li><a href="#"><i class="lni lni-mastercard mr-2"></i>Add New Admin</a></li>
 
                         </ul>
