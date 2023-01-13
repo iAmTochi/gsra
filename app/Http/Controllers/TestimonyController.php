@@ -39,8 +39,11 @@ class TestimonyController extends Controller
      */
     public function store(CreateTestimonyRequest $request)
     {
-
-
+        $request->validate([
+            'name' => 'required',
+            'passport' => 'required',
+            'description' => 'required'
+        ]);
         $imagePath = $request->file('passport')->store('testimonies');
 
         $data = $request->all();
