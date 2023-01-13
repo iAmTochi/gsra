@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\Gallery;
 use App\Models\Job;
 use App\Models\Testimony;
 use Illuminate\Http\Request;
@@ -43,6 +44,7 @@ class HomeController extends Controller
      */
     public function gallery() :View
     {
-        return view('gallery');
+        $galleries = Gallery::all();
+        return view('gallery', compact('galleries'));
     }
 }
