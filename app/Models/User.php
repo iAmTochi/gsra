@@ -160,7 +160,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
         if($this->isEmployer()){
 
-        $name =  $this->employer->first_name;
+        $name =  $this->employer?->first_name;
 
         }
 
