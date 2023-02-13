@@ -18,6 +18,7 @@ class IndustrySeeder extends Seeder
     public function run()
     {
         $industries = [
+            'Domestic (House help, Nanny, Driver, Cook, etc)',
             'Advertising, Media & Communications',
             'Agriculture, Fishing & Forestry',
             'Automotive & Aviation',
