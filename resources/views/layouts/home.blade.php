@@ -72,7 +72,7 @@
                                         <li><a href="{{ route('resume.browse') }}">Browse Resumes</a></li>
 {{--                                    @endif--}}
 {{--                                @else--}}
-                                <li><a href="{{ route('register.employer') }}">Sign Up</a></li>
+                                <li><a href="{{ route('register.employer') }}">Register</a></li>
 {{--                                @endauth--}}
 {{--                                <li><a href="browse-category.html">Browse Categories</a></li>--}}
 
@@ -123,7 +123,6 @@
     <!-- End Navigation -->
     <div class="clearfix"></div>
 
-
         @if($pageTitle??Null)
             <!-- ======================= Top Breadcrubms ======================== -->
             <div class="gray py-3">
@@ -143,9 +142,7 @@
             <!-- ======================= Top Breadcrubms ======================== -->
         @endif
 
-
-
-            @yield('content')
+    @yield('content')
 
         <!-- ======================= Newsletter Start ============================ -->
         <section class="space bg-cover" style="background:#ff0000 url({{ assert('assets/img/landing-bg.png') }}) no-repeat;">
@@ -280,12 +277,7 @@
             </div>
         </footer>
         <!-- ============================ Footer End ================================== -->
-
-
-
         <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
-
-
     </div>
 
 <!-- ============================================================== -->
