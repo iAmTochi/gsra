@@ -73,7 +73,7 @@ class RegisteredUserController extends Controller
                 'capacity'  => ['required',],
                 'address'   => ['required',],
                 'state'     => ['required',],
-                'website'   => ['required',],
+                'position'     => ['required',],
             ];
 
             $data = array_merge($this->userValidationData(), $employerData);
