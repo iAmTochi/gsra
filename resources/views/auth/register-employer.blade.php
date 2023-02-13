@@ -64,7 +64,7 @@
                                             </span>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label>Position in Company</label>
+                                                <label>Position in Company/Family</label>
                                                 <select name="position" id=""
                                                         class="form-control {{ $errors->has('position') ? ' is-invalid' : '' }}">
                                                     <option value="">Select your position the company</option>
@@ -159,10 +159,10 @@
 
                                         <div class="row">
                                             <div class="form-group col-md-6">
-                                                <label>Company's Name *</label>
+                                                <label>Company's/Family Name *</label>
                                                 <input type="text" name="company_name" value="{{ old('company_name') }}"
                                                        class="form-control{{ $errors->has('company_name') ? ' is-invalid' : '' }}"
-                                                       placeholder="Company's Name">
+                                                       placeholder="Company's/Family Name">
                                                 <span role="alert" class="invalid-feedback">
                                                     <strong>{{$errors->first('company_name')}}</strong>
                                             </span>
@@ -197,8 +197,8 @@
                                             </span>
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label>Website</label>
-                                                <input type="url" name="website" value="{{ old('website') }}"
+                                                <label>Website (Optional)</label>
+                                                <input type="text" name="website" value="{{ old('website') }}"
                                                        class="form-control{{ $errors->has('website') ? ' is-invalid' : '' }}"
                                                        placeholder="Website">
                                                 <span role="alert" class="invalid-feedback">
