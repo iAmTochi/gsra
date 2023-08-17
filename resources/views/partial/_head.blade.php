@@ -49,5 +49,3 @@
     </script>
     <livewire:styles />
 </head>
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-dd8eb5e6-cba6-4caa-9739-6d6b6009de4f"></div>
