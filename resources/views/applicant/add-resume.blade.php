@@ -313,8 +313,6 @@
 @section('scripts')
 
     <script>
-
-
         /**
          * Add Education
          */
