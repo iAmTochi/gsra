@@ -24,7 +24,7 @@ return new class extends Migration
             $table->text('image');
             $table->timestamp('published_at')->nullable();
             $table->boolean('is_published')->default(true);
-            $table->mediumText('slug')->unique();
+            $table->string('slug')->unique();
             $table->softDeletes();
             $table->timestamps();
         });
