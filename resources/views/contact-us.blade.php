@@ -18,8 +18,11 @@
                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                     <div class="card-wrap-body mb-4 gray rounded p-3">
                         <h4 class="ft-medium mb-3 theme-cl">Make a Call</h4>
-                        <p>Block 26, Plot 12, Admiralty Way, <br>Lekki Phase 1, Lagos, Nigeria</p>
-                        <p class="lh-1"><span class="text-dark ft-medium">Email:</span> support@gsrajobs.com</p>
+                        <p> Plot 25, Salem street. Global International College Plaza.
+                            <br> Beside Salem Church, Former Bolt Office, Near House on The Rock Church.
+                            <br>Lekki Lagos State.
+                        </p>
+                        <p class="lh-1"><span class="text-dark ft-medium">Email:</span> jobsglobal@gsrajobs.com</p>
                     </div>
 
                     <div class="card-wrap-body mb-3 gray rounded p-3">
