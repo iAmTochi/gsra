@@ -23,18 +23,18 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
 
-                                <div class="banner_caption text-left mb-5 typed-out">
-                                    <h1 class="banner_title ft-bold mb-1 uppercase"><span class="count"></span> In need
+                                <div class="mb-5 text-left banner_caption typed-out">
+                                    <h1 class="mb-1 uppercase banner_title ft-bold"><span class="count"></span> In need
                                         of a new staff?</h1>
                                     <p class="fs-md ft-medium">...Or seeking for a new job</p>
                                 </div>
 
-                                <div class="text-left align-items-center justify-content-center mt-5">
-                                    <a href="{{ route('applicant.add.resume') }}" class="btn bg-white hover-theme ft-regular mr-1"><i
-                                                class="lni lni-user mr-1"></i>I'm looking for a Job</a>
+                                <div class="mt-5 text-left align-items-center justify-content-center">
+                                    <a href="{{ route('applicant.add.resume') }}" class="mr-1 bg-white btn hover-theme ft-regular"><i
+                                                class="mr-1 lni lni-user"></i>I'm looking for a Job</a>
                                     <a href="{{ route('register.employer') }}"
-                                       class="btn bg-dark hover-theme text-light ft-regular ml-1"><i
-                                                class="lni lni-briefcase mr-1"></i>I'm Hiring</a>
+                                       class="ml-1 btn bg-dark hover-theme text-light ft-regular"><i
+                                                class="mr-1 lni lni-briefcase"></i>I'm Hiring</a>
                                 </div>
 
                             </div>
@@ -49,18 +49,18 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
 
-                                <div class="banner_caption text-right mb-5 typed-out">
-                                    <h1 class="banner_title ft-bold mb-1 uppercase "><span class="count"></span> In need
+                                <div class="mb-5 text-right banner_caption typed-out">
+                                    <h1 class="mb-1 uppercase banner_title ft-bold "><span class="count"></span> In need
                                         of a new staff?</h1>
                                     <p class="fs-md ft-medium " >...Or seeking for a new job</p>
                                 </div>
 
-                                <div class="text-right align-items-center justify-content-center mt-5">
-                                    <a href="{{ route('applicant.add.resume') }}" class="btn bg-white hover-theme ft-regular mr-1"><i
-                                                class="lni lni-user mr-1"></i>I'm looking for a Job</a>
+                                <div class="mt-5 text-right align-items-center justify-content-center">
+                                    <a href="{{ route('applicant.add.resume') }}" class="mr-1 bg-white btn hover-theme ft-regular"><i
+                                                class="mr-1 lni lni-user"></i>I'm looking for a Job</a>
                                     <a href="{{ route('register.employer') }}"
-                                       class="btn bg-dark hover-theme text-light ft-regular ml-1"><i
-                                                class="lni lni-briefcase mr-1"></i>I'm Hiring</a>
+                                       class="ml-1 btn bg-dark hover-theme text-light ft-regular"><i
+                                                class="mr-1 lni lni-briefcase"></i>I'm Hiring</a>
                                 </div>
 
                             </div>
@@ -75,18 +75,18 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-11 col-lg-12 col-md-12 col-sm-12 col-12">
 
-                                <div class="banner_caption text-center mb-5 typed-out">
-                                    <h1 class="banner_title ft-bold mb-1  uppercase"><span class="count"></span> In need
+                                <div class="mb-5 text-center banner_caption typed-out">
+                                    <h1 class="mb-1 uppercase banner_title ft-bold"><span class="count"></span> In need
                                         of a new staff?</h1>
                                     <p class="fs-md ft-medium">...Or seeking for a new job</p>
                                 </div>
 
-                                <div class="text-center align-items-center justify-content-center mt-5">
-                                    <a href="{{ route('applicant.add.resume') }}" class="btn bg-white hover-theme ft-regular mr-1"><i
-                                                class="lni lni-user mr-1"></i>I'm looking for a Job</a>
+                                <div class="mt-5 text-center align-items-center justify-content-center">
+                                    <a href="{{ route('applicant.add.resume') }}" class="mr-1 bg-white btn hover-theme ft-regular"><i
+                                                class="mr-1 lni lni-user"></i>I'm looking for a Job</a>
                                     <a href="{{ route('register.employer') }}"
-                                       class="btn bg-dark hover-theme text-light ft-regular ml-1"><i
-                                                class="lni lni-briefcase mr-1"></i>I'm Hiring</a>
+                                       class="ml-1 btn bg-dark hover-theme text-light ft-regular"><i
+                                                class="mr-1 lni lni-briefcase"></i>I'm Hiring</a>
                                 </div>
 
                             </div>
@@ -108,7 +108,7 @@
 
 
     <!-- ======================= Job seeks and employers Banner ======================== -->
-    <section class="space py-0" style="background: #ff0000;">
+    <section class="py-0 space" style="background: #ff0000;">
         <!-- ======================= for job seekers Start ============================ -->
         <div class="text-white container-fluid">
 
@@ -118,9 +118,9 @@
                      style=" background: url({{ asset('assets/img/applicant.jpeg') }}); z-index: 1" data-overlay="1">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="position-relative py-5 px-4">
+                    <div class="px-4 py-5 position-relative">
 
-                        <h2 class="ft-bold mb-3 text-white text-center">FOR JOB SEEKERS</h2>
+                        <h2 class="mb-3 text-center text-white ft-bold">FOR JOB SEEKERS</h2>
                         <p class="mb-2" style="font-size: 18px !important;"> Our number one goal is to significantly
                             reduce the number of unemployed graduates in Nigeria. To achieve our primary objective,
                             we dedicate a lot of time to training and re-training candidates to be employable and
@@ -129,9 +129,9 @@
                             help prepare our candidates to be successful in their next job.
                         </p>
 
-                        <div class="col-lg-12 col-md-12 col-12 mt-3 ml-0 pl-0">
-                            <a href="{{ route('about') }}" class="btn gray ft-medium apply-btn fs-sm rounded">See
-                                Details<i class="lni lni-arrow-right-circle ml-2"></i></a>
+                        <div class="pl-0 mt-3 ml-0 col-lg-12 col-md-12 col-12">
+                            <a href="{{ route('about') }}" class="rounded btn gray ft-medium apply-btn fs-sm">See
+                                Details<i class="ml-2 lni lni-arrow-right-circle"></i></a>
                         </div>
                     </div>
 
@@ -151,9 +151,9 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
 
-                        <div class="position-relative py-5 px-2">
+                        <div class="px-2 py-5 position-relative">
 
-                            <h2 class="ft-bold mb-3 text-white text-center">FOR EMPLOYERS</h2>
+                            <h2 class="mb-3 text-center text-white ft-bold">FOR EMPLOYERS</h2>
                             <p class="mb-2" style="font-size: 18px !important;"> Global Skills Recruitment Agency, GSRA,
                                 is a recruiting. We dedicate a lot of time to training and re-training candidates to be employable and
                                 fitted for the right job. We hire qualified employees to their respective employers.
@@ -163,10 +163,10 @@
                                     on behalf of our clients and the candidates themselves</span> to ensure that they are equipped
                                 with the requisite knowledge and skills to perform their responsibilities effectively.
                             </p>
-                            <div class="col-lg-12 col-md-12 col-12 mt-3 ml-0 pl-0">
+                            <div class="pl-0 mt-3 ml-0 col-lg-12 col-md-12 col-12">
                                 <a href="{{ route('about') }}"
-                                   class="btn gray ft-medium apply-btn fs-sm rounded">See Details<i
-                                            class="lni lni-arrow-right-circle ml-2"></i></a>
+                                   class="rounded btn gray ft-medium apply-btn fs-sm">See Details<i
+                                            class="ml-2 lni lni-arrow-right-circle"></i></a>
                             </div>
                         </div>
                 </div>
@@ -191,9 +191,12 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="m-spaced">
                         <div class="position-relative">
-                            <div class="mb-1"><span class="theme-bg-light theme-cl px-2 py-1 rounded">About Us</span>
+                            <div class="mb-1"><span class="px-2 py-1 rounded theme-bg-light theme-cl">About Us</span>
                             </div>
-                            <h2 class="ft-bold mb-3">We Recruit and Train <br> Staff For You</h2>
+                            <h2 class="mb-3 ft-bold text-capitalize"> Welcome to GSRA, <br> where we're revolutionizing the world of work!</h2>
+                            @if (false)
+                                
+                            
                             <p class="mb-2"> Global Skills Recruitment Agency, GSRA, is a recruiting,
                                 training and staffing agency. Our number one goal is to significantly
                                 reduce the number of unemployed graduates in Nigeria. To achieve our primary objective,
@@ -210,24 +213,50 @@
                                 help prepare our
                                 candidates to be successful in their next job.
                             </p>
+                            @endif
+                                <p class="mb-2">
+                                    We're on a mission to transform the way organizations and individuals connect and thrive in 
+                                    the modern employment landscape. Our two-pronged approach is designed to drive success on both 
+                                    sides of the equation:
+        
+                                </p>
+                                <p class="mb-2">
+                                    <b>For Organizations:</b> <br>
+                                    We're your trusted partner in building high-performing teams that fuel growth and innovation. 
+                                    Our expert staffing solutions ensure the right talent fits seamlessly into your unique culture 
+                                    and roles, driving your organization forward.
+        
+                                </p>
+                                <p class="mb-2">
+                                    <b>For Candidates:</b> <br>
+                                    We're your career compass in a world of digitalization and hybrid work environments. 
+                                    Our personalized guidance and counseling empower you to navigate the modern job market with confidence, 
+                                    unlocking your full potential and finding fulfillment in your career journey.
+        
+                                </p>
+        
+                                <p class="mb-2">
+                                    At GSRA, we believe in people-first solutions that spark meaningful connections and drive success. 
+                                    Join us in shaping the future of work!
+                                </p>
                         </div>
                         <div class="position-relative row">
 {{--                            <div class="col-lg-4 col-md-4 col-4">--}}
-{{--                                <h3 class="ft-bold theme-cl mb-0">10k+</h3>--}}
+{{--                                <h3 class="mb-0 ft-bold theme-cl">10k+</h3>--}}
 {{--                                <p class="ft-medium">Active Jobs</p>--}}
 {{--                            </div>--}}
 {{--                            <div class="col-lg-4 col-md-4 col-4">--}}
-{{--                                <h3 class="ft-bold theme-cl mb-0">12k+</h3>--}}
+{{--                                <h3 class="mb-0 ft-bold theme-cl">12k+</h3>--}}
 {{--                                <p class="ft-medium">Resumes</p>--}}
 {{--                            </div>--}}
 {{--                            <div class="col-lg-4 col-md-4 col-4">--}}
-{{--                                <h3 class="ft-bold theme-cl mb-0">07k+</h3>--}}
+{{--                                <h3 class="mb-0 ft-bold theme-cl">07k+</h3>--}}
 {{--                                <p class="ft-medium">Employers</p>--}}
 {{--                            </div>--}}
-                            <div class="col-lg-12 col-md-12 col-12 mt-3">
+                            <div class="mt-3 col-lg-12 col-md-12 col-12">
                                 <a href="{{ route('about') }}"
-                                   class="btn btn-md theme-bg-light rounded theme-cl hover-theme">See Details<i
-                                            class="lni lni-arrow-right-circle ml-2"></i></a>
+                                   class="rounded btn btn-md theme-bg-light theme-cl hover-theme">See Details<i
+                                            class="ml-2 lni lni-arrow-right-circle"></i></a>
                             </div>
                         </div>
                     </div>
@@ -235,7 +264,7 @@
 
                 <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
                     <div class="position-relative">
-                        <img src="{{ asset('assets/img/aboutus-01.jpg') }}" class="img-fluid rounded" alt="" width="350" />
+                        <img src="{{ asset('assets/img/aboutus-01.jpg') }}" class="rounded img-fluid" alt="" width="350" />
                     </div>
                 </div>
             </div>
@@ -250,7 +279,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-4">
+                    <div class="mb-4 text-center sec_title position-relative">
                         <h2 class="ft-bold text-muted">Why Choose GSRA?</h2>
                     </div>
                 </div>
@@ -318,8 +347,8 @@
 
             <div class="row justify-content-center">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="text-muted mb-0">Trending Jobs</h6>
+                    <div class="mb-5 text-center sec_title position-relative">
+                        <h6 class="mb-0 text-muted">Trending Jobs</h6>
                         <h2 class="ft-bold">All Popular Listed jobs</h2>
                     </div>
                 </div>
@@ -333,30 +362,30 @@
                 @foreach($jobs as $job)
                 <!-- Single -->
                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                    <div class="job_grid border rounded ">
+                    <div class="border rounded job_grid ">
                         <div class="position-absolute ab-left">
                             <button type="button"
-                                    class="p-3 border circle d-flex align-items-center justify-content-center bg-white text-gray">
+                                    class="p-3 bg-white border circle d-flex align-items-center justify-content-center text-gray">
                                 <i class="lni lni-heart-filled position-absolute snackbar-wishlist"></i></button>
                         </div>
                         <div class="position-absolute ab-right"><span
-                                    class="medium bg-light-success text-success px-2 py-1 rounded">{{ $job->workType->name }}</span>
+                                    class="px-2 py-1 rounded medium bg-light-success text-success">{{ $job->workType->name }}</span>
                         </div>
-                        <div class="job_grid_thumb mb-3 pt-5 px-3">
-                            <a href="{{ route('home.jobs.detail', $job->id) }}" class="d-block text-center m-auto"><img src="assets/img/c-2.png"
+                        <div class="px-3 pt-5 mb-3 job_grid_thumb">
+                            <a href="{{ route('home.jobs.detail', $job->id) }}" class="m-auto text-center d-block"><img src="assets/img/c-2.png"
                                                                                               class="img-fluid"
                                                                                               width="70" alt=""/></a>
                         </div>
-                        <div class="job_grid_caption text-center pb-5 px-3">
+                        <div class="px-3 pb-5 text-center job_grid_caption">
                             <h6 class="mb-0 lh-1 ft-medium medium"><a href="employer-detail.html"
                                                                       class="text-muted medium">{{ $job->recruiter->company_name }}</a></h6>
                             <h4 class="mb-0 ft-medium medium"><a href="{{ route('home.jobs.detail', $job->id) }}" class="text-dark fs-md">{{ $job->title }}</a></h4>
-                            <div class="jbl_location"><i class="lni lni-map-marker mr-1"></i><span>{{ ucwords( strtolower($job->state->name)) }}</span>
+                            <div class="jbl_location"><i class="mr-1 lni lni-map-marker"></i><span>{{ ucwords( strtolower($job->state->name)) }}</span>
                             </div>
                         </div>
-                        <div class="job_grid_footer pb-4 px-3 d-flex align-items-center justify-content-between">
-                            <div class="df-1 text-muted"><i class="lni lni-wallet mr-1"></i>$50k - $80k PA.</div>
-                            <div class="df-1 text-muted"><i class="lni lni-timer mr-1"></i>{{ $job->created_at->diffForHumans() }}</div>
+                        <div class="px-3 pb-4 job_grid_footer d-flex align-items-center justify-content-between">
+                            <div class="df-1 text-muted"><i class="mr-1 lni lni-wallet"></i>$50k - $80k PA.</div>
+                            <div class="df-1 text-muted"><i class="mr-1 lni lni-timer"></i>{{ $job->created_at->diffForHumans() }}</div>
                         </div>
                     </div>
                 </div>
@@ -366,9 +395,9 @@
 
             </div>
             <!-- row -->
-            <div class="position-relative text-center">
-                <a href="{{ route('home.jobs') }}" class="btn btn-md theme-bg rounded text-light hover-theme">Explore More
-                    Jobs<i class="lni lni-arrow-right-circle ml-2"></i></a>
+            <div class="text-center position-relative">
+                <a href="{{ route('home.jobs') }}" class="rounded btn btn-md theme-bg text-light hover-theme">Explore More
+                    Jobs<i class="ml-2 lni lni-arrow-right-circle"></i></a>
             </div>
 
         </div>
@@ -381,8 +410,8 @@
 
                 <div class="row justify-content-center">
                     <div class="col-xl-5 col-lg-7 col-md-9 col-sm-12">
-                        <div class="sec_title position-relative text-center mb-5">
-                            <h6 class="text-light mb-0">Current Openings</h6>
+                        <div class="mb-5 text-center sec_title position-relative">
+                            <h6 class="mb-0 text-light">Current Openings</h6>
                             <h2 class="ft-bold text-light">We Have Worked with 10,000+ Trusted Companies</h2>
                         </div>
                     </div>
@@ -392,91 +421,91 @@
                     <div class="col-xl-10 col-lg-11 col-md-12 col-sm-12">
                         <div class="row justify-content-center">
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                <div class="cats-wrap text-left">
+                                <div class="text-left cats-wrap">
                                     <a href="job-search-v1.html"
-                                       class="cats-box rounded bg-white d-flex align-items-center px-2 py-3">
+                                       class="px-2 py-3 bg-white rounded cats-box d-flex align-items-center">
                                         <div class="text-center"><img src="assets/img/c-9.png" class="img-fluid" width="55"
                                                                       alt=""></div>
-                                        <div class="cats-box-caption px-2">
-                                            <h4 class="fs-md mb-0 ft-medium">Web Designing</h4>
+                                        <div class="px-2 cats-box-caption">
+                                            <h4 class="mb-0 fs-md ft-medium">Web Designing</h4>
                                             <span class="text-muted">302 Jobs</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                <div class="cats-wrap text-left">
+                                <div class="text-left cats-wrap">
                                     <a href="job-search-v1.html"
-                                       class="cats-box rounded bg-white d-flex align-items-center px-2 py-3">
+                                       class="px-2 py-3 bg-white rounded cats-box d-flex align-items-center">
                                         <div class="text-center"><img src="assets/img/c-4.png" class="img-fluid" width="55"
                                                                       alt=""></div>
-                                        <div class="cats-box-caption px-2">
-                                            <h4 class="fs-md mb-0 ft-medium">Web Designing</h4>
+                                        <div class="px-2 cats-box-caption">
+                                            <h4 class="mb-0 fs-md ft-medium">Web Designing</h4>
                                             <span class="text-muted">302 Jobs</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                <div class="cats-wrap text-left">
+                                <div class="text-left cats-wrap">
                                     <a href="job-search-v1.html"
-                                       class="cats-box rounded bg-white d-flex align-items-center px-2 py-3">
+                                       class="px-2 py-3 bg-white rounded cats-box d-flex align-items-center">
                                         <div class="text-center"><img src="assets/img/c-2.png" class="img-fluid" width="55"
                                                                       alt=""></div>
-                                        <div class="cats-box-caption px-2">
-                                            <h4 class="fs-md mb-0 ft-medium">Web Designing</h4>
+                                        <div class="px-2 cats-box-caption">
+                                            <h4 class="mb-0 fs-md ft-medium">Web Designing</h4>
                                             <span class="text-muted">302 Jobs</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                <div class="cats-wrap text-left">
+                                <div class="text-left cats-wrap">
                                     <a href="job-search-v1.html"
-                                       class="cats-box rounded bg-white d-flex align-items-center px-2 py-3">
+                                       class="px-2 py-3 bg-white rounded cats-box d-flex align-items-center">
                                         <div class="text-center"><img src="assets/img/c-5.png" class="img-fluid" width="55"
                                                                       alt=""></div>
-                                        <div class="cats-box-caption px-2">
-                                            <h4 class="fs-md mb-0 ft-medium">Web Designing</h4>
+                                        <div class="px-2 cats-box-caption">
+                                            <h4 class="mb-0 fs-md ft-medium">Web Designing</h4>
                                             <span class="text-muted">302 Jobs</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                <div class="cats-wrap text-left">
+                                <div class="text-left cats-wrap">
                                     <a href="job-search-v1.html"
-                                       class="cats-box rounded bg-white d-flex align-items-center px-2 py-3">
+                                       class="px-2 py-3 bg-white rounded cats-box d-flex align-items-center">
                                         <div class="text-center"><img src="assets/img/c-10.png" class="img-fluid" width="55"
                                                                       alt=""></div>
-                                        <div class="cats-box-caption px-2">
-                                            <h4 class="fs-md mb-0 ft-medium">Web Designing</h4>
+                                        <div class="px-2 cats-box-caption">
+                                            <h4 class="mb-0 fs-md ft-medium">Web Designing</h4>
                                             <span class="text-muted">302 Jobs</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                <div class="cats-wrap text-left">
+                                <div class="text-left cats-wrap">
                                     <a href="job-search-v1.html"
-                                       class="cats-box rounded bg-white d-flex align-items-center px-2 py-3">
+                                       class="px-2 py-3 bg-white rounded cats-box d-flex align-items-center">
                                         <div class="text-center"><img src="assets/img/c-12.png" class="img-fluid" width="55"
                                                                       alt=""></div>
-                                        <div class="cats-box-caption px-2">
-                                            <h4 class="fs-md mb-0 ft-medium">Web Designing</h4>
+                                        <div class="px-2 cats-box-caption">
+                                            <h4 class="mb-0 fs-md ft-medium">Web Designing</h4>
                                             <span class="text-muted">302 Jobs</span>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12">
-                                <div class="cats-wrap text-left">
+                                <div class="text-left cats-wrap">
                                     <a href="job-search-v1.html"
-                                       class="cats-box rounded bg-white d-flex align-items-center px-2 py-3">
+                                       class="px-2 py-3 bg-white rounded cats-box d-flex align-items-center">
                                         <div class="text-center"><img src="assets/img/c-17.png" class="img-fluid" width="55"
                                                                       alt=""></div>
-                                        <div class="cats-box-caption px-2">
-                                            <h4 class="fs-md mb-0 ft-medium">Web Designing</h4>
+                                        <div class="px-2 cats-box-caption">
+                                            <h4 class="mb-0 fs-md ft-medium">Web Designing</h4>
                                             <span class="text-muted">302 Jobs</span>
                                         </div>
                                     </a>
@@ -499,8 +528,8 @@
 
             <div class="row justify-content-center">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-5">
-                        <h6 class="text-muted mb-0">Our Reviews</h6>
+                    <div class="mb-5 text-center sec_title position-relative">
+                        <h6 class="mb-0 text-muted">Our Reviews</h6>
                         <h2 class="ft-bold">What Our Customers <span class="text-danger"> Are Saying</span></h2>
                     </div>
                 </div>
@@ -508,20 +537,20 @@
 
             <div class="row justify-content-center">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="review-slide px-3">
+                    <div class="px-3 review-slide">
 
                         @foreach($testimonies as $testimony)
                         <!-- single review -->
-                        <div class="single_review px-2">
-                            <div class="reviews_wrap position-relative bg-white rounded py-4 px-4">
+                        <div class="px-2 single_review">
+                            <div class="px-4 py-4 bg-white rounded reviews_wrap position-relative">
                                 <div class="rw-header d-flex align-items-center justify-content-start">
                                     <div class="rv-110-thumb position-relative verified-author"><img src="{{asset('storage/'.$testimony->passport ) }}" class="img-fluid circle" width="70" alt="" /></div>
-                                    <div class="rv-110-caption pl-3">
-                                        <h4 class="ft-medium fs-md mb-0 lh-1">{{ $testimony->name }}</h4>
+                                    <div class="pl-3 rv-110-caption">
+                                        <h4 class="mb-0 ft-medium fs-md lh-1">{{ $testimony->name }}</h4>
                                         <p class="p-0 m-0">{{ $testimony->occupation }}</p>
                                     </div>
                                 </div>
-                                <div class="rw-header d-flex mt-3">
+                                <div class="mt-3 rw-header d-flex">
                                     <p>{{ $testimony->description }}</p>
                                 </div>
                             </div>
