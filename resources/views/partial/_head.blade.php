@@ -47,6 +47,7 @@
 
         gtag('config', 'UA-240061875-1');
     </script>
+    {!! htmlScriptTagJsApi() !!}
     <livewire:styles />
 </head>
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>

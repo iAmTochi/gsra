@@ -73,7 +73,6 @@ class RegisteredUserController extends Controller
                 'capacity'  => ['required',],
                 'address'   => ['required',],
                 'state'     => ['required',],
-                'position'     => ['required',],
             ];
 
             $data = array_merge($this->userValidationData(), $employerData);
@@ -131,6 +130,7 @@ class RegisteredUserController extends Controller
             'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'g-recaptcha-response'     => 'recaptcha',
         ];
 
     }

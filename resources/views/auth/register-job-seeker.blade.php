@@ -59,6 +59,15 @@
                                 </span>
                             </div>
                         </div>
+                        <div class="form-group">
+                            {!! htmlFormSnippet() !!}
+                            @if($errors->has('g-recaptcha-response'))
+                                <span role="alert" class="text-danger">
+                                    <strong>{{$errors->first('g-recaptcha-response')}}</strong>
+                            </span>
+                            @endif
+                        </div>
+
 
                         <div class="form-group">
                             <p>By registering your details, you agree with our Terms & Conditions, and Privacy and Cookie Policy.</p>
