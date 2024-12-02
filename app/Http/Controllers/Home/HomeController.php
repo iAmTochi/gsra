@@ -18,7 +18,7 @@ class HomeController extends Controller
     {
         $data = [
             'testimonies' => Testimony::all(),
-            'jobs' => Job::limit(4)->get(),
+            'jobs' => Job::query()->limit(4)->get(),
         ];
         return view('home', $data);
     }
