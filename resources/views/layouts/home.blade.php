@@ -192,8 +192,10 @@
                                 <img src="assets/img/logo.png" class="img-footer small mb-2" alt="" />
 
                                 <div class="address mt-2">
-
-                                    Block 26, Plot 12, Admiralty Way, <br>Lekki Phase 1, Lagos, Nigeria
+                                    Plot 25, Salem street. Global International College Plaza.
+                                    <br>Beside Salem Church, Former Bolt Office,
+                                    <br>Near House on The Rock Church.
+                                    <br>Lekki, Lagos State, Nigeria.
 
                                 </div>
                                 <div class="address mt-3">
