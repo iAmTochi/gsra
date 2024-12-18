@@ -8,7 +8,7 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="abt_caption">
-                        <h2 class="ft-medium mb-4">We Have Everything You Need ?</h2>
+                        <h2 class="mb-4 ft-medium">We Have Everything You Need ?</h2>
                         <p class="mb-4">Global Skills Recruitment Agency, GSRA, is a recruiting, training
                             and staffing agency. Our number one goal is to significantly reduce the number
                             of unemployed graduates in Nigeria. To achieve our primary objective,
@@ -22,16 +22,21 @@
                             knowledge and skills to perform their responsibilities effectively.
                             We are a one-stop shop for the basic recruitment needs of both employers and
                             job seekers and have inculcated SKILLS ACQUISITION as a fundamental aspect of
-                            GSRA to help prepare our candidates to be successful in their next job.</p>
-                        <div class="form-group mt-4">
-{{--                            <a href="#" class="btn theme-bg text-white">See More Info</a>--}}
+                            GSRA to help prepare our candidates to be successful in their next job.
+                        </p>
+
+                        <p>Welcome to GSRA, where we're revolutionizing the world of work!</p>
+
+                        
+                        <div class="mt-4 form-group">
+{{--                            <a href="#" class="text-white btn theme-bg">See More Info</a>--}}
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="abt_caption">
-                        <img src="assets/img/about-1.png" class="img-fluid rounded" alt="" />
+                        <img src="assets/img/about-1.png" class="rounded img-fluid" alt="" />
                     </div>
                 </div>
 
@@ -107,7 +112,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-4">
+                    <div class="mb-4 text-center sec_title position-relative">
                         <h2 class="ft-bold text-muted">OUR VALUES</h2>
                     </div>
                 </div>
@@ -116,12 +121,12 @@
 
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="abt_caption">
-{{--                        <img src="assets/img/about-2.png" class="img-fluid rounded" alt="" />--}}
-                        <img src="assets/img/about_team1.png" class="img-fluid rounded" alt=""  />
+{{--                        <img src="assets/img/about-2.png" class="rounded img-fluid" alt="" />--}}
+                        <img src="assets/img/about_team1.png" class="rounded img-fluid" alt=""  />
                     </div>
                 </div>
 
-                <div class="col-md-6 mt-4">
+                <div class="mt-4 col-md-6">
 
                     <div class="row">
                         <!-- Single Item -->
@@ -129,7 +134,7 @@
                             <div class="blg_grid_box">
 
                                 <div class="blg_grid_caption">
-                                    <div class="blg_title text-uppercase text-center"><h4 class="text-success">Honorable </h4></div>
+                                    <div class="text-center blg_title text-uppercase"><h4 class="text-success">Honorable </h4></div>
                                 </div>
 
                             </div>
@@ -139,7 +144,7 @@
 
                                 <div class="blg_grid_caption">
 
-                                    <div class="blg_title text-uppercase text-center"><h4  class="text-warning">Commitment </h4></div>
+                                    <div class="text-center blg_title text-uppercase"><h4  class="text-warning">Commitment </h4></div>
 
                                 </div>
 
@@ -148,7 +153,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="blg_grid_box">
                                 <div class="blg_grid_caption">
-                                    <div class="blg_title text-uppercase text-center"><h4  class="text-info">Equality</h4></div>
+                                    <div class="text-center blg_title text-uppercase"><h4  class="text-info">Equality</h4></div>
                                 </div>
 
                             </div>
@@ -156,7 +161,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="blg_grid_box">
                                 <div class="blg_grid_caption">
-                                    <div class="blg_title text-uppercase text-center"><h4 class="text-danger">Resoluteness</h4></div>
+                                    <div class="text-center blg_title text-uppercase"><h4 class="text-danger">Resoluteness</h4></div>
                                 </div>
 
                             </div>
@@ -164,7 +169,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="blg_grid_box">
                                 <div class="blg_grid_caption">
-                                    <div class="blg_title text-uppercase text-center"><h4 class="text-warning">Integrity-driven</h4></div>
+                                    <div class="text-center blg_title text-uppercase"><h4 class="text-warning">Integrity-driven</h4></div>
                                 </div>
 
                             </div>
@@ -186,7 +191,7 @@
 
             <div class="row justify-content-center">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="sec_title position-relative text-center mb-4">
+                    <div class="mb-4 text-center sec_title position-relative">
                         <h2 class="ft-bold">MEET THE TEAM LEAD</h2>
                     </div>
                 </div>
@@ -205,8 +210,8 @@
                             <div class="blg_title d-flex justify-content-between">
                                 <h4>ABOLAJI OSIME</h4>
 
-                                <button class="btn btn-sm stretched-link borders collapsed py-0 my-0" data-toggle="collapse" data-target="#ord1" aria-expanded="false" aria-controls="ord1">
-                                    More Info  <i class=" lni lni-arrow-right ml-2"></i>
+                                <button class="py-0 my-0 btn btn-sm stretched-link borders collapsed" data-toggle="collapse" data-target="#ord1" aria-expanded="false" aria-controls="ord1">
+                                    More Info  <i class="ml-2 lni lni-arrow-right"></i>
                                 </button>
 
                             </div>
@@ -234,7 +239,7 @@
                             </div>
                         </div>
                         <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
+                            <div class="px-3 py-2 crs_flex d-flex align-items-center justify-content-between br-top">
                                 <div class="crs_fl_first">
                                     <div class="foot_list_info">
                                         <ul>
@@ -264,8 +269,8 @@
                             <div class="blg_title d-flex justify-content-between">
                                 <h4>CHALYA PRINCESS MIRI-GAZHI</h4>
 
-                                    <button class="btn btn-sm stretched-link borders collapsed py-0 my-0" data-toggle="collapse" data-target="#ord2" aria-expanded="false" aria-controls="ord1">
-                                        More Info <i class=" lni lni-arrow-right ml-2"></i>
+                                    <button class="py-0 my-0 btn btn-sm stretched-link borders collapsed" data-toggle="collapse" data-target="#ord2" aria-expanded="false" aria-controls="ord1">
+                                        More Info <i class="ml-2 lni lni-arrow-right"></i>
                                     </button>
 
                             </div>
@@ -287,7 +292,7 @@
                             </div>
                         </div>
                         <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
+                            <div class="px-3 py-2 crs_flex d-flex align-items-center justify-content-between br-top">
                                 <div class="crs_fl_first">
                                     <div class="foot_list_info">
                                         <ul>
@@ -317,8 +322,8 @@
                             <div class="blg_title d-flex justify-content-between">
                                 <h4><a href="blog-detail.html">OYIN ABIBO</a></h4>
 
-                                <button class="btn btn-sm stretched-link borders collapsed py-0 my-0" data-toggle="collapse" data-target="#ord3" aria-expanded="false" aria-controls="ord1">
-                                    More Info <i class=" lni lni-arrow-right ml-2"></i>
+                                <button class="py-0 my-0 btn btn-sm stretched-link borders collapsed" data-toggle="collapse" data-target="#ord3" aria-expanded="false" aria-controls="ord1">
+                                    More Info <i class="ml-2 lni lni-arrow-right"></i>
                                 </button>
 
                             </div>
@@ -333,7 +338,7 @@
                             </div>
                         </div>
                         <div class="crs_grid_foot">
-                            <div class="crs_flex d-flex align-items-center justify-content-between br-top px-3 py-2">
+                            <div class="px-3 py-2 crs_flex d-flex align-items-center justify-content-between br-top">
                                 <div class="crs_fl_first">
                                     <div class="foot_list_info">
                                         <ul>
